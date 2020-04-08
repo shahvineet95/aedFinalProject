@@ -123,12 +123,9 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
-        // Get user name
         String userName = userNameJTextField.getText();
-        // Get Password
         char[] passwordCharArray = passwordField.getPassword();
         String password = String.valueOf(passwordCharArray);
-        
         //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
         
@@ -151,7 +148,6 @@ public class MainJFrame extends javax.swing.JFrame {
                                break;
                            }
                        }
-                        
                     }
                     else{
                        inEnterprise=enterprise;
