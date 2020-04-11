@@ -92,6 +92,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManageNetwork = new javax.swing.JButton();
         btnManageEnterprise = new javax.swing.JButton();
         btnManageAdmin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -144,6 +145,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("Manage CDC Manager");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -159,7 +167,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnManageNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnManageAdmin)
-                        .addComponent(btnManageEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnManageEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(212, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -175,7 +184,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 .addComponent(btnManageEnterprise)
                 .addGap(18, 18, 18)
                 .addComponent(btnManageAdmin)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         jSplitPane.setRightComponent(jPanel2);
@@ -212,11 +223,20 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTreeValueChanged
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        ManageCDCAdminJPanel manageAdminJPanel=new ManageCDCAdminJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("manageEnterpriseAdminJPanel",manageAdminJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageAdmin;
     private javax.swing.JButton btnManageEnterprise;
     private javax.swing.JButton btnManageNetwork;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
