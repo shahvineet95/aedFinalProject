@@ -15,17 +15,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author imskr
  */
-public class ProviderWorkArea extends javax.swing.JPanel {
+public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ProviderWorkArea
+     * Creates new form ProviderWorkAreaJPanel
      */
-    
     private JPanel viewJPanel;
     private UserAccountDirectory directory;
     private WorkQueue wq;
+    
 
-    ProviderWorkArea(JPanel viewJPanel, UserAccountDirectory directory, String text, WorkQueue wq) {
+    ProviderWorkAreaJPanel(JPanel container, WorkQueue wq) {
         initComponents();
         this.viewJPanel = viewJPanel;
         this.directory = directory;
@@ -54,11 +54,13 @@ public class ProviderWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        providerWorkAreaJPanel = new org.netbeans.modules.form.InvalidComponent();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_provider = new javax.swing.JTable();
         button_process = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 36)); // NOI18N
+        jLabel1.setText("PROVIDER WORK AREA");
 
         table_provider.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -72,42 +74,28 @@ public class ProviderWorkArea extends javax.swing.JPanel {
 
         button_process.setText("Process Request");
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 36)); // NOI18N
-        jLabel1.setText("PROVIDER WORK AREA");
-
-        javax.swing.GroupLayout providerWorkAreaJPanelLayout = new javax.swing.GroupLayout(providerWorkAreaJPanel);
-        providerWorkAreaJPanel.setLayout(providerWorkAreaJPanelLayout);
-        providerWorkAreaJPanelLayout.setHorizontalGroup(
-            providerWorkAreaJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(providerWorkAreaJPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
-                .addGroup(providerWorkAreaJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(button_process, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
-        providerWorkAreaJPanelLayout.setVerticalGroup(
-            providerWorkAreaJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(providerWorkAreaJPanelLayout.createSequentialGroup()
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
                 .addGap(80, 80, 80)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(button_process, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -116,7 +104,6 @@ public class ProviderWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton button_process;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private org.netbeans.modules.form.InvalidComponent providerWorkAreaJPanel;
     private javax.swing.JTable table_provider;
     // End of variables declaration//GEN-END:variables
 }

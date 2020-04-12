@@ -22,7 +22,12 @@ public abstract class WorkRequest {
     private Date resolveDate;
     private int quantity;
     private Vaccine vaccine;
-    
+    private String hospital;
+
+    public String getHospital() {
+        return hospital;
+    }
+
     public WorkRequest(){
         requestDate = new Date();
     }
