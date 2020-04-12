@@ -35,7 +35,7 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
-        this.wq = new WorkQueue();
+        
     }
 
     /**
@@ -190,13 +190,6 @@ public class MainJFrame extends javax.swing.JFrame {
         
         Enterprise inEnterprise=null;
         Organization inOrganization=null;
-        
-        //code added for provider
-        if (userNameJTextField.getText().equals("provider") && passwordField.getText().equals("provider")) {
-            CardLayout layout = (CardLayout)container.getLayout();
-            container.add(new ProviderWorkAreaJPanel(container, wq));
-            layout.next(container);
-        }
         
         if(userAccount==null){
             //Step 2: Go inside each network and check each enterprise
