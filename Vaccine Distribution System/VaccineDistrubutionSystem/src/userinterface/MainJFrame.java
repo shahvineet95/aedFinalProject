@@ -288,13 +288,7 @@ public class MainJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    MainJFrame frame = new MainJFrame();
-                    frame.dispose();
-                    frame.setUndecorated(true);
-                    frame.setSize(1300, 700);
-                    frame.setLocationRelativeTo(null);
-                    frame.setVisible(true);
-                     
+                    new MainJFrame().setVisible(true);
                 } catch (IOException ex) {
                     Logger.getLogger(MainJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
