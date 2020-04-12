@@ -24,7 +24,11 @@ public abstract class Organization {
     private static int counter=0;
     
     public enum Type{
-        Admin("Admin Organization"), InventoryManager("Inventory Organization"), Doctor("Doctor Organization"), Lab("Lab Organization");
+        Admin("Admin Organization"), 
+        InventoryManager("Inventory Organization"), 
+        Doctor("Doctor Organization"), 
+        Lab("Lab Organization"),
+        Hospitaladmin("Hospital Organization");
         private String value;
         private Type(String value) {
             this.value = value;
@@ -72,6 +76,7 @@ public abstract class Organization {
     public void setWorkQueue(WorkQueue workQueue) {
         this.workQueue = workQueue;
     }
+    
 
     @Override
     public String toString() {

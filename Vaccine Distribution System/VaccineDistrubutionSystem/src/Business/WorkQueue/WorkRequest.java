@@ -5,6 +5,7 @@
 package Business.WorkQueue;
 
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
 import java.util.Date;
 
 /**
@@ -19,6 +20,8 @@ public abstract class WorkRequest {
     private String status;
     private Date requestDate;
     private Date resolveDate;
+    private int quantity;
+    private Vaccine vaccine;
     
     public WorkRequest(){
         requestDate = new Date();
@@ -71,4 +74,22 @@ public abstract class WorkRequest {
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Vaccine getVaccine() {
+        return vaccine;
+    }
+
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+    
+    
 }

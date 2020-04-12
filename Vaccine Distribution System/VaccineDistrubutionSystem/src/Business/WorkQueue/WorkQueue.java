@@ -21,4 +21,10 @@ public class WorkQueue {
     public ArrayList<WorkRequest> getWorkRequestList() {
         return workRequestList;
     }
+    
+    public WorkRequest addWorkRequestList() {
+        WorkRequest temp = new Extended();
+        workRequestList.add(temp);
+        return temp;
+    }
 }

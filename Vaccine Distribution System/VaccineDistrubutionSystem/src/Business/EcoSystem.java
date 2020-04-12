@@ -9,6 +9,7 @@ import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
+import Business.Vaccine.VaccineDirectory;
 import java.util.ArrayList;
 
 /**
@@ -20,6 +21,7 @@ public class EcoSystem extends Organization{
     private static EcoSystem business;
     private ArrayList<Network> networkList;
    // private CDCAdmin cdcadmin;
+    private VaccineDirectory vaccinedir;
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
@@ -40,7 +42,8 @@ public class EcoSystem extends Organization{
     }
     private EcoSystem(){
         super(null);
-        networkList=new ArrayList<Network>();
+        networkList = new ArrayList<Network>();
+        vaccinedir = new VaccineDirectory();
     }
 
     public ArrayList<Network> getNetworkList() {
@@ -60,4 +63,14 @@ public class EcoSystem extends Organization{
         }
         return true;
     }
+
+    public VaccineDirectory getVaccinedir() {
+        return vaccinedir;
+    }
+
+    public void setVaccinedir(VaccineDirectory vaccinedir) {
+        this.vaccinedir = vaccinedir;
+    }
+    
+    
 }
