@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterfacePackage;
+package userinterface;
 
-import Business.User.UserDirectory;
-import Business.WorkRequest.WorkQueue;
-import Business.WorkRequest.WorkRequest;
+import Business.UserAccount.UserAccountDirectory;
+import Business.WorkQueue.WorkQueue;
+import Business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,10 +22,10 @@ public class ProviderWorkArea extends javax.swing.JPanel {
      */
     
     private JPanel viewJPanel;
-    private UserDirectory directory;
+    private UserAccountDirectory directory;
     private WorkQueue wq;
 
-    ProviderWorkArea(JPanel viewJPanel, UserDirectory directory, String text, WorkQueue wq) {
+    ProviderWorkArea(JPanel viewJPanel, UserAccountDirectory directory, String text, WorkQueue wq) {
         initComponents();
         this.viewJPanel = viewJPanel;
         this.directory = directory;
@@ -54,7 +54,7 @@ public class ProviderWorkArea extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        providerWorkAreaJPanel = new keeptoo.KGradientPanel();
+        providerWorkAreaJPanel = new org.netbeans.modules.form.InvalidComponent();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_provider = new javax.swing.JTable();
         button_process = new javax.swing.JButton();
@@ -73,7 +73,6 @@ public class ProviderWorkArea extends javax.swing.JPanel {
         button_process.setText("Process Request");
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PROVIDER WORK AREA");
 
         javax.swing.GroupLayout providerWorkAreaJPanelLayout = new javax.swing.GroupLayout(providerWorkAreaJPanel);
@@ -104,11 +103,11 @@ public class ProviderWorkArea extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 862, Short.MAX_VALUE)
+            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 620, Short.MAX_VALUE)
+            .addComponent(providerWorkAreaJPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -117,7 +116,7 @@ public class ProviderWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton button_process;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private keeptoo.KGradientPanel providerWorkAreaJPanel;
+    private org.netbeans.modules.form.InvalidComponent providerWorkAreaJPanel;
     private javax.swing.JTable table_provider;
     // End of variables declaration//GEN-END:variables
 }
