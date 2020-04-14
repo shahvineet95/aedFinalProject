@@ -28,11 +28,20 @@ public abstract class Organization {
         InventoryManager("Inventory Organization"), 
         Doctor("Doctor Organization"), 
         Lab("Lab Organization"),
-        Hospitaladmin("Hospital Organization");
+        Hospitaladmin("Hospital Organization"),
+        
+        //for the delivery enterprise, @author - santhosh
+        PhdLead("PHD Lead"),
+        Delivery("Delivery Organization"),
+        Provider("Provider Organization"),
+        Logistics("Logistics Organization");
+        
         private final String value;
+        
         private Type(String value) {
             this.value = value;
         }
+        
         public String getValue() {
             return value;
         }

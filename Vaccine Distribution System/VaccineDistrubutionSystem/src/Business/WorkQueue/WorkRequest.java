@@ -90,6 +90,4 @@ public abstract class WorkRequest {
     public void setVaccine(Vaccine vaccine) {
         this.vaccine = vaccine;
     }
-    
-    
 }
