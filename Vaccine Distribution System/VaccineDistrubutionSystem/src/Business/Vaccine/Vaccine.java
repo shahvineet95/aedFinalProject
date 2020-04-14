@@ -42,4 +42,11 @@ public class Vaccine {
     public void setDesc(String desc) {
         this.desc = desc;
     }
+  
+    @Override 
+    public String toString(){
+        return this.getName();
+    }
+    
+
 }

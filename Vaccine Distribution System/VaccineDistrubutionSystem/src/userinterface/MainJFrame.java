@@ -187,7 +187,7 @@ public class MainJFrame extends javax.swing.JFrame {
         String password = String.valueOf(passwordCharArray);
         //Step1: Check in the system admin user account directory if you have the user
         UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
-        
+      
         Enterprise inEnterprise = null;
         Organization inOrganization = null;
         
