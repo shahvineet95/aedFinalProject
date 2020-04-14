@@ -24,6 +24,8 @@ import javax.swing.JPanel;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
+	//this is the mainJFrame..
+
     /**
      * Creates new form MainJFrame
      */

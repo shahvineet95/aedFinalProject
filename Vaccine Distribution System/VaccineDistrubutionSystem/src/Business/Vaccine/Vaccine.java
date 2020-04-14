@@ -9,6 +9,8 @@ package Business.Vaccine;
  *
  * @author dharm
  */
+
+//class Vaccine
 public class Vaccine {
     private String name;
     private Float cost;
