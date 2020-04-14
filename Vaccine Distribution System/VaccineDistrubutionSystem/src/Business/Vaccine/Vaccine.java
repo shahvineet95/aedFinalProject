@@ -42,6 +42,9 @@ public class Vaccine {
         this.desc = desc;
     }
     
-    
+    @Override 
+    public String toString(){
+        return this.getName();
+    }
     
 }

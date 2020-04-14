@@ -13,6 +13,7 @@ import Business.Role.CDCAdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -151,7 +152,7 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         Employee employee = system.getEmployeeDirectory().createEmployee(name);
         
         UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new CDCAdminRole());
-        
+        JOptionPane.showMessageDialog(null, "Account created Successfully");
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
