@@ -29,7 +29,7 @@ public abstract class Organization {
         Doctor("Doctor Organization"), 
         Lab("Lab Organization"),
         Hospitaladmin("Hospital Organization");
-        private String value;
+        private final String value;
         private Type(String value) {
             this.value = value;
         }
@@ -40,11 +40,11 @@ public abstract class Organization {
 
     public Organization(String name) {
         this.name = name;
-        workQueue = new WorkQueue();
-        employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        organizationID = counter;
-        ++counter;
+        this.workQueue = new WorkQueue();
+        this.employeeDirectory = new EmployeeDirectory();
+        this.userAccountDirectory = new UserAccountDirectory();
+        this.organizationID = counter++;
+        //++counter
     }
 
     public abstract ArrayList<Role> getSupportedRole();
@@ -76,12 +76,9 @@ public abstract class Organization {
     public void setWorkQueue(WorkQueue workQueue) {
         this.workQueue = workQueue;
     }
-    
 
     @Override
     public String toString() {
         return name;
     }
-    
-    
 }

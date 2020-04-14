@@ -22,5 +22,4 @@ public class PharmaceuticalEnterprise extends Enterprise {
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
-    
 }

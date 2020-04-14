@@ -15,7 +15,6 @@ public class Vaccine {
     private String desc;
     
     public Vaccine(){
-     
     }
 
     public String getName() {
@@ -41,7 +40,4 @@ public class Vaccine {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    
-    
-    
 }

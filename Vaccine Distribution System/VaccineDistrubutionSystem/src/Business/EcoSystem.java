@@ -22,6 +22,7 @@ public class EcoSystem extends Organization{
     private ArrayList<Network> networkList;
    // private CDCAdmin cdcadmin;
     private VaccineDirectory vaccinedir;
+    
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
@@ -34,12 +35,14 @@ public class EcoSystem extends Organization{
         networkList.add(network);
         return network;
     }
+    
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
         roleList.add(new SystemAdminRole());
         return roleList;
     }
+    
     private EcoSystem(){
         super(null);
         networkList = new ArrayList<Network>();
@@ -58,9 +61,9 @@ public class EcoSystem extends Organization{
         if(!this.getUserAccountDirectory().checkIfUsernameIsUnique(userName)){
             return false;
         }
-        for(Network network:networkList){
-            
-        }
+//        for(Network network:networkList){
+//            
+//        }
         return true;
     }
 
@@ -71,6 +74,4 @@ public class EcoSystem extends Organization{
     public void setVaccinedir(VaccineDirectory vaccinedir) {
         this.vaccinedir = vaccinedir;
     }
-    
-    
 }
