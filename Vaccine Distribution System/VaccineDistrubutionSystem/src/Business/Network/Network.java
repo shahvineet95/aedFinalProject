@@ -34,5 +34,4 @@ public class Network {
     public String toString(){
         return name;
     }
-    
 }

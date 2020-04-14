@@ -24,18 +24,18 @@ import javax.swing.JPanel;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
+	//this is the mainJFrame..
+
     /**
      * Creates new form MainJFrame
      */
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
-    private WorkQueue wq;
 
     public MainJFrame() throws IOException{
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1680, 1050);
-        
     }
 
     /**
@@ -186,10 +186,10 @@ public class MainJFrame extends javax.swing.JFrame {
         char[] passwordCharArray = passwordField.getPassword();
         String password = String.valueOf(passwordCharArray);
         //Step1: Check in the system admin user account directory if you have the user
-        UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
-        
-        Enterprise inEnterprise=null;
-        Organization inOrganization=null;
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userName, password);
+      
+        Enterprise inEnterprise = null;
+        Organization inOrganization = null;
         
         if(userAccount==null){
             //Step 2: Go inside each network and check each enterprise

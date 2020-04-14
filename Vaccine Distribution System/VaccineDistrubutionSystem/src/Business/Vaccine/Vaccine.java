@@ -9,13 +9,14 @@ package Business.Vaccine;
  *
  * @author dharm
  */
+
+//class Vaccine
 public class Vaccine {
     private String name;
     private Float cost;
     private String desc;
     
     public Vaccine(){
-     
     }
 
     public String getName() {
@@ -41,10 +42,11 @@ public class Vaccine {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-    
+  
     @Override 
     public String toString(){
         return this.getName();
     }
     
+
 }

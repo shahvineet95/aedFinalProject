@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package Business.Role;
-
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
@@ -19,26 +18,26 @@ public abstract class Role {
     public enum RoleType{
         Admin("Admin"),
         Doctor("Doctor"),
-        InventoryManager("InventoryManager"),
+        InventoryManager("Inventory Manager"),
         LabAssistant("Lab Assistant");
         
-        private String value;
+        private final String value;
+        
         private RoleType(String value){
             this.value = value;
         }
 
         public String getValue() {
-            return value;
+            return this.value;
         }
 
         @Override
         public String toString() {
-            return value;
+            return this.value;
         }
     }
     
-    public abstract JPanel createWorkArea(JPanel userProcessContainer, 
-            UserAccount account, 
+    public abstract JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, 
             Organization organization, 
             Enterprise enterprise, 
             EcoSystem business);
@@ -46,7 +45,5 @@ public abstract class Role {
     @Override
     public String toString() {
         return this.getClass().getName();
-    }
-    
-    
+    }  
 }

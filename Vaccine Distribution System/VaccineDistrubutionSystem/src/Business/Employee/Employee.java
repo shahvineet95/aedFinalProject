@@ -15,8 +15,8 @@ public class Employee {
     private static int count = 1;
 
     public Employee() {
-        id = count;
-        count++;
+        this.id = count;
+        this.count++;
     }
 
     public int getId() {
@@ -27,7 +27,6 @@ public class Employee {
         this.name = name;
     }
 
-    
     public String getName() {
         return name;
     }
@@ -36,6 +35,4 @@ public class Employee {
     public String toString() {
         return name;
     }
-    
-    
 }
