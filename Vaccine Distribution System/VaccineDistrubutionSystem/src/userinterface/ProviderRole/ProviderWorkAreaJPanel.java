@@ -19,10 +19,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     
-    private final JPanel userProcessContainer;
-    private final ProviderOrganization organization;
-    private final Enterprise enterprise;
-    private final UserAccount userAccount;
+    private JPanel userProcessContainer;
+    private ProviderOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
 
     /**
      * Creates new form ProviderWorkAreaJPanel

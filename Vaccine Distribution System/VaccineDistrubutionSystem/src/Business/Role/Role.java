@@ -19,7 +19,14 @@ public abstract class Role {
         Admin("Admin"),
         Doctor("Doctor"),
         InventoryManager("Inventory Manager"),
-        LabAssistant("Lab Assistant");
+        LabAssistant("Lab Assistant"),
+        
+        //DeliveryEnterprise
+        PHDLead("PHD Lead"),
+        DeliveryPerson("Delivery Person"),
+        Provider("Provider"),
+        Logistics("Logistics");
+        
         
         private final String value;
         

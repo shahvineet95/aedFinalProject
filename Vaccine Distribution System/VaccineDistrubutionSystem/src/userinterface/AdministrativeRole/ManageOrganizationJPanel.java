@@ -4,42 +4,60 @@
  */
 package userinterface.AdministrativeRole;
 
+import java.util.*;
+import Business.EcoSystem;
+import Business.Enterprise.DistributorEnterprise;
+import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Organization.Organization.Type;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author raunak
  */
 public class ManageOrganizationJPanel extends javax.swing.JPanel {
-
-    private OrganizationDirectory directory;
-    private JPanel userProcessContainer;
+    
+    private final Enterprise enterprise;
+    private final OrganizationDirectory directory;
+    private final JPanel userProcessContainer;
     
     /**
      * Creates new form ManageOrganizationJPanel
+     * @param userProcessContainer
+     * @param directory
+     * @param enterprise
+     * @param system
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+    
+    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory,
+            Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.directory = directory;
-        
+        this.enterprise = enterprise;
         populateTable();
         populateCombo();
     }
-    
     private void populateCombo(){
+        
         organizationJComboBox.removeAllItems();
-        for (Type type : Organization.Type.values()){
-            if (!type.getValue().equals(Type.Admin.getValue()))
-                organizationJComboBox.addItem(type);
+        
+        if (enterprise.equals(enterprise.getEnterpriseType().Distributor)) {
+            for (Type type: EnumSet.range(Organization.Type.PhdLead, Organization.Type.Logistics)) {
+                organizationJComboBox.addItem(type.getValue());
+            }
+        } else {
+            System.out.println("FAlse Condition was executed!");
+            for (Type type : Organization.Type.values()){
+                if (!type.getValue().equals(Type.Admin.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
         }
     }
-
     private void populateTable(){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         model.setRowCount(0);
@@ -106,6 +124,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         });
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                organizationJComboBoxActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Organization Type ");
 
@@ -134,7 +157,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                                 .addComponent(organizationJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addJButton))))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,18 +177,20 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-
-        Type type = (Type) organizationJComboBox.getSelectedItem();
+       Type type = (Type) organizationJComboBox.getSelectedItem();
         directory.createOrganization(type);
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButtonActionPerformed
+
+    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;

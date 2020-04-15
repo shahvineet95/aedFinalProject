@@ -16,10 +16,10 @@ import java.util.ArrayList;
 public class PHDOrganization extends Organization {
 
     //PHD Lead Type
-    public PHDOrganization(String name) {
+    public PHDOrganization() {
         super(Organization.Type.PhdLead.getValue());
     }
-
+    
     //PHD Role
     @Override
     public ArrayList<Role> getSupportedRole() {

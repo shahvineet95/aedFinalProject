@@ -5,14 +5,9 @@
  */
 package Business.Organization;
 
-import Business.EcoSystem;
-import Business.Enterprise.Enterprise;
-import Business.Role.DoctorRole;
 import Business.Role.ProviderRole;
 import Business.Role.Role;
-import Business.UserAccount.UserAccount;
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 /**
  *
@@ -30,9 +25,5 @@ public class ProviderOrganization extends Organization {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new ProviderRole());
         return roles;
-    }
-    
-    
-  
-    
+    } 
 }

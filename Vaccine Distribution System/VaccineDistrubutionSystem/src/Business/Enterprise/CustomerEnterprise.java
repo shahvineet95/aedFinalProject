@@ -13,8 +13,7 @@ import java.util.ArrayList;
  * @author MyPC1
  */
 public class CustomerEnterprise extends Enterprise {
-    
-    
+   
     public CustomerEnterprise(String name){
         super(name,EnterpriseType.Customer);
     }
