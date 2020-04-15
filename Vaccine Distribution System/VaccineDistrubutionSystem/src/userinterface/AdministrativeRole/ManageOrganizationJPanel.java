@@ -42,14 +42,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private void populateTable(){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
-        
         model.setRowCount(0);
-        
         for (Organization organization : directory.getOrganizationList()){
             Object[] row = new Object[2];
             row[0] = organization.getOrganizationID();
             row[1] = organization.getName();
-            
             model.addRow(row);
         }
     }
@@ -135,7 +132,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel1)
                                 .addGap(32, 32, 32)
                                 .addComponent(organizationJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addJButton))))
                 .addContainerGap(184, Short.MAX_VALUE))
         );
