@@ -37,7 +37,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
     public ManageHospitalJPanle(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+        this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
         this.hosOrganization = (HospitalOrganization)organization;
