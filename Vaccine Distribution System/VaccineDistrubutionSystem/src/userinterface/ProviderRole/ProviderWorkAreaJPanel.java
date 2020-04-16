@@ -45,13 +45,17 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request.getMessage();
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
+        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[7];
+            row[0] = request.getVaccine().getName();
+            row[1] = request.getSender();
+            row[2] = request.getQuantity();
+            row[3] = request.getQuantity()*request.getVaccine().getCost();
+            row[4] = request;
+            row[5] = request.getMessage();
+            row[6] = request.getRequestDate();
+           // String result = ((LabTestWorkRequest) request).getTestResult();
+            //row[3] = result == null ? "Waiting" : result;
             model.addRow(row);
         }
     }
@@ -79,11 +83,11 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Required", "Hospital", "Status"
+                "Vaccine", "Hospital", "Quantity", "Cost", "Status", "Message", "Created Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -99,6 +103,11 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 688, 341));
 
         button_approve.setText("Forward Request");
+        button_approve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_approveActionPerformed(evt);
+            }
+        });
         add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
@@ -113,6 +122,10 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setText("Enterprise Name: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_approveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
