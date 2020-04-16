@@ -19,10 +19,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     
-    private final JPanel userProcessContainer;
-    private final PHDOrganization organization;
-    private final Enterprise enterprise;
-    private final UserAccount userAccount;
+    private JPanel userProcessContainer;
+    private PHDOrganization organization;
+    private Enterprise enterprise;
+    private UserAccount userAccount;
 
     /**
      * Creates new form PHDLeadWorkAreaJPanel

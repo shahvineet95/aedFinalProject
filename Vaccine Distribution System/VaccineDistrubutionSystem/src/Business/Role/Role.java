@@ -20,7 +20,13 @@ public abstract class Role {
         Admin("Admin"),
         Doctor("Doctor"),
         InventoryManager("Inventory Manager"),
-        LabAssistant("Lab Assistant");
+        LabAssistant("Lab Assistant"),
+        
+        //DeliveryEnterprise
+        PHDLead("PHD Lead"),
+        DeliveryPerson("Delivery Person"),
+        Provider("Provider"),
+        Logistics("Logistics");
         
         private final String value;
         
@@ -31,11 +37,6 @@ public abstract class Role {
         public String getValue() {
             return this.value;
         }
-
-        @Override
-        public String toString() {
-            return this.value;
-        }
     }
     
     public abstract JPanel createWorkArea(JPanel userProcessContainer,Network network, UserAccount account, 
@@ -43,8 +44,4 @@ public abstract class Role {
             Enterprise enterprise, 
             EcoSystem business);
 
-    @Override
-    public String toString() {
-        return this.getClass().getName();
-    }  
 }
