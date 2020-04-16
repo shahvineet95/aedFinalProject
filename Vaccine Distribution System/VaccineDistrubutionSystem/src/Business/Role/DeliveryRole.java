@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.DeliveryOrganization;
 import Business.Organization.DoctorOrganization;
 import Business.Organization.Organization;
@@ -24,7 +25,7 @@ public class DeliveryRole extends Role{
     //DeliveryWorkAreaJPanel
     //typecase organization
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public JPanel createWorkArea(JPanel userProcessContainer,Network network ,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new DeliveryPersonWorkAreaJPanel(userProcessContainer, account, (DeliveryOrganization)organization, enterprise);
     }
 }

@@ -10,5 +10,15 @@ package Business.WorkQueue;
  * @author dharm
  */
 public class Extended extends WorkRequest{
+    private String network;
+
+    public String getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
+    
     
 }

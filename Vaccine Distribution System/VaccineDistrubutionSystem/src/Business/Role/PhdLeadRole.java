@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.PHDOrganization;
 import Business.UserAccount.UserAccount;
@@ -19,7 +20,7 @@ import userinterface.PHDLead.PHDLeadWorkAreaJPanel;
  */
 public class PhdLeadRole extends Role {
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, 
+    public JPanel createWorkArea(JPanel userProcessContainer,Network network ,UserAccount account, 
             Organization organization, Enterprise enterprise, EcoSystem business) {
         return new PHDLeadWorkAreaJPanel(userProcessContainer, account, (PHDOrganization)organization, 
                 enterprise);

@@ -6,12 +6,14 @@
 package userinterface.HospitalAdminRole;
 
 import Business.EcoSystem;
+import Business.Network.Network;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.WorkQueue.WorkRequest;
+import Business.WorkQueue.Extended;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -31,13 +33,15 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
     private EcoSystem business;
     private UserAccount userAccount;
     private HospitalOrganization hosOrganization;
+    private Network network;
 
-    public ManageHospitalJPanle(JPanel userProcessContainer, UserAccount account, Organization organization, EcoSystem business) {
+    public ManageHospitalJPanle(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
          this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
         this.hosOrganization = (HospitalOrganization)organization;
+        this.network=network;
         populateTable();
        
     }
@@ -150,12 +154,14 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             String str1=JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
        
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
-            WorkRequest w=hosOrganization.getWorkQueue().addWorkRequestList();
+            Extended w=hosOrganization.getWorkQueue().addWorkRequestList();
             w.setSender(userAccount);
             w.setStatus("Order placed");
             w.setMessage(str1);
             w.setVaccine(v);
             w.setQuantity(Integer.parseInt(quantity.getText()));
+            w.setNetwork(network.getName());
+            business.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

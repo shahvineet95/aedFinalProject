@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.InventoryOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -19,7 +20,7 @@ import userinterface.InventoryManagerRole.InventoryManagerWorkAreaJPanel;
  */
 public class InventoryManagerRole extends Role{
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public JPanel createWorkArea(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new InventoryManagerWorkAreaJPanel(userProcessContainer, account, (InventoryOrganization)organization, enterprise);
     }
 }
