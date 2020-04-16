@@ -22,7 +22,15 @@ public abstract class WorkRequest {
     private Date resolveDate;
     private int quantity;
     private Vaccine vaccine;
+        private int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public WorkRequest(){
         requestDate = new Date();
     }
@@ -89,5 +97,10 @@ public abstract class WorkRequest {
 
     public void setVaccine(Vaccine vaccine) {
         this.vaccine = vaccine;
+    }
+    
+    @Override 
+    public String toString(){
+    return this.status;
     }
 }

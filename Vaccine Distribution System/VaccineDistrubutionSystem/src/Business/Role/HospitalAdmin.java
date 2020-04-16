@@ -6,6 +6,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import userinterface.LabAssistantRole.LabAssistantWorkAreaJPanel;
@@ -19,8 +20,8 @@ import userinterface.HospitalAdminRole.ManageHospitalJPanle;
 public class HospitalAdmin extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ManageHospitalJPanle(userProcessContainer, account, organization, business);
+    public JPanel createWorkArea(JPanel userProcessContainer,Network network,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new ManageHospitalJPanle(userProcessContainer,network, account, organization, business);
     }
     
 }

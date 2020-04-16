@@ -22,9 +22,13 @@ public class WorkQueue {
         return workRequestList;
     }
     
-    public WorkRequest addWorkRequestList() {
-        WorkRequest temp = new Extended();
+    public Extended addWorkRequestList() {
+        Extended temp = new Extended();
         workRequestList.add(temp);
         return temp;
+    }
+    
+    public void addCreatedWorkrequest(WorkRequest e){
+        workRequestList.add(e);
     }
 }

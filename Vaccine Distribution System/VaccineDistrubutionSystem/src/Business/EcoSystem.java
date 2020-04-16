@@ -6,6 +6,7 @@
 package Business;
 
 import Business.Network.Network;
+import Business.Organization.CdcOrganization;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
@@ -20,7 +21,7 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private ArrayList<Network> networkList;
-   // private CDCAdmin cdcadmin;
+    private Organization cdcOrganization;
     private VaccineDirectory vaccinedir;
     
     public static EcoSystem getInstance(){
@@ -33,6 +34,7 @@ public class EcoSystem extends Organization{
     public Network createAndAddNetwork(){
         Network network=new Network();
         networkList.add(network);
+        cdcOrganization=new CdcOrganization();
         return network;
     }
     
@@ -74,4 +76,14 @@ public class EcoSystem extends Organization{
     public void setVaccinedir(VaccineDirectory vaccinedir) {
         this.vaccinedir = vaccinedir;
     }
+
+    public Organization getCdcOrganization() {
+        return cdcOrganization;
+    }
+
+    public void setCdcOrganization(Organization cdcOrganization) {
+        this.cdcOrganization = cdcOrganization;
+    }
+    
+    
 }
