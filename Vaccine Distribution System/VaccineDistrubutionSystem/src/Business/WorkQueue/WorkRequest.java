@@ -98,4 +98,9 @@ public abstract class WorkRequest {
     public void setVaccine(Vaccine vaccine) {
         this.vaccine = vaccine;
     }
+    
+    @Override 
+    public String toString(){
+    return this.status;
+    }
 }
