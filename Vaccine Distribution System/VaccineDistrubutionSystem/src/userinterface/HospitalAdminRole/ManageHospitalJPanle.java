@@ -6,10 +6,13 @@
 package userinterface.HospitalAdminRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
 import Business.Network.Network;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.Type.Provider;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.WorkQueue.WorkRequest;
@@ -162,6 +165,19 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             w.setQuantity(Integer.parseInt(quantity.getText()));
             w.setNetwork(network.getName());
             business.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);
+           for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
+               System.out.println("AAAA"+e);
+               if(e.getEnterpriseType().equals(Distributor)){
+               System.out.println("AAAA1"+e);
+                   for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
+                        System.out.println("A11111AAA1"+o);
+                        if(o.toString().equals("Provider Organization")){
+                            System.out.println("Adding it in provider organization"+o);
+                            o.getWorkQueue().addCreatedWorkrequest(w);
+                        }
+                   }
+               }
+           }
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
