@@ -24,4 +24,11 @@ public class PhdLeadRole extends Role {
         return new PHDLeadWorkAreaJPanel(userProcessContainer, account, (PHDOrganization)organization, 
                 enterprise);
     }
+
+    @Override
+    public String toString() {
+        return "PHD Lead";
+    }
+    
+    
 }

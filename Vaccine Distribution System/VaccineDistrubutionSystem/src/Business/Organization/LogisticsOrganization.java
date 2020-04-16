@@ -6,6 +6,7 @@
 package Business.Organization;
 
 import Business.Role.DoctorRole;
+import Business.Role.LogisticsRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 public class LogisticsOrganization extends Organization {
 
     public LogisticsOrganization() {
-        super(Organization.Type.Delivery.getValue());
+        super(Organization.Type.Logistics.getValue());
     }
     
     //LogisticsRole
@@ -24,7 +25,7 @@ public class LogisticsOrganization extends Organization {
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         //LogisticsRole
-        roles.add(new DoctorRole());
+        roles.add(new LogisticsRole());
         return roles;
     }
     

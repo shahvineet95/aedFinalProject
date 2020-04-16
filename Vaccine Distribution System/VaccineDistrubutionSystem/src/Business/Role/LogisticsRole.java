@@ -24,5 +24,12 @@ public class LogisticsRole extends Role {
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new LogisticsWorkAreaJPanel(userProcessContainer, account, (LogisticsOrganization)organization, enterprise);
     }
+
+    @Override
+    public String toString() {
+        return "Logistics Person";
+    }
+    
+    
     
 }

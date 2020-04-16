@@ -27,4 +27,13 @@ public class DeliveryRole extends Role{
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new DeliveryPersonWorkAreaJPanel(userProcessContainer, account, (DeliveryOrganization)organization, enterprise);
     }
+
+    @Override
+    public String toString() {
+        return "Delivery Person";
+    }
+    
+    
+    
+    
 }

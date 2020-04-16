@@ -45,19 +45,24 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         
         organizationJComboBox.removeAllItems();
         
-        if (enterprise.equals(enterprise.getEnterpriseType().Distributor)) {
+        if (this.enterprise.getEnterpriseType().getValue().equals("Distributor")) {
             for (Type type: EnumSet.range(Organization.Type.PhdLead, Organization.Type.Logistics)) {
-                organizationJComboBox.addItem(type.getValue());
+                if (!type.getValue().equals(Type.Admin.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
             }
         } else {
-            System.out.println("FAlse Condition was executed!");
-            for (Type type : Organization.Type.values()){
+            System.out.println("False Condition was executed!");
+            System.out.println("In Enterprise :: " + this.enterprise.getEnterpriseType().getValue());
+                   
+            for (Type type : EnumSet.range(Organization.Type.Admin, Organization.Type.Hospitaladmin)){
                 if (!type.getValue().equals(Type.Admin.getValue())) {
                     organizationJComboBox.addItem(type);
                 }
             }
         }
     }
+    
     private void populateTable(){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         model.setRowCount(0);
@@ -86,10 +91,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "ID", "Name"
@@ -177,7 +179,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
-       Type type = (Type) organizationJComboBox.getSelectedItem();
+        Type type = (Type) organizationJComboBox.getSelectedItem();
         directory.createOrganization(type);
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
