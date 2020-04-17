@@ -21,7 +21,7 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
-    private static int counter=0;
+    private static int counter=1;
     
     public enum Type{
         Admin("Admin Organization"), 
@@ -65,7 +65,7 @@ public abstract class Organization {
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;
     }
-
+   
     public int getOrganizationID() {
         return organizationID;
     }

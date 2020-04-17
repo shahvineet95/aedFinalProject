@@ -6,10 +6,13 @@
 package userinterface.HospitalAdminRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
 import Business.Network.Network;
 import Business.Organization.HospitalOrganization;
 import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
+import static Business.Organization.Organization.Type.Provider;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.WorkQueue.WorkRequest;
@@ -37,7 +40,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
     public ManageHospitalJPanle(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
-         this.userProcessContainer = userProcessContainer;
+        this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
         this.hosOrganization = (HospitalOrganization)organization;
@@ -151,10 +154,10 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
-            String str1=JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
        
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
-            Extended w=hosOrganization.getWorkQueue().addWorkRequestList();
+            Extended w = hosOrganization.getWorkQueue().addWorkRequestList();
             w.setSender(userAccount);
             w.setStatus("Order placed");
             w.setMessage(str1);
@@ -162,6 +165,23 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             w.setQuantity(Integer.parseInt(quantity.getText()));
             w.setNetwork(network.getName());
             business.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);
+           
+            for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
+               System.out.println("AAAA"+e);
+               if(e.getEnterpriseType().equals(Distributor)) {
+                    System.out.println("AAAA1"+e);
+                    for(Organization o : e.getOrganizationDirectory().getOrganizationList()) {
+                        System.out.println("A11111AAA1"+o);
+                        if(o.toString().equals("Provider Organization")){
+                            System.out.println("Adding it in provider organization"+o);
+                            o.getWorkQueue().addCreatedWorkrequest(w);
+                            JOptionPane.showMessageDialog(null, "Order was placed successfully!");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                        }
+                    }
+                } 
+            }
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

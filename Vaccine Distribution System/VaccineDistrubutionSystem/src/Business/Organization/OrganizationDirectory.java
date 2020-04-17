@@ -40,6 +40,21 @@ public class OrganizationDirectory {
             organization = new HospitalOrganization();
             organizationList.add(organization);
         }
+        
+        //DeliveryEnterprise..
+        else if (type.getValue().equals(Type.Delivery.getValue())) {
+            organization = new DeliveryOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.PhdLead.getValue())) {
+            organization = new PHDOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.Provider.getValue())) {
+            organization = new ProviderOrganization();
+            organizationList.add(organization);
+        }else if (type.getValue().equals(Type.Logistics.getValue())) {
+            organization = new LogisticsOrganization();
+            organizationList.add(organization);
+        }
         return organization;
     }
 }

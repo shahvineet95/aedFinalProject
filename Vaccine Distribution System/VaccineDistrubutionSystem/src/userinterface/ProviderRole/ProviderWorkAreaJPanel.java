@@ -6,10 +6,13 @@
 package userinterface.ProviderRole;
 
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
+import Business.Network.Network;
+import Business.Organization.Organization;
 import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,12 +20,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author imskr
  */
-public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
+public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     
     private final JPanel userProcessContainer;
     private final ProviderOrganization organization;
     private final Enterprise enterprise;
     private final UserAccount userAccount;
+    private Network network;
 
     /**
      * Creates new form ProviderWorkAreaJPanel
@@ -43,15 +47,16 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request.getMessage();
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
+        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[7];
+            row[0] = request.getVaccine().getName();
+            row[1] = request.getSender();
+            row[2] = request.getQuantity();
+            row[3] = request.getQuantity()*request.getVaccine().getCost();
+            row[4] = request;
+            row[5] = request.getMessage();
+            row[6] = request.getRequestDate();
             model.addRow(row);
         }
     }
@@ -79,11 +84,11 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Required", "Hospital", "Status"
+                "Vaccine", "Hospital", "Quantity", "Cost", "Status", "Message", "Created Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -96,23 +101,47 @@ public class ProviderWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 688, 341));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 810, 341));
 
         button_approve.setText("Forward Request");
+        button_approve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_approveActionPerformed(evt);
+            }
+        });
         add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PROVIDER WORK AREA");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 690, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 810, -1));
 
+        valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<Enterprise Name>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 500, 20));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 500, 20));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Name: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
+        // TODO add your handling code here:
+        for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
+            System.out.println("AAAA"+e);
+            if(e.getEnterpriseType().equals(Distributor)){
+                System.out.println("AAAA1"+e);
+                for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
+                   System.out.println("A11111AAA1"+o);
+                   if(o.toString().equals("PHD Organization")){
+                      System.out.println("Adding it in provider organization"+o);
+                      o.getWorkQueue().addCreatedWorkrequest();
+                      JOptionPane.showMessageDialog(null, "Order was placed successfully!");
+                  }
+               }
+            } 
+        }
+    }//GEN-LAST:event_button_approveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
