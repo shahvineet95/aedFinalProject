@@ -22,8 +22,8 @@ public class PhdLeadRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer,Network network ,UserAccount account, 
             Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PHDLeadWorkAreaJPanel(userProcessContainer, account, (PHDOrganization)organization, 
-                enterprise);
+        return new PHDLeadWorkAreaJPanel(userProcessContainer, network, account, (PHDOrganization)organization, 
+                enterprise, business);
     }
 
     @Override

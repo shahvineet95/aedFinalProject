@@ -5,7 +5,9 @@
  */
 package userinterface.PHDLead;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.PHDOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
@@ -23,6 +25,8 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     private PHDOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
+    private EcoSystem system;
+    private Network network;
 
     /**
      * Creates new form PHDLeadWorkAreaJPanel
@@ -31,12 +35,14 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, PHDOrganization organization, Enterprise enterprise) {
+    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization organization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.network = network;
+        this.system = system;
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
     }
@@ -77,11 +83,11 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine Requested", "Hospital", "State/City", "Received on", "Required by"
+                "Vaccine", "Hospital", "Received on", "Required by", "Quantity", "Cost"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, true, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -93,7 +99,6 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
             phdLeadRequestTable.getColumnModel().getColumn(0).setResizable(false);
             phdLeadRequestTable.getColumnModel().getColumn(1).setResizable(false);
             phdLeadRequestTable.getColumnModel().getColumn(2).setResizable(false);
-            phdLeadRequestTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jButton1.setText("Approve");
@@ -119,14 +124,14 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -138,13 +143,13 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(valueLabel))
-                .addGap(54, 54, 54)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(197, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

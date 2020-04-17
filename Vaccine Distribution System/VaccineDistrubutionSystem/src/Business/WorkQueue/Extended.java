@@ -18,7 +18,5 @@ public class Extended extends WorkRequest{
 
     public void setNetwork(String network) {
         this.network = network;
-    }
-    
-    
+    } 
 }
