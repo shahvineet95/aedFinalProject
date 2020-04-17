@@ -24,7 +24,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrdersJPanel
      */
-     private JPanel userProcessContainer;
+    private JPanel userProcessContainer;
     private EcoSystem system;
     private Network selectedNetwork;
     private Organization selectedOrganization;

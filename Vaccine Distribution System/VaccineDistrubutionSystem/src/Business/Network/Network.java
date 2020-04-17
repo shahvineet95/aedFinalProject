@@ -14,6 +14,7 @@ import Business.Enterprise.EnterpriseDirectory;
 public class Network {
     private String name;
     private EnterpriseDirectory enterpriseDirectory;
+    private double population;
     
     public Network(){
         enterpriseDirectory=new EnterpriseDirectory();
@@ -28,6 +29,14 @@ public class Network {
 
     public EnterpriseDirectory getEnterpriseDirectory() {
         return enterpriseDirectory;
+    }
+
+    public double getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(double population) {
+        this.population = population;
     }
     
     @Override
