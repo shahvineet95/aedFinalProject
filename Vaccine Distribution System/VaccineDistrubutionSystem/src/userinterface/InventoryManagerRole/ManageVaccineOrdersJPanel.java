@@ -6,8 +6,13 @@
 package userinterface.InventoryManagerRole;
 
 import Business.EcoSystem;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.Extended;
+import Business.WorkQueue.RegisterVaccine;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,15 +20,17 @@ import javax.swing.JPanel;
  */
 public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 
-    /**
+    /** 
      * Creates new form ManageVaccineOrdersJPanel
      */
     private JPanel userProcessContainer;
     private EcoSystem ecosystem;
-    public ManageVaccineOrdersJPanel(JPanel userProcessContainer, EcoSystem ecosystem) {
+    private UserAccount account;
+    public ManageVaccineOrdersJPanel(JPanel userProcessContainer, EcoSystem ecosystem, UserAccount account) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
+        this.account = account;
     }
 
     /**
@@ -104,7 +111,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                         .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(refreshTestJButton)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +125,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(requestTestJButton)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -127,6 +134,24 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
 //        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
+        DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
+        model.setRowCount(0);
+        
+            for(WorkRequest or : account.getWorkQueue().getWorkRequestList()){
+                if(or instanceof Extended){
+                 Object[] row = new Object[4];
+                row[0] = ((Extended) or).getMessage();
+                row[1] = ((Extended) or).getStatus();
+                row[2] = ((Extended) or).getSender();
+                row[3] = ((Extended) or).getSender();
+                model.addRow(row);
+                    
+                
+                
+                }
+                
+            }
+        
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed

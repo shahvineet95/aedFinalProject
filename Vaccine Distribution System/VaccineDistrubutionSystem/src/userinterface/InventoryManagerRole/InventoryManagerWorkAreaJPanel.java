@@ -7,6 +7,7 @@ package userinterface.InventoryManagerRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.InventoryOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
@@ -24,17 +25,19 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private InventoryOrganization organization;
     private Enterprise enterprise;
-    private UserAccount userAccount;
+    private UserAccount account;
     private EcoSystem system;
+    private Network network;
     /**
      * Creates new form InventoryManagerWorkAreaJPanel
      */
-    public InventoryManagerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, InventoryOrganization inventoryOrganization,Enterprise enterprise, EcoSystem system) {
+    public InventoryManagerWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, InventoryOrganization inventoryOrganization,Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
-        this.userAccount = account;
+        this.account = account;
+        this.network = network;
         this.system = system;
         //valueLabel.setText(enterprise.getName());
         
@@ -122,7 +125,7 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void manageVaccineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineBtnActionPerformed
         // TODO add your handling code here:
-        ManageVaccineOrdersJPanel manageNetworkJPanel=new ManageVaccineOrdersJPanel(userProcessContainer, system);
+        ManageVaccineOrdersJPanel manageNetworkJPanel=new ManageVaccineOrdersJPanel(userProcessContainer, system, account);
         userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -130,7 +133,7 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void createVaccineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createVaccineBtnActionPerformed
         // TODO add your handling code here:
-        CreateVaccineJPanel manageNetworkJPanel=new CreateVaccineJPanel(userProcessContainer, system);
+        CreateVaccineJPanel manageNetworkJPanel=new CreateVaccineJPanel(userProcessContainer, network, account, organization, system);
         userProcessContainer.add("manageOrders",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);

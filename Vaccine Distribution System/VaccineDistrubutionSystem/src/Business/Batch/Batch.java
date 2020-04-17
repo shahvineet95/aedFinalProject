@@ -27,5 +27,6 @@ public class Batch {
 
     public Batch(int n) {
         this.vaccineStorage = new ArrayList<Vaccine>();
+        
     }
 }

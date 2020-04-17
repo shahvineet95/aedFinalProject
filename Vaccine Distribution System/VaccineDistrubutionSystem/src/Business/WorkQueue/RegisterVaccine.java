@@ -11,7 +11,16 @@ import java.util.Date;
  *
  * @author India
  */
-public class registerVaccine {
+public class RegisterVaccine extends WorkRequest{
+     private String network;
+
+    public String getNetwork() {
+        return network;
+    }
+
+    public void setNetwork(String network) {
+        this.network = network;
+    }
     private String vaccineName;
     private String vaccineDesc;
     private int batch;

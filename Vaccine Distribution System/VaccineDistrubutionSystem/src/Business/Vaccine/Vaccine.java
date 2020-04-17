@@ -18,6 +18,15 @@ public class Vaccine {
     private Float cost;
     private String desc;
     private Date bestUse;
+    private int batch;
+
+    public int getBatch() {
+        return batch;
+    }
+
+    public void setBatch(int batch) {
+        this.batch = batch;
+    }
 
     public Date getBestUse() {
         return bestUse;
