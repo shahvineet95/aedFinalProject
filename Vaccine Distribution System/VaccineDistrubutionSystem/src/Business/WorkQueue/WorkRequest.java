@@ -22,7 +22,12 @@ public abstract class WorkRequest {
     private Date resolveDate;
     private int quantity;
     private Vaccine vaccine;
-        private int id;
+    private static int id = 0;
+    
+    public WorkRequest(){
+        requestDate = new Date();
+        WorkRequest.id++;
+    }
 
     public int getId() {
         return id;
@@ -31,10 +36,7 @@ public abstract class WorkRequest {
     public void setId(int id) {
         this.id = id;
     }
-    public WorkRequest(){
-        requestDate = new Date();
-    }
-
+    
     public String getMessage() {
         return message;
     }
@@ -101,6 +103,6 @@ public abstract class WorkRequest {
     
     @Override 
     public String toString(){
-    return this.status;
+        return this.status;
     }
 }
