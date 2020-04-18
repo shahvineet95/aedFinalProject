@@ -1,3 +1,27 @@
 /Vaccine Distribution System/VaccineDistrubutionSystem/nbproject/private/
 /Vaccine Distribution System/VaccineDistrubutionSystem/build/
 /Vaccine Distribution System/VaccineDistrubutionSystem/dist/
+VaccineDistrubutionSystem/nbproject/private/private.properties
+VaccineDistrubutionSystem/Databank.db4o
+
+#ant specific
+dist/
+build/
+
+#netbeans specific
+core
+nbproject/*
+!nbproject/project.properties
+!nbproject/project.xml
+
+#java specific
+*.class
+
+#general swap/backup files
+*.so
+*.log
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock

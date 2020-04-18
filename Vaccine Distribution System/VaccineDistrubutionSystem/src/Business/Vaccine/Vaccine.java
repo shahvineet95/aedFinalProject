@@ -5,6 +5,8 @@
  */
 package Business.Vaccine;
 
+import java.util.Date;
+
 /**
  *
  * @author dharm
@@ -15,6 +17,33 @@ public class Vaccine {
     private String name;
     private Float cost;
     private String desc;
+    private Date bestUse;
+    private int batch;
+    private String vaccineId;
+
+    public String getVaccineId() {
+        return vaccineId;
+    }
+
+    public void setVaccineId(String vaccineId) {
+        this.vaccineId = vaccineId;
+    }
+
+    public int getBatch() {
+        return batch;
+    }
+
+    public void setBatch(int batch) {
+        this.batch = batch;
+    }
+
+    public Date getBestUse() {
+        return bestUse;
+    }
+
+    public void setBestUse(Date bestUse) {
+        this.bestUse = bestUse;
+    }
     
     public Vaccine(){
     }
