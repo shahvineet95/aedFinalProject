@@ -5,16 +5,20 @@
  */
 package userinterface.ProviderRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
+import Business.WorkQueue.Extended;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.PHDLead.PHDLeadWorkAreaJPanel;
 
 /**
  *
@@ -27,7 +31,8 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     private final Enterprise enterprise;
     private final UserAccount userAccount;
     private Network network;
-
+    private EcoSystem business;
+    
     /**
      * Creates new form ProviderWorkAreaJPanel
      * @param userProcessContainer
@@ -35,12 +40,14 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise) {
+    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.network = network;
+        this.business = business;
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
     }
@@ -127,20 +134,22 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
         // TODO add your handling code here:
-        for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
-            System.out.println("AAAA"+e);
-            if(e.getEnterpriseType().equals(Distributor)){
-                System.out.println("AAAA1"+e);
-                for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
-                   System.out.println("A11111AAA1"+o);
-                   if(o.toString().equals("PHD Organization")){
-                      System.out.println("Adding it in provider organization"+o);
-                      o.getWorkQueue().addCreatedWorkrequest();
-                      JOptionPane.showMessageDialog(null, "Order was placed successfully!");
-                  }
-               }
-            } 
+        int selectedRow = workRequestJTable.getSelectedRow();
+        if (selectedRow >= 0) {
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+            WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
+            w.setStatus("Forwarded to PHD");
+            w.setMessage(str1);
+            for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
+                if(o.toString().equals("PHD Organization")){
+                    o.getWorkQueue().addCreatedWorkrequest(w);
+                }     
+            }
+            populateRequestTable();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row first.");
         }
+        
     }//GEN-LAST:event_button_approveActionPerformed
 
 

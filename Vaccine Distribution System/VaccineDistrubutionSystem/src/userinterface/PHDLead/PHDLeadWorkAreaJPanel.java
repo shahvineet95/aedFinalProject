@@ -9,8 +9,8 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.PHDOrganization;
+import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -22,11 +22,12 @@ import javax.swing.table.DefaultTableModel;
 public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
-    private PHDOrganization organization;
+    private PHDOrganization phdorganization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     private EcoSystem system;
     private Network network;
+    private ProviderOrganization organization;
 
     /**
      * Creates new form PHDLeadWorkAreaJPanel
@@ -35,10 +36,10 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization organization, Enterprise enterprise, EcoSystem system) {
+    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization phdorganization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = organization;
+        this.phdorganization = phdorganization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
@@ -46,17 +47,22 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
     }
+
+//    public PHDLeadWorkAreaJPanel(ProviderOrganization organization) {
+//        this.organization = organization;
+//    }
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) phdLeadRequestTable.getModel();
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[5];
-            row[0] = request.getMessage();
+        for (WorkRequest request : this.phdorganization.getWorkQueue().getWorkRequestList()) {
+            Object[] row = new Object[6];
+            row[0] = request.getVaccine();
             row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
+            row[2] = request.getRequestDate();
+            row[3] = request.getResolveDate();
+            row[4] = request.getQuantity();
+            row[5] = request.getQuantity()*request.getVaccine().getCost();
             model.addRow(row);
         }
     }
