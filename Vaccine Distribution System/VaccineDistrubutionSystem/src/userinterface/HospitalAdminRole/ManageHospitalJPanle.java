@@ -10,18 +10,14 @@ import Business.Enterprise.Enterprise;
 import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
 import Business.Network.Network;
 import Business.Organization.HospitalOrganization;
-import Business.Organization.LabOrganization;
 import Business.Organization.Organization;
-import static Business.Organization.Organization.Type.Provider;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
-import Business.WorkQueue.WorkRequest;
 import Business.WorkQueue.Extended;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-import userinterface.SystemAdminWorkArea.ManageEnterpriseAdminJPanel;
 
 /**
  *
