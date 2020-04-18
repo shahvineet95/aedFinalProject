@@ -8,7 +8,8 @@ import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
-
+import Business.WorkQueue.RegisterVaccine;
+import javax.swing.JOptionPane;
 /**
  *
  * @author raunak
@@ -18,11 +19,11 @@ import javax.swing.JPanel;
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
-    LabTestWorkRequest request;
+    RegisterVaccine request;
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public ProcessWorkRequestJPanel(JPanel userProcessContainer, LabTestWorkRequest request) {
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, RegisterVaccine request) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
@@ -102,7 +103,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         request.setTestResult(resultJTextField.getText());
-        request.setStatus("Completed");
+        request.setStatus("Passed to CDC");
+        JOptionPane.showMessageDialog(null, "Order passed on to CDC.");
+        
     }//GEN-LAST:event_submitJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

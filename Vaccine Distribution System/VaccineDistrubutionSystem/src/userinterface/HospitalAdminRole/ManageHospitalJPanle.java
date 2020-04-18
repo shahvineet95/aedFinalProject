@@ -189,7 +189,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         // TODO add your handling code here:
          int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
-            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
+            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel();
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             

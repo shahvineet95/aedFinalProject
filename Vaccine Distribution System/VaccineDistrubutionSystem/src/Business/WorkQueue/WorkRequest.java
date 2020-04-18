@@ -29,6 +29,17 @@ public abstract class WorkRequest {
         WorkRequest.id++;
     }
 
+    public WorkRequest(String message, UserAccount sender, UserAccount receiver, String status, Date requestDate, Date resolveDate, int quantity, Vaccine vaccine) {
+        this.message = message;
+        this.sender = sender;
+        this.receiver = receiver;
+        this.status = status;
+        this.requestDate = requestDate;
+        this.resolveDate = resolveDate;
+        this.quantity = quantity;
+        this.vaccine = vaccine;
+    }
+
     public int getId() {
         return id;
     }
