@@ -21,6 +21,8 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.CDCAdmin.ManageVaccine;
+import userinterface.InventoryManagerRole.ManageVaccineOrdersJPanel;
 import userinterface.SystemAdminWorkArea.ManageEnterpriseAdminJPanel;
 
 /**
@@ -189,7 +191,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         // TODO add your handling code here:
          int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
-            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel();
+            VaccineHistoryJPanel manageEnterpriseAdminJPanel=new VaccineHistoryJPanel(userProcessContainer,business,hosOrganization);
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             layout.next(userProcessContainer);
