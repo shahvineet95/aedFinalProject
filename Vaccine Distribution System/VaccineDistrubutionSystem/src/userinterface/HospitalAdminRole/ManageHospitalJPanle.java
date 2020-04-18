@@ -192,6 +192,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+            
             layout.next(userProcessContainer);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
