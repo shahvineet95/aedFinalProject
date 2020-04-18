@@ -15,6 +15,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.WorkQueue.RegisterVaccine;
+import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -28,18 +29,18 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateVaccineJPanel
      */
-     private JPanel userProcessContainer;
-    private EcoSystem ecosystem;
+    private JPanel userProcessContainer;
+    private EcoSystem business;
     private UserAccount userAccount;
+    private InventoryOrganization inventoryOrganization;
     private Network network;
-    private InventoryOrganization inventoryOrg;
-    public CreateVaccineJPanel(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, EcoSystem ecosystem) {
+    public CreateVaccineJPanel(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.ecosystem = ecosystem;
-        this.userAccount = userAccount;
-        this.network = network;
-        this.inventoryOrg = (InventoryOrganization)organization;
+        this.userAccount = account;
+        this.business = business;
+        this.inventoryOrganization = (InventoryOrganization)organization;
+        this.network=network;
         populateTable();
     }
 
@@ -68,25 +69,28 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         bestBeforeDate = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
         btnPass = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtVaccineId = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("Create Vaccine Request");
 
         VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Batch", "Cost", "Description", "Best Before"
+                "Name", "Vaccine Id", "Batch", "Cost", "Description", "Best Before"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.Float.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -132,10 +136,25 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
         jLabel6.setText("Best before");
 
-        btnPass.setText("Pass");
+        btnPass.setText("Pass to Test");
         btnPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Vaccine Id");
+
+        txtVaccineId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVaccineIdActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("< Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -144,12 +163,13 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(175, 175, 175)
+                        .addComponent(jButton1)
+                        .addGap(100, 100, 100)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,62 +177,61 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(41, 41, 41)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel4)))))
-                            .addComponent(createBtn)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnPass)))
+                            .addComponent(txtVaccineId, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(createBtn)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPass))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBatch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtVaccineId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel6))
+                    .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtBatch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(createBtn)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnPass)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -224,28 +243,39 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
          DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
 
         model.setRowCount(0);
-        for (Vaccine v : ecosystem.getVaccinedir().getVaccDir()) {
-                    Object[] row = new Object[5];
+        for (Vaccine v : business.getVaccinedir().getVaccDir()) {
+                    Object[] row = new Object[6];
                     row[0] = v;
-                    row[1] = v.getBatch();
-                    row[2] = v.getCost();
-                    row[3] = v.getDesc();
-                    row[4] = v.getBestUse();
+                    row[1] = v.getVaccineId();
+                    row[2] = v.getBatch();
+                    row[3] = v.getCost();
+                    row[4] = v.getDesc();
+                    row[5] = v.getBestUse();
                     model.addRow(row);
          }
     }
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
         // TODO add your handling code here:
-        Vaccine v = ecosystem.getVaccinedir().addVaccDir();
-        v.setCost(Float.parseFloat(txtCost.getText()));
-        v.setDesc(DescField.getText());
-        v.setBestUse(bestBeforeDate.getDate());
-        v.setBatch(Integer.parseInt(txtBatch.getText()));
-        Batch batch = new Batch(Integer.parseInt(txtBatch.getText()));
-        batch.setVaccineStorage(v);
+        Vaccine v = business.getVaccinedir().addVaccDir();
+        if(txtVaccineId.getText().equals(v.getVaccineId()))
+        {
+            JOptionPane.showMessageDialog(null, "Vaccine Id already present.");
+        }
+        else
+        {
+            v.setCost(Float.parseFloat(txtCost.getText()));
+            v.setDesc(DescField.getText());
+            v.setBestUse(bestBeforeDate.getDate());
+            v.setBatch(Integer.parseInt(txtBatch.getText()));
+            v.setVaccineId(txtVaccineId.getText());
+            Batch batch = new Batch(Integer.parseInt(txtBatch.getText()));
+    //TODO        
+    //batch.setVaccineStorage(v);
+            System.out.println("Batch=>"+batch);
+            v.setName(txtName.getText());
+            populateTable();
+        }
         
-        v.setName(txtName.getText());
-        populateTable();
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void txtBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBatchActionPerformed
@@ -258,14 +288,18 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         if(selectedRow >= 0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is sent for testing");
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
-            RegisterVaccine rv = inventoryOrg.getWorkQueue().addWorkRequestList2();
+            System.out.println("org"+inventoryOrganization.getWorkQueue().addWorkRequestList2());
+//            TOdo
+            RegisterVaccine rv = inventoryOrganization.getWorkQueue().addWorkRequestList2();
+            
             rv.setSender(userAccount);
             rv.setStatus("Order placed");
             rv.setMessage(str1);
             rv.setVaccine(v);
             rv.setQuantity(Integer.parseInt(txtBatch.getText()));
+            // rv.setVaccineId(txtVaccineId.getText());
             rv.setNetwork(network.getName());
-            ecosystem.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(rv);
+            business.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(rv);
            
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                 if(e.getEnterpriseType().equals(Pharmaceutical)){
@@ -273,7 +307,7 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
                         if(o.toString().equals("Lab Organization")){
                         System.out.println("Adding it in Lab organization"+o);
                         o.getWorkQueue().addCreatedWorkrequest(rv);
-                            JOptionPane.showMessageDialog(null, "Order was placed successfully!");
+                            JOptionPane.showMessageDialog(null, "Order was been sent successfully to Lab for Testing!");
                         }
                         else {
                             JOptionPane.showMessageDialog(null, "Order could not be placed.");
@@ -285,6 +319,17 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnPassActionPerformed
 
+    private void txtVaccineIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVaccineIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVaccineIdActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DescField;
@@ -292,16 +337,19 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser bestBeforeDate;
     private javax.swing.JButton btnPass;
     private javax.swing.JButton createBtn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField txtBatch;
     private javax.swing.JTextField txtCost;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtVaccineId;
     // End of variables declaration//GEN-END:variables
 }

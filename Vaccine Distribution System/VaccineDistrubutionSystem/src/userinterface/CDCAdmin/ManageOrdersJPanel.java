@@ -24,7 +24,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrdersJPanel
      */
-     private JPanel userProcessContainer;
+    private JPanel userProcessContainer;
     private EcoSystem system;
     private Network selectedNetwork;
     private Organization selectedOrganization;
@@ -34,28 +34,28 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         this.system = system;
         this.userProcessContainer = userProcessContainer;
         populateTable();
+        populatePopulationTable();
            NetworkCombobox.removeAllItems();
         for(Network a:system.getNetworkList()){
             NetworkCombobox.addItem(a);
         }
         try{
-        selectedNetwork=system.getNetworkList().get(0);
-        organizationCombo.removeAllItems();
+            selectedNetwork=system.getNetworkList().get(0);
+            organizationCombo.removeAllItems();
             System.out.println("Selected Network"+selectedNetwork);
-       for(Enterprise e:selectedNetwork.getEnterpriseDirectory().getEnterpriseList()){
-           System.out.println("ENterprise"+e+"AAAA "+e.getEnterpriseType());
-           if(e.getEnterpriseType().equals(Pharmaceutical)){
-            System.out.println("ENterprise1"+e);
-              for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
-                  organizationCombo.addItem(o);
-                   System.out.println("ENterprise11"+o);
-          
-              }
-           }
-       }
-    }catch(Exception e){
+            for(Enterprise e:selectedNetwork.getEnterpriseDirectory().getEnterpriseList()){
+                System.out.println("ENterprise"+e+"AAAA "+e.getEnterpriseType());
+                if(e.getEnterpriseType().equals(Pharmaceutical)){
+                    System.out.println("ENterprise1"+e);
+                    for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
+                        organizationCombo.addItem(o);
+                        System.out.println("ENterprise11"+o);
+                    }
+                }
+            }
+        }catch(Exception e){
             System.out.println("Error");
-}
+        }
     }
 
     /**
@@ -76,6 +76,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         organizationCombo = new javax.swing.JComboBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        populationTable = new javax.swing.JTable();
 
         jLabel1.setText("Manage Orders");
 
@@ -122,6 +124,19 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
+        populationTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "State ", "Population"
+            }
+        ));
+        jScrollPane2.setViewportView(populationTable);
+        if (populationTable.getColumnModel().getColumnCount() > 0) {
+            populationTable.getColumnModel().getColumn(1).setResizable(false);
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,22 +148,23 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addGap(30, 30, 30)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(30, 30, 30)
+                                .addComponent(jButton2))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,18 +172,21 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
@@ -187,6 +206,19 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
+    
+    void populatePopulationTable(){
+        DefaultTableModel model = (DefaultTableModel) populationTable.getModel();
+
+        model.setRowCount(0);
+        for (Network n :system.getNetworkList()) {
+            Object[] row = new Object[2];
+            row[0] = n;
+            row[1] = n.getPopulation();
+            model.addRow(row);
+        }
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
        int selectedRow = ManageOrdersJTable.getSelectedRow();
@@ -226,6 +258,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox organizationCombo;
+    private javax.swing.JTable populationTable;
     // End of variables declaration//GEN-END:variables
 }

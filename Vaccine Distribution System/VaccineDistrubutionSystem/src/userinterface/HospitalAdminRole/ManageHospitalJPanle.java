@@ -164,7 +164,6 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             w.setVaccine(v);
             w.setQuantity(Integer.parseInt(quantity.getText()));
             w.setNetwork(network.getName());
-            business.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);
            
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                System.out.println("AAAA"+e);
@@ -177,7 +176,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
                             o.getWorkQueue().addCreatedWorkrequest(w);
                             JOptionPane.showMessageDialog(null, "Order was placed successfully!");
                         } else {
-                            JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                            //JOptionPane.showMessageDialog(null, "Order could not be placed.");
                         }
                     }
                 } 
@@ -188,10 +187,13 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        VaccineHistoryJPanel manageEnterpriseAdminJPanel=new VaccineHistoryJPanel(userProcessContainer, business,hosOrganization);
-        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
+         int selectedRow = VaccineTable.getSelectedRow();
+        if(selectedRow >= 0){
+            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel();
+            userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
+            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

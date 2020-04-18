@@ -127,19 +127,23 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
         // TODO add your handling code here:
-        for(Enterprise e: network.getEnterpriseDirectory().getEnterpriseList()){
-            System.out.println("AAAA"+e);
-            if(e.getEnterpriseType().equals(Distributor)){
-                System.out.println("AAAA1"+e);
-                for(Organization o:e.getOrganizationDirectory().getOrganizationList()){
-                   System.out.println("A11111AAA1"+o);
-                   if(o.toString().equals("PHD Organization")){
-                      System.out.println("Adding it in provider organization"+o);
-                      o.getWorkQueue().addCreatedWorkrequest();
-                      JOptionPane.showMessageDialog(null, "Order was placed successfully!");
-                  }
-               }
-            } 
+        int selectedRow=workRequestJTable.getSelectedRow();
+        if(selectedRow>=0){
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+       
+            WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
+            w.setStatus("Sent to PHD");
+            w.setMessage(str1);
+            for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
+                        if(o.toString().equals("PHD Organization")){
+                            System.out.println("YAYYY"+o);
+                            o.getWorkQueue().addCreatedWorkrequest(w);
+                        } else {
+                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                        }
+                    
+            }
+            populateRequestTable();
         }
     }//GEN-LAST:event_button_approveActionPerformed
 

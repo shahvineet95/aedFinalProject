@@ -19,6 +19,15 @@ public class Vaccine {
     private String desc;
     private Date bestUse;
     private int batch;
+    private String vaccineId;
+
+    public String getVaccineId() {
+        return vaccineId;
+    }
+
+    public void setVaccineId(String vaccineId) {
+        this.vaccineId = vaccineId;
+    }
 
     public int getBatch() {
         return batch;

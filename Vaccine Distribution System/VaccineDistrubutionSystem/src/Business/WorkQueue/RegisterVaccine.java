@@ -13,6 +13,16 @@ import java.util.Date;
  */
 public class RegisterVaccine extends WorkRequest{
      private String network;
+     private String vaccineId;
+     private String testResult;
+
+    public String getTestResult() {
+        return testResult;
+    }
+
+    public void setTestResult(String testResult) {
+        this.testResult = testResult;
+    }
 
     public String getNetwork() {
         return network;
@@ -21,60 +31,14 @@ public class RegisterVaccine extends WorkRequest{
     public void setNetwork(String network) {
         this.network = network;
     }
-    private String vaccineName;
-    private String vaccineDesc;
-    private int batch;
-    private float cost;
-    private double totalCost;
-    private Date bestUse;
 
-    public Date getBestUse() {
-        return bestUse;
+    public String getVaccineId() {
+        return vaccineId;
     }
 
-    public void setBestUse(Date bestUse) {
-        this.bestUse = bestUse;
+    public void setVaccineId(String vaccineId) {
+        this.vaccineId = vaccineId;
     }
 
-    public String getVaccineName() {
-        return vaccineName;
-    }
-
-    public void setVaccineName(String vaccineName) {
-        this.vaccineName = vaccineName;
-    }
-
-    public String getVaccineDesc() {
-        return vaccineDesc;
-    }
-
-    public void setVaccineDesc(String vaccineDesc) {
-        this.vaccineDesc = vaccineDesc;
-    }
-
-    public int getBatch() {
-        return batch;
-    }
-
-    public void setBatch(int batch) {
-        this.batch = batch;
-    }
-
-    public float getCost() {
-        return cost;
-    }
-
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(double totalCost) {
-        this.totalCost = totalCost;
-    }
-    
     
 }
