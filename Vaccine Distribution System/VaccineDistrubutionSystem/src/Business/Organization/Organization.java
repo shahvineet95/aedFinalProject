@@ -30,7 +30,7 @@ public abstract class Organization {
         Lab("Lab Organization"),
         
         //for the delivery enterprise, @author - santhosh
-        PhdLead("PHD Lead"),
+        PhdLead("PHD Organization"),
         Delivery("Delivery Organization"),
         Provider("Provider Organization"),
         Logistics("Logistics Organization"),

@@ -134,16 +134,24 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
         // TODO add your handling code here:
-        int selectedRow = workRequestJTable.getSelectedRow();
-        if (selectedRow >= 0) {
+
+	//select a row from table
+        int selectedRow=workRequestJTable.getSelectedRow();
+        if(selectedRow>=0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+       		
+		//get workrequest from workRequestJTable..
             WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
-            w.setStatus("Forwarded to PHD");
+            w.setStatus("Sent to PHD");
             w.setMessage(str1);
             for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
-                if(o.toString().equals("PHD Organization")){
-                    o.getWorkQueue().addCreatedWorkrequest(w);
-                }     
+                        if(o.toString().equals("PHD Organization")){
+                            System.out.println("YAYYY"+o);
+                            o.getWorkQueue().addCreatedWorkrequest(w);
+                        } else {
+                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                        }
+                    
             }
             populateRequestTable();
         } else {
