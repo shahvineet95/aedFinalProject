@@ -8,6 +8,7 @@
  */
 package Business.Organization;
 
+import Business.Role.DeliveryManager;
 import Business.Role.DeliveryRole;
 import Business.Role.DoctorRole;
 import Business.Role.Role;
@@ -29,6 +30,7 @@ public class DeliveryOrganization extends Organization {
         ArrayList<Role> roles = new ArrayList();
         //DeliveryRole
         roles.add(new DeliveryRole());
+        roles.add(new DeliveryManager());
         return roles;
     }
 }

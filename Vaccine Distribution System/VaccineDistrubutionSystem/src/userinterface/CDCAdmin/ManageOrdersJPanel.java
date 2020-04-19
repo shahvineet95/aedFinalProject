@@ -222,11 +222,13 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
        int selectedRow = ManageOrdersJTable.getSelectedRow();
-       if(selectedRow>0){
-           System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
+       if(selectedRow>=0){
+          System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
           WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
           w.setStatus("CDC Approved");
           selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
+          populateTable();
+           System.out.println("SelectedWorkreq"+selectedOrganization);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
