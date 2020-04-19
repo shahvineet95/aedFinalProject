@@ -26,7 +26,8 @@ public abstract class Role {
         PHDLead("PHD Lead"),
         DeliveryPerson("Delivery Person"),
         Provider("Provider"),
-        Logistics("Logistics");
+        Logistics("Logistics"),
+        DeliveryManger("Delivery Manager");
         
         private final String value;
         
