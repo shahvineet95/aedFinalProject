@@ -24,4 +24,8 @@ public class HospitalAdmin extends Role {
         return new ManageHospitalJPanle(userProcessContainer,network, account, organization, business);
     }
     
+    @Override
+    public String toString() {
+        return "Hospital Admin";
+    }
 }
