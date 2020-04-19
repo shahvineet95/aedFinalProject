@@ -93,7 +93,7 @@
           <Font name="Product Sans" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="PHD LEAD WORK AREA"/>
+        <Property name="text" type="java.lang.String" value="PHD Lead Work Area"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="valueLabel">

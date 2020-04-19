@@ -72,7 +72,7 @@
           <Font name="Product Sans" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="DELIVERY PERSON WORK AREA"/>
+        <Property name="text" type="java.lang.String" value="Delivery Person Work Area"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="enterpriseLabel">

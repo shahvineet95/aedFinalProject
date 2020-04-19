@@ -106,7 +106,7 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PHD LEAD WORK AREA");
+        jLabel1.setText("PHD Lead Work Area");
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         valueLabel.setText("<value>");
