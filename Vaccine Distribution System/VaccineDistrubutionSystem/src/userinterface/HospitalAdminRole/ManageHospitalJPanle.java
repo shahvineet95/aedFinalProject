@@ -116,9 +116,9 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
                         .addGap(36, 36, 36)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
+                        .addContainerGap()
                         .addComponent(jButton2)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,9 +132,9 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
      void populateTable(){
