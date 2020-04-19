@@ -22,7 +22,7 @@ public class ProviderRole extends Role{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer,Network network ,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ProviderWorkAreaJPanel(userProcessContainer, account, (ProviderOrganization)organization, enterprise);
+        return new ProviderWorkAreaJPanel(userProcessContainer, account, (ProviderOrganization)organization, enterprise, business);
     }
 
     @Override

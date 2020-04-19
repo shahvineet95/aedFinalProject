@@ -5,16 +5,20 @@
  */
 package userinterface.ProviderRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
+import Business.WorkQueue.Extended;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.PHDLead.PHDLeadWorkAreaJPanel;
 
 /**
  *
@@ -27,7 +31,8 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     private final Enterprise enterprise;
     private final UserAccount userAccount;
     private Network network;
-
+    private EcoSystem business;
+    
     /**
      * Creates new form ProviderWorkAreaJPanel
      * @param userProcessContainer
@@ -35,12 +40,14 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise) {
+    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.network = network;
+        this.business = business;
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
     }
@@ -127,10 +134,13 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
         // TODO add your handling code here:
+
+	//select a row from table
         int selectedRow=workRequestJTable.getSelectedRow();
         if(selectedRow>=0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       
+       		
+		//get workrequest from workRequestJTable..
             WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
             w.setStatus("Sent to PHD");
             w.setMessage(str1);
@@ -144,7 +154,10 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
                     
             }
             populateRequestTable();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select a row first.");
         }
+        
     }//GEN-LAST:event_button_approveActionPerformed
 
 

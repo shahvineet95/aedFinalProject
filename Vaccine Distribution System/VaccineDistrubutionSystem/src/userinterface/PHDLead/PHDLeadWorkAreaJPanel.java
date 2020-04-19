@@ -10,8 +10,8 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Organization.PHDOrganization;
+import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
-import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -24,11 +24,12 @@ import javax.swing.table.DefaultTableModel;
 public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
-    private PHDOrganization organization;
+    private PHDOrganization phdorganization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     private EcoSystem system;
     private Network network;
+    private ProviderOrganization organization;
 
     /**
      * Creates new form PHDLeadWorkAreaJPanel
@@ -37,10 +38,10 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization organization, Enterprise enterprise, EcoSystem system) {
+    public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization phdorganization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = organization;
+        this.phdorganization = phdorganization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
@@ -49,6 +50,10 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         populateRequestTable();
         populationField.setText(""+network.getPopulation());
     }
+
+//    public PHDLeadWorkAreaJPanel(ProviderOrganization organization) {
+//        this.organization = organization;
+//    }
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
