@@ -67,7 +67,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        amountText = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
         requesttable.setModel(new javax.swing.table.DefaultTableModel(
@@ -142,7 +142,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
 
         jLabel7.setText("Amount :");
 
-        jLabel9.setText("xxxx");
+        amountText.setText("xxxx");
 
         jButton4.setText("Pay Now");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -173,7 +173,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
+                        .addComponent(amountText)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,7 +212,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel9))
+                            .addComponent(amountText))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
@@ -267,7 +267,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
             row[0] = w.getVaccine().getName();
             row[1] = w.getQuantity();
             row[2] = w.getQuantity()*w.getVaccine().getCost();
-            row[3] = w.getStatus();
+            row[3] = w;
             row[4] = w.getMessage();
             
             model.addRow(row);
@@ -293,7 +293,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         if(selectedRow >= 0){
             jPanel1.setVisible(true);
             selectedWorkrequest = (Order)requesttable.getValueAt(selectedRow, 3);
-            jLabel8.setText(""+selectedWorkrequest.getQuantity()*selectedWorkrequest.getVaccine().getCost());
+            amountText.setText(""+selectedWorkrequest.getQuantity()*selectedWorkrequest.getVaccine().getCost());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -320,16 +320,17 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        Payment p=selectedWorkrequest.getCdcPayment();
+        Payment p=selectedWorkrequest.getHosPayment();
         p.setAmount(selectedWorkrequest.getQuantity()*selectedWorkrequest.getVaccine().getCost());
         p.setCompleted(true);
-        p.setEnd4digits("**** **** **** "+cardNumberField.getText().substring(-4));
+        p.setEnd4digits("**** **** **** "+cardNumberField.getText().substring(cardNumberField.getText().length()-4,cardNumberField.getText().length()));
     }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CvcField;
     private javax.swing.JTextField NameField;
+    private javax.swing.JLabel amountText;
     private javax.swing.JTextField cardNumberField;
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField expDateField;
@@ -344,7 +345,6 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable requesttable;
