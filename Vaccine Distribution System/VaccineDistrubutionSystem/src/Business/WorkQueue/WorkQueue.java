@@ -27,6 +27,11 @@ public class WorkQueue {
         workRequestList.add(temp);
         return temp;
     }
+    public RegisterVaccine addWorkRequestList2(){
+        RegisterVaccine temp = new RegisterVaccine();
+        workRequestList.add(temp);
+        return temp;
+    }
     
     public void addCreatedWorkrequest(WorkRequest e){
         workRequestList.add(e);

@@ -166,10 +166,18 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
+<<<<<<< HEAD
 //          PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
 //          userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
 //          CardLayout layout=(CardLayout)userProcessContainer.getLayout();
 //          layout.next(userProcessContainer);
+=======
+            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel();
+            userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
+            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+            
+            layout.next(userProcessContainer);
+>>>>>>> 3eda1dbba111d549a8a7e72a86cf01037d592eed
         }
     }//GEN-LAST:event_kButton2ActionPerformed
 
