@@ -22,8 +22,8 @@ public class WorkQueue {
         return workRequestList;
     }
     
-    public Extended addWorkRequestList() {
-        Extended temp = new Extended();
+    public Order addWorkRequestList() {
+        Order temp = new Order();
         workRequestList.add(temp);
         return temp;
     }

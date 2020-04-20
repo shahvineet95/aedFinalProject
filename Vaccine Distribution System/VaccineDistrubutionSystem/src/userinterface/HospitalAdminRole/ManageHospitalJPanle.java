@@ -13,7 +13,7 @@ import Business.Organization.HospitalOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
-import Business.WorkQueue.Extended;
+import Business.WorkQueue.Order;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -154,7 +154,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
        
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
-            Extended w = hosOrganization.getWorkQueue().addWorkRequestList();
+            Order w = hosOrganization.getWorkQueue().addWorkRequestList();
             w.setSender(userAccount);
             w.setStatus("Order placed");
             w.setMessage(str1);
