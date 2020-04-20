@@ -120,7 +120,7 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PROVIDER WORK AREA");
+        jLabel1.setText("Provider Work Area");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 810, -1));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
