@@ -26,15 +26,11 @@ public class DeliveryRole extends Role{
     //typecase organization
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer,Network network ,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new DeliveryPersonWorkAreaJPanel(userProcessContainer, account, (DeliveryOrganization)organization, enterprise);
+        return new DeliveryPersonWorkAreaJPanel(userProcessContainer, account, (DeliveryOrganization)organization, enterprise, business);
     }
 
     @Override
     public String toString() {
         return "Delivery Person";
     }
-    
-    
-    
-    
 }

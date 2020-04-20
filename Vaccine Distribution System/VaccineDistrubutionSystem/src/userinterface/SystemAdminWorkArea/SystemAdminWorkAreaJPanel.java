@@ -89,12 +89,16 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblSelectedNode = new javax.swing.JLabel();
-        btnManageNetwork = new javax.swing.JButton();
-        btnManageEnterprise = new javax.swing.JButton();
-        btnManageAdmin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        button_manageNetwork = new keeptoo.KButton();
+        button_manageEnterprise = new keeptoo.KButton();
+        button_manageEntAdmin = new keeptoo.KButton();
+        button_cdcAdmin = new keeptoo.KButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 51));
 
         jTree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
             public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
@@ -115,76 +119,93 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 118, Short.MAX_VALUE))
+                .addGap(0, 444, Short.MAX_VALUE))
         );
 
         jSplitPane.setLeftComponent(jPanel1);
 
+        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setText("Selected Node:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 25, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, -1, -1));
 
-        lblSelectedNode.setText("<View_selected_node>");
-        jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 25, -1, -1));
+        lblSelectedNode.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
-        btnManageNetwork.setText("Manage Network");
-        btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
+        button_manageNetwork.setText("Network");
+        button_manageNetwork.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        button_manageNetwork.setkBackGroundColor(new java.awt.Color(0, 0, 0));
+        button_manageNetwork.setkBorderRadius(40);
+        button_manageNetwork.setkEndColor(new java.awt.Color(51, 153, 0));
+        button_manageNetwork.setkHoverEndColor(new java.awt.Color(0, 102, 51));
+        button_manageNetwork.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        button_manageNetwork.setkHoverStartColor(new java.awt.Color(153, 153, 153));
+        button_manageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageNetworkActionPerformed(evt);
+                button_manageNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 95, 240, -1));
+        jPanel2.add(button_manageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 260, 50));
 
-        btnManageEnterprise.setText("Manage Enterprise");
-        btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
+        button_manageEnterprise.setText("Enterprise");
+        button_manageEnterprise.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        button_manageEnterprise.setkBackGroundColor(new java.awt.Color(0, 0, 0));
+        button_manageEnterprise.setkBorderRadius(40);
+        button_manageEnterprise.setkEndColor(new java.awt.Color(51, 153, 0));
+        button_manageEnterprise.setkHoverEndColor(new java.awt.Color(0, 102, 51));
+        button_manageEnterprise.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        button_manageEnterprise.setkHoverStartColor(new java.awt.Color(153, 153, 153));
+        button_manageEnterprise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageEnterpriseActionPerformed(evt);
+                button_manageEnterpriseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 138, 240, -1));
+        jPanel2.add(button_manageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 260, 50));
 
-        btnManageAdmin.setText("Manage Enterprise Admin");
-        btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
+        button_manageEntAdmin.setText("Enterprise Admin");
+        button_manageEntAdmin.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        button_manageEntAdmin.setkBackGroundColor(new java.awt.Color(0, 0, 0));
+        button_manageEntAdmin.setkBorderRadius(40);
+        button_manageEntAdmin.setkEndColor(new java.awt.Color(51, 153, 0));
+        button_manageEntAdmin.setkHoverEndColor(new java.awt.Color(0, 102, 51));
+        button_manageEntAdmin.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        button_manageEntAdmin.setkHoverStartColor(new java.awt.Color(153, 153, 153));
+        button_manageEntAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnManageAdminActionPerformed(evt);
+                button_manageEntAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 181, 240, -1));
+        jPanel2.add(button_manageEntAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, 260, 50));
 
-        jButton1.setText("Manage CDC Manager");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        button_cdcAdmin.setText("CDC Admin");
+        button_cdcAdmin.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        button_cdcAdmin.setkBackGroundColor(new java.awt.Color(0, 0, 0));
+        button_cdcAdmin.setkBorderRadius(40);
+        button_cdcAdmin.setkEndColor(new java.awt.Color(51, 153, 0));
+        button_cdcAdmin.setkHoverEndColor(new java.awt.Color(0, 102, 51));
+        button_cdcAdmin.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        button_cdcAdmin.setkHoverStartColor(new java.awt.Color(153, 153, 153));
+        button_cdcAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                button_cdcAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 224, 240, -1));
+        jPanel2.add(button_cdcAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 260, 50));
+
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel2.setText("System Admin Work Area.");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_administrator_male_50px.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 80, 50));
 
         jSplitPane.setRightComponent(jPanel2);
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnManageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageNetworkActionPerformed
-        ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageNetworkActionPerformed
-
-    private void btnManageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEnterpriseActionPerformed
-        ManageEnterpriseJPanel manageEnterpriseJPanel=new ManageEnterpriseJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageEnterpriseJPanel",manageEnterpriseJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageEnterpriseActionPerformed
-
-    private void btnManageAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageAdminActionPerformed
-        ManageEnterpriseAdminJPanel manageEnterpriseAdminJPanel=new ManageEnterpriseAdminJPanel(userProcessContainer, ecosystem);
-        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnManageAdminActionPerformed
 
     private void jTreeValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_jTreeValueChanged
         
@@ -194,21 +215,47 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jTreeValueChanged
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void button_manageNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manageNetworkActionPerformed
+        // TODO add your handling code here:
+        ManageNetworkJPanel manageNetworkJPanel=new ManageNetworkJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_button_manageNetworkActionPerformed
+
+    private void button_manageEnterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manageEnterpriseActionPerformed
+        // TODO add your handling code here:
+        ManageEnterpriseJPanel manageEnterpriseJPanel=new ManageEnterpriseJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("manageEnterpriseJPanel",manageEnterpriseJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_button_manageEnterpriseActionPerformed
+
+    private void button_manageEntAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_manageEntAdminActionPerformed
+        // TODO add your handling code here:
+        ManageEnterpriseAdminJPanel manageEnterpriseAdminJPanel=new ManageEnterpriseAdminJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_button_manageEntAdminActionPerformed
+
+    private void button_cdcAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_cdcAdminActionPerformed
         // TODO add your handling code here:
         ManageCDCAdminJPanel manageAdminJPanel=new ManageCDCAdminJPanel(userProcessContainer, ecosystem);
         userProcessContainer.add("manageEnterpriseAdminJPanel",manageAdminJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_button_cdcAdminActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnManageAdmin;
-    private javax.swing.JButton btnManageEnterprise;
-    private javax.swing.JButton btnManageNetwork;
-    private javax.swing.JButton jButton1;
+    private keeptoo.KButton button_cdcAdmin;
+    private keeptoo.KButton button_manageEntAdmin;
+    private keeptoo.KButton button_manageEnterprise;
+    private keeptoo.KButton button_manageNetwork;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

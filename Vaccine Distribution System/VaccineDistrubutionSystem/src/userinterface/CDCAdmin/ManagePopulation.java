@@ -45,67 +45,53 @@ public class ManagePopulation extends javax.swing.JPanel {
         populationTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         populationField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        kButton1 = new keeptoo.KButton();
+        jLabel3 = new javax.swing.JLabel();
 
-        jLabel1.setText("ManagePopulation");
+        setBackground(new java.awt.Color(153, 255, 153));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setText("Manage Population.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, -1, -1));
+
+        populationTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         populationTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Network", "Population"
             }
         ));
+        populationTable.setRowHeight(24);
+        populationTable.setSelectionBackground(new java.awt.Color(51, 204, 0));
         jScrollPane1.setViewportView(populationTable);
 
-        jLabel2.setText("New Population");
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 670, 320));
 
-        jButton1.setText("Update");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel2.setText("Enter Population: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, -1, -1));
+
+        populationField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(populationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, 190, -1));
+
+        kButton1.setText("Update Population");
+        kButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton1.setkBorderRadius(40);
+        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverStartColor(new java.awt.Color(51, 102, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                kButton1ActionPerformed(evt);
             }
         });
+        add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 560, 360, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(populationField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72)
-                        .addComponent(jButton1)))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(populationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(152, Short.MAX_VALUE))
-        );
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_business_group_50px.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 70, 50));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
         DefaultTableModel model = (DefaultTableModel) populationTable.getModel();
@@ -118,7 +104,7 @@ public class ManagePopulation extends javax.swing.JPanel {
                     model.addRow(row);
          }
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         // TODO add your handling code here:
         int selectedRow=populationTable.getSelectedRow();
         if(selectedRow>=0){
@@ -126,14 +112,15 @@ public class ManagePopulation extends javax.swing.JPanel {
              n.setPopulation(Double.parseDouble(populationField.getText()));
              populateTable();
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_kButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private keeptoo.KButton kButton1;
     private javax.swing.JTextField populationField;
     private javax.swing.JTable populationTable;
     // End of variables declaration//GEN-END:variables

@@ -5,9 +5,11 @@
  */
 package userinterface.DeliveryRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Organization.DeliveryOrganization;
 import Business.Organization.DoctorOrganization;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
@@ -25,6 +27,7 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
     private final DeliveryOrganization organization;
     private final Enterprise enterprise;
     private final UserAccount userAccount;
+    private final EcoSystem business;
     /**
      * Creates new form DeliveryPersonWorkAreaJPanel
      * @param userProcessContainer
@@ -32,27 +35,27 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public DeliveryPersonWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, DeliveryOrganization organization, Enterprise enterprise) {
+    public DeliveryPersonWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = organization;
+        this.organization = (DeliveryOrganization) organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.business = business;
         valueLabel.setText(enterprise.getName());
         populateRequestTable();
     }
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
-        
         model.setRowCount(0);
-        for (WorkRequest request : userAccount.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[4];
-            row[0] = request.getMessage();
-            row[1] = request.getReceiver();
-            row[2] = request.getStatus();
-            String result = ((LabTestWorkRequest) request).getTestResult();
-            row[3] = result == null ? "Waiting" : result;
+        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+            Object[] row = new Object[5];
+            row[0] = request.getVaccine();
+            row[1] = request.getQuantity();
+            row[2] = request.getQuantity()*request.getVaccine().getCost();
+            row[3] = request.getStatus();
+            row[4] = request.getMessage();
             model.addRow(row);
         }
     }
@@ -69,47 +72,23 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
         refreshJButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        button_confirmPickup = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         resultJTextField = new javax.swing.JTextField();
         processJButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        workRequestJTable = new javax.swing.JTable();
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("DELIVERY PERSON WORK AREA");
+        jLabel1.setText("Delivery Person Work Area");
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
+        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        enterpriseLabel.setText("Enterprise:");
 
+        valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<value>");
-
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Vaccine", "Sender", "Receiver", "Status", "Request Date", "Resolve Date", "Quantity"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(workRequestJTable);
 
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -118,10 +97,10 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setText("Order Pickup Confirm");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        button_confirmPickup.setText("Order Pickup Confirm");
+        button_confirmPickup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                button_confirmPickupActionPerformed(evt);
             }
         });
 
@@ -134,6 +113,24 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Vaccine", "Quantity", "Cost", "Status", "Message"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(workRequestJTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,50 +138,49 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(processJButton)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(resultJTextField))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(refreshJButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton3))))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(processJButton)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(resultJTextField))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(refreshJButton)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(button_confirmPickup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 904, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 62, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                    .addComponent(enterpriseLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(refreshJButton)
-                    .addComponent(jButton3))
+                    .addComponent(button_confirmPickup))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(resultJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(processJButton)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -192,7 +188,7 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
         populateRequestTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void button_confirmPickupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_confirmPickupActionPerformed
         // TODO add your handling code here:
         int selectedRow = workRequestJTable.getSelectedRow();
 
@@ -202,12 +198,12 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
         }
 
         String selectedOrderId = (String) workRequestJTable.getValueAt(selectedRow, 4);
-        Order order = business.getOrderDirectory().getOrderByOrderId(selectedOrderId);
+        //Order order = business.getOrderDirectory().getOrderByOrderId(selectedOrderId);
 
-        order.setStatus("Out For Delivery");
+        //order.setStatus("Out For Delivery");
         JOptionPane.showMessageDialog(null, "Order updated!");
         populateRequestTable();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_button_confirmPickupActionPerformed
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         int selectedRow = workRequestJTable.getSelectedRow();
@@ -217,30 +213,30 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
 
-        String selectedOrderId = (String) workRequestJTable.getValueAt(selectedRow, 4);
-        Order order = business.getOrderDirectory().getOrderByOrderId(selectedOrderId);
-
-        if(order.getStatus().trim().equalsIgnoreCase("Out For Delivery")){
-            order.setResult(resultJTextField.getText());
-            order.setStatus("Completed");
-            resultJTextField.setText("");
-            JOptionPane.showMessageDialog(null, "Order updated!");
-            populateTable();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Confirm order pick up before confirming delivery!");
-        }
-        //        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, order);
-        //        userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
-        //        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        //        layout.next(userProcessContainer);
+//        String selectedOrderId = (String) workRequestJTable.getValueAt(selectedRow, 4);
+//        Order order = business.getOrderDirectory().getOrderByOrderId(selectedOrderId);
+//
+//        if(order.getStatus().trim().equalsIgnoreCase("Out For Delivery")){
+//            order.setResult(resultJTextField.getText());
+//            order.setStatus("Completed");
+//            resultJTextField.setText("");
+//            JOptionPane.showMessageDialog(null, "Order updated!");
+//            populateRequestTable();
+//        }
+//        else{
+//            JOptionPane.showMessageDialog(null, "Confirm order pick up before confirming delivery!");
+//        }
+//        ProcessWorkRequestJPanel processWorkRequestJPanel = new ProcessWorkRequestJPanel(userProcessContainer, order);
+//        userProcessContainer.add("processWorkRequestJPanel", processWorkRequestJPanel);
+//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+//        layout.next(userProcessContainer);
 
     }//GEN-LAST:event_processJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button_confirmPickup;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;

@@ -38,101 +38,89 @@ public class CDCadminDashboard extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        manageOrderBtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        kButton1 = new keeptoo.KButton();
+        kButton2 = new keeptoo.KButton();
+        kButton3 = new keeptoo.KButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        jLabel1.setText("CDC Admin");
+        setBackground(new java.awt.Color(153, 255, 153));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Manage Population");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setText("CDC Admin.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, -1, -1));
+
+        kButton1.setText("Manage Orders");
+        kButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton1.setkBorderRadius(40);
+        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverStartColor(new java.awt.Color(0, 102, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                kButton1ActionPerformed(evt);
             }
         });
+        add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 300, -1));
 
-        manageOrderBtn.setText("Manage Orders");
-        manageOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+        kButton2.setText("Manage Vaccines");
+        kButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton2.setkBorderRadius(40);
+        kButton2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton2.setkHoverStartColor(new java.awt.Color(0, 102, 0));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageOrderBtnActionPerformed(evt);
+                kButton2ActionPerformed(evt);
             }
         });
+        add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 300, -1));
 
-        jButton2.setText("Manage Vaccines");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        kButton3.setText("Manage Population");
+        kButton3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton3.setkBorderRadius(40);
+        kButton3.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton3.setkHoverStartColor(new java.awt.Color(0, 102, 0));
+        kButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                kButton3ActionPerformed(evt);
             }
         });
+        add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 380, 300, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addContainerGap(154, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(149, 149, 149)
-                    .addComponent(manageOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(154, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(53, 53, 53)
-                    .addComponent(manageOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(217, Short.MAX_VALUE)))
-        );
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_administrator_male_50px.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 60, 40));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        ManagePopulation manageNetworkJPanel=new ManagePopulation(userProcessContainer, system);
-        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
-        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void manageOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrderBtnActionPerformed
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         // TODO add your handling code here:
         ManageOrdersJPanel manageNetworkJPanel=new ManageOrdersJPanel(userProcessContainer, system);
         userProcessContainer.add("manageOrders",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_manageOrderBtnActionPerformed
+    }//GEN-LAST:event_kButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
         // TODO add your handling code here:
-         ManageVaccine manageNetworkJPanel=new ManageVaccine(userProcessContainer, system);
+        ManageVaccine manageNetworkJPanel=new ManageVaccine(userProcessContainer, system);
         userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+        // TODO add your handling code here:
+        ManagePopulation manageNetworkJPanel=new ManagePopulation(userProcessContainer, system);
+        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_kButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton manageOrderBtn;
+    private javax.swing.JLabel jLabel2;
+    private keeptoo.KButton kButton1;
+    private keeptoo.KButton kButton2;
+    private keeptoo.KButton kButton3;
     // End of variables declaration//GEN-END:variables
 }

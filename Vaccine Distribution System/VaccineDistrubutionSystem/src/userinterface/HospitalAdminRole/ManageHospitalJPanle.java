@@ -42,7 +42,6 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         this.hosOrganization = (HospitalOrganization)organization;
         this.network=network;
         populateTable();
-       
     }
 
     /**
@@ -57,101 +56,86 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         VaccineTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         quantity = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        kButton1 = new keeptoo.KButton();
+        kButton2 = new keeptoo.KButton();
 
-        jLabel1.setText("Dashboard");
+        setBackground(new java.awt.Color(153, 255, 153));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Dashboard.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 200, -1));
+
+        VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Name", "Cost"
             }
         ));
+        VaccineTable.setRowHeight(24);
         jScrollPane1.setViewportView(VaccineTable);
 
-        jButton1.setText("Place Order");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 585, 241));
 
-        jButton2.setText("VIew Order History");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Quantity");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jButton2)))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(39, 39, 39)
-                .addComponent(jButton2)
-                .addContainerGap(90, Short.MAX_VALUE))
-        );
+        quantity.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 178, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_dashboard_50px.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 70, 50));
+
+        kButton1.setText("Place Order");
+        kButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton1.setkBorderRadius(40);
+        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverStartColor(new java.awt.Color(51, 153, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
+        add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, -1, -1));
+
+        kButton2.setText("View History");
+        kButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton2.setkBorderRadius(40);
+        kButton2.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton2.setkHoverStartColor(new java.awt.Color(51, 153, 0));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
+        add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
      void populateTable(){
-         DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
-
+        DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
         model.setRowCount(0);
         for (Vaccine v : business.getVaccinedir().getVaccDir()) {
-                    Object[] row = new Object[3];
-                    row[0] = v;
-                    row[1] = v.getCost();
-                    row[2] = v.getDesc();
-                    model.addRow(row);
-         }
+            Object[] row = new Object[3];
+            row[0] = v;
+            row[1] = v.getCost();
+            row[2] = v.getDesc();
+            model.addRow(row);
+        }
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         // TODO add your handling code here:
         int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       
+
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
             Extended w = hosOrganization.getWorkQueue().addWorkRequestList();
             w.setSender(userAccount);
@@ -160,46 +144,44 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             w.setVaccine(v);
             w.setQuantity(Integer.parseInt(quantity.getText()));
             w.setNetwork(network.getName());
-           
+
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                System.out.println("AAAA"+e);
                if(e.getEnterpriseType().equals(Distributor)) {
-                    System.out.println("AAAA1"+e);
+                    System.out.println("AAA1"+e);
                     for(Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                         System.out.println("A11111AAA1"+o);
                         if(o.toString().equals("Provider Organization")){
                             System.out.println("Adding it in provider organization"+o);
                             o.getWorkQueue().addCreatedWorkrequest(w);
                             JOptionPane.showMessageDialog(null, "Order was placed successfully!");
-                        } else {
-                            //JOptionPane.showMessageDialog(null, "Order could not be placed.");
-                        }
+                        } 
                     }
                 } 
             }
         }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_kButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
         // TODO add your handling code here:
-         int selectedRow = VaccineTable.getSelectedRow();
+        int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
-            PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
-            userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
-            CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
+//          PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
+//          userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
+//          CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+//          layout.next(userProcessContainer);
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_kButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable VaccineTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private keeptoo.KButton kButton1;
+    private keeptoo.KButton kButton2;
     private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables
 }

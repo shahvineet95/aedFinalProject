@@ -70,17 +70,25 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ManageOrdersJTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         NetworkCombobox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         organizationCombo = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         populationTable = new javax.swing.JTable();
+        kButton1 = new keeptoo.KButton();
+        button_decline = new keeptoo.KButton();
+        jLabel4 = new javax.swing.JLabel();
 
-        jLabel1.setText("Manage Orders");
+        setBackground(new java.awt.Color(153, 255, 153));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manage Orders.");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 220, -1));
+
+        ManageOrdersJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         ManageOrdersJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -97,33 +105,37 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        ManageOrdersJTable.setRowHeight(24);
+        ManageOrdersJTable.setSelectionBackground(new java.awt.Color(51, 204, 0));
         jScrollPane1.setViewportView(ManageOrdersJTable);
 
-        jButton1.setText("Approve");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 710, 250));
 
-        jButton2.setText("Decline");
-
+        NetworkCombobox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         NetworkCombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NetworkComboboxActionPerformed(evt);
             }
         });
+        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 210, -1));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Network:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Organization:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, -1));
 
+        organizationCombo.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationComboActionPerformed(evt);
             }
         });
+        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 210, -1));
 
+        populationTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         populationTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -132,62 +144,42 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 "State ", "Population"
             }
         ));
+        populationTable.setRowHeight(24);
+        populationTable.setSelectionBackground(new java.awt.Color(51, 204, 0));
         jScrollPane2.setViewportView(populationTable);
         if (populationTable.getColumnModel().getColumnCount() > 0) {
             populationTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(30, 30, 30)
-                                .addComponent(jButton2))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(53, 53, 53))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NetworkCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(organizationCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(254, Short.MAX_VALUE))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 220, 500));
+
+        kButton1.setText("Approve");
+        kButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        kButton1.setkBorderRadius(40);
+        kButton1.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        kButton1.setkHoverStartColor(new java.awt.Color(51, 102, 0));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
+        add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 380, -1));
+
+        button_decline.setText("Decline");
+        button_decline.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        button_decline.setkBorderRadius(40);
+        button_decline.setkHoverForeGround(new java.awt.Color(0, 0, 0));
+        button_decline.setkHoverStartColor(new java.awt.Color(51, 102, 0));
+        button_decline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_declineActionPerformed(evt);
+            }
+        });
+        add(button_decline, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 600, 380, -1));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_list_50px.png"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 50, 30));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
         DefaultTableModel model = (DefaultTableModel) ManageOrdersJTable.getModel();
@@ -219,17 +211,6 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         }
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-       int selectedRow = ManageOrdersJTable.getSelectedRow();
-       if(selectedRow>0){
-           System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
-          WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
-          w.setStatus("CDC Approved");
-          selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
-       }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void organizationComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationComboActionPerformed
         // TODO add your handling code here:
        selectedOrganization=(Organization)organizationCombo.getSelectedItem();
@@ -248,17 +229,33 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
        } 
     }//GEN-LAST:event_NetworkComboboxActionPerformed
 
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = ManageOrdersJTable.getSelectedRow();
+       if(selectedRow>0){
+           System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
+          WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
+          w.setStatus("CDC Approved");
+          selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
+       }
+    }//GEN-LAST:event_kButton1ActionPerformed
+
+    private void button_declineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_declineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_declineActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageOrdersJTable;
     private javax.swing.JComboBox NetworkCombobox;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private keeptoo.KButton button_decline;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private keeptoo.KButton kButton1;
     private javax.swing.JComboBox organizationCombo;
     private javax.swing.JTable populationTable;
     // End of variables declaration//GEN-END:variables

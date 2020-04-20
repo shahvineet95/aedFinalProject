@@ -15,6 +15,7 @@ import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
 import Business.WorkQueue.Extended;
 import Business.WorkQueue.WorkRequest;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -27,11 +28,14 @@ import userinterface.PHDLead.PHDLeadWorkAreaJPanel;
 public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     
     private final JPanel userProcessContainer;
-    private final ProviderOrganization organization;
+    private final ProviderOrganization provOrganization;
     private final Enterprise enterprise;
     private final UserAccount userAccount;
     private Network network;
     private EcoSystem business;
+    private static int remaining = 0;
+    private static int forwarded = 0;
+    //private Organization organization;
     
     /**
      * Creates new form ProviderWorkAreaJPanel
@@ -40,10 +44,10 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
-    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise, EcoSystem business) {
+    public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.organization = organization;
+        this.provOrganization = (ProviderOrganization)organization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
@@ -53,9 +57,10 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     }
     
     public void populateRequestTable(){
+        System.out.println("Inside populate request table...");
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
-        for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
+        for (WorkRequest request : provOrganization.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[7];
             row[0] = request.getVaccine().getName();
             row[1] = request.getSender();
@@ -86,6 +91,7 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -95,20 +101,20 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true, true, true
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setRowHeight(24);
         jScrollPane1.setViewportView(workRequestJTable);
         if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
             workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 810, 341));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 900, 341));
 
         button_approve.setText("Forward Request");
         button_approve.addActionListener(new java.awt.event.ActionListener() {
@@ -116,16 +122,16 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
                 button_approveActionPerformed(evt);
             }
         });
-        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PROVIDER WORK AREA");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 810, -1));
+        jLabel1.setText("Provider Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 900, -1));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<Enterprise Name>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 500, 20));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 650, 20));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Name: ");
@@ -134,30 +140,29 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
         // TODO add your handling code here:
-
-	//select a row from table
+        // select a row from table
         int selectedRow=workRequestJTable.getSelectedRow();
         if(selectedRow>=0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       		
-		//get workrequest from workRequestJTable..
             WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
             w.setStatus("Sent to PHD");
             w.setMessage(str1);
+
             for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
-                        if(o.toString().equals("PHD Organization")){
-                            System.out.println("YAYYY"+o);
-                            o.getWorkQueue().addCreatedWorkrequest(w);
-                        } else {
-                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
-                        }
-                    
+                if(o.toString().equals("PHD Organization")){
+                    o.getWorkQueue().addCreatedWorkrequest(w);
+                    JOptionPane.showMessageDialog(null, "Order was forwarded to PHD Lead.");
+                } else {
+                    //JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                }
             }
+
             populateRequestTable();
+
         } else {
             JOptionPane.showMessageDialog(null, "Please select a row first.");
         }
-        
+
     }//GEN-LAST:event_button_approveActionPerformed
 
 
