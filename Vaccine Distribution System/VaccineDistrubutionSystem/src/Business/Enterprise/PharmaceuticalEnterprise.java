@@ -5,6 +5,7 @@
  */
 package Business.Enterprise;
 
+import Business.Batch.BatchDirectory;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -14,9 +15,18 @@ import java.util.ArrayList;
  */
 public class PharmaceuticalEnterprise extends Enterprise {
     
-    
+    private BatchDirectory batchDir;
     public PharmaceuticalEnterprise(String name){
         super(name,EnterpriseType.Pharmaceutical);
+        batchDir = new BatchDirectory();
+    }
+
+    public BatchDirectory getBatchDir() {
+        return batchDir;
+    }
+
+    public void setBatchDir(BatchDirectory batchDir) {
+        this.batchDir = batchDir;
     }
     @Override
     public ArrayList<Role> getSupportedRole() {

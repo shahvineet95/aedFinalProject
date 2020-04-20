@@ -4,11 +4,18 @@
  */
 package userinterface.LabAssistantRole;
 
+import Business.Batch.Batch;
+import Business.Batch.BatchDirectory;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.PharmaceuticalEnterprise;
+import Business.Vaccine.Vaccine;
 import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
 import Business.WorkQueue.RegisterVaccine;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -18,15 +25,19 @@ import javax.swing.JOptionPane;
 
 public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
-    JPanel userProcessContainer;
-    RegisterVaccine request;
+   private JPanel userProcessContainer;
+   private RegisterVaccine request;
+   private EcoSystem business;
+   private PharmaceuticalEnterprise pharmEnterprise;
     /**
      * Creates new form ProcessWorkRequestJPanel
      */
-    public ProcessWorkRequestJPanel(JPanel userProcessContainer, RegisterVaccine request) {
+    public ProcessWorkRequestJPanel(JPanel userProcessContainer, RegisterVaccine request, Enterprise pharmEnterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.request = request;
+        this.business = business;
+        this.pharmEnterprise = (PharmaceuticalEnterprise)pharmEnterprise;
     }
 
     /**
@@ -105,6 +116,9 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         request.setTestResult(resultJTextField.getText());
         request.setStatus("Passed to CDC");
         JOptionPane.showMessageDialog(null, "Order passed on to CDC.");
+        ArrayList<Vaccine> v = new ArrayList<Vaccine>();
+        v.add(request.getVaccine());
+       //pharmEnterprise.getBatchDir().addBatchStorage(request.getVaccine().getBatch());
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 

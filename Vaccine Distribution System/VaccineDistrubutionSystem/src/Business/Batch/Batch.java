@@ -14,19 +14,26 @@ import java.util.ArrayList;
  * @author India
  */
 public class Batch {
-    private int batchId = 1; 
-    ArrayList<Vaccine> vaccineStorage;
+    private String batchId; 
+    private Vaccine vaccine;
 
-    public ArrayList<Vaccine> getVaccineStorage() {
-        return vaccineStorage;
+    public String getBatchId() {
+        return batchId;
     }
 
-    public void setVaccineStorage(ArrayList<Vaccine> vaccineStorage) {
-        this.vaccineStorage = vaccineStorage;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public Batch(int n) {
-        this.vaccineStorage = new ArrayList<Vaccine>();
-        
+    public Vaccine getVaccine() {
+        return vaccine;
     }
+
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+    
+
+    
+    
 }

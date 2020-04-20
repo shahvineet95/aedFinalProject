@@ -123,7 +123,7 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void createVaccineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createVaccineBtnActionPerformed
         // TODO add your handling code here:
-        CreateVaccineJPanel manageNetworkJPanel=new CreateVaccineJPanel(userProcessContainer, network, account, inventoryOrganization, system);
+        CreateVaccineJPanel manageNetworkJPanel=new CreateVaccineJPanel(userProcessContainer, network, account, inventoryOrganization, system, enterprise);
         userProcessContainer.add("manageOrders",manageNetworkJPanel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);

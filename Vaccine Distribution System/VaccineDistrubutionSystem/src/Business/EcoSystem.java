@@ -5,6 +5,7 @@
  */
 package Business;
 
+import Business.Batch.BatchDirectory;
 import Business.Network.Network;
 import Business.Organization.CdcOrganization;
 import Business.Organization.Organization;

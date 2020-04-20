@@ -31,9 +31,14 @@ public class BatchDirectory {
         this.batchStorage = batchStorage;
     }
 
-    public BatchDirectory(ArrayList<Batch> batchStorage) {
-        this.batchStorage = batchStorage;
+    public BatchDirectory() {
+        this.batchStorage = new ArrayList<Batch>();
     }
-    
+    public void addBatchStorage(Batch b){
+        this.batchStorage.add(b); 
+    }
+    public void removeBatchStorage(Batch b){
+        this.batchStorage.remove(b);
+    }
     
 }
