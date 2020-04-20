@@ -1,45 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
-        <file>
-            <url>src/userinterface/HospitalAdminRole/ManageHospitalJPanle.java</url>
-            <bookmark id="1">
-                <name/>
-                <line>158</line>
-                <key/>
-            </bookmark>
-        </file>
-    </editor-bookmarks>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-<<<<<<< HEAD
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/DeliveryRole/DeliveryPersonWorkAreaJPanel.java</file>
             <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/ProviderRole/ProviderWorkAreaJPanel.java</file>
-            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/MainJFrame.java</file>
-            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/SystemAdminWorkArea/SystemAdminWorkAreaJPanel.java</file>
-=======
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/VaccineHistoryJPanel.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/Business/Organization/DeliveryOrganization.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/ManageOrdersJPanel.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/PaymentJPanel.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/ProviderRole/ProviderWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/CDCadminDashboard.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/ManagePopulation.java</file>
-            <file>file:/C:/Users/dharm/Documents/NetBeansProjects/aedGit/Final/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/ManageHospitalJPanle.java</file>
-
->>>>>>> 3eda1dbba111d549a8a7e72a86cf01037d592eed
-=======
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/AdministrativeRole/AdminWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/ManagePopulation.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/AdministrativeRole/ManageUserAccountJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/AdministrativeRole/ManageEmployeeJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/ManageOrdersJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/DeliveryRole/DeliveryPersonWorkAreaJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/ManageVaccine.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/AdministrativeRole/ManageOrganizationJPanel.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/DeliveryManager/DeliveryManagerDashboard.java</file>
-            <file>file:/C:/Users/India/Desktop/AED%20group/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/CDCAdmin/CDCadminDashboard.java</file>
->>>>>>> submaster
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/ManageHospitalJPanle.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/PHDLead/PHDLeadWorkAreaJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/DoctorRole/DoctorWorkAreaJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/LabAssistantRole/ProcessWorkRequestJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/VaccineHistoryJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/LabAssistantRole/LabAssistantWorkAreaJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/SystemAdminWorkArea/ManageCDCAdminJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/InventoryManagerRole/InventoryManagerWorkAreaJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/HospitalAdminRole/PaymentJPanel.java</file>
+            <file>file:/E:/AED/Final-Project-AED/aedFinalProject/Vaccine%20Distribution%20System/VaccineDistrubutionSystem/src/userinterface/LogisticsRole/LogisticsWorkAreaJPanel.java</file>
         </group>
     </open-files>
 </project-private>
