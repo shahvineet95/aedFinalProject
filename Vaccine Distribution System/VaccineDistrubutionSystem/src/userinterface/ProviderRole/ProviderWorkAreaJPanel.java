@@ -13,7 +13,7 @@ import Business.Organization.Organization;
 import Business.Organization.ProviderOrganization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
-import Business.WorkQueue.Extended;
+import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;

@@ -29,7 +29,7 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private EcoSystem system;
     private Network network;
-    private ProviderOrganization organization;
+    private Organization organization;
 
     /**
      * Creates new form PHDLeadWorkAreaJPanel
@@ -41,7 +41,7 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     public PHDLeadWorkAreaJPanel(JPanel userProcessContainer, Network network, UserAccount account, PHDOrganization phdorganization, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.phdorganization = phdorganization;
+        this.organization = phdorganization;
         this.enterprise = enterprise;
         this.userAccount = account;
         this.network = network;
@@ -58,6 +58,7 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
+        System.out.println("phd"+organization.getWorkQueue());
         for (WorkRequest request : organization.getWorkQueue().getWorkRequestList()){
             Object[] row = new Object[7];
             row[0] = request.getVaccine().getName();

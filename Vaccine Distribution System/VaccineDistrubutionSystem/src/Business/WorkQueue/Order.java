@@ -5,6 +5,7 @@
  */
 package Business.WorkQueue;
 
+import Business.Batch.BatchDirectory;
 import Business.Payment.Payment;
 
 /**
@@ -15,7 +16,7 @@ public class Order extends WorkRequest{
     private String network;
     private Payment hosPayment;
     private Payment cdcPayment;
-
+    private BatchDirectory batchDir;
     public String getNetwork() {
         return network;
     }
@@ -23,6 +24,7 @@ public class Order extends WorkRequest{
     Order(){
         this.hosPayment=new Payment();
         this.cdcPayment=new Payment();
+        this.batchDir = new BatchDirectory();
     }
     public void setNetwork(String network) {
         this.network = network;
@@ -42,6 +44,14 @@ public class Order extends WorkRequest{
 
     public void setCdcPayment(Payment cdcPayment) {
         this.cdcPayment = cdcPayment;
+    }
+
+    public BatchDirectory getBatchDir() {
+        return batchDir;
+    }
+
+    public void setBatchDir(BatchDirectory batchDir) {
+        this.batchDir = batchDir;
     }
     
     

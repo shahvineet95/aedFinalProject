@@ -17,7 +17,7 @@ import Business.Organization.InventoryOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Vaccine.Vaccine;
-import Business.WorkQueue.Extended;
+import Business.WorkQueue.Order;
 import Business.WorkQueue.RegisterVaccine;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -47,6 +47,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         this.account = account;
         this.enterprise = (PharmaceuticalEnterprise) enterprise;
         this.inventoryOrganization = (InventoryOrganization)organization;
+        this.network = network;
         populateBatchTable();
         populateTable();
     }
@@ -99,7 +100,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -213,41 +214,15 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
    
     private void proceedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedBtnActionPerformed
 
-//        sCardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
-//        layout.next(userProcessContainer);
-
-//        int selectedRow=ManageOrdersJTable.getSelectedRow();
-//        if(selectedRow>=0){
-//            String str1 = JOptionPane.showInputDialog(null, "Your Vaccine is Sent for Testing.Do you want to add addtional message");
-//            
-//            WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
-//            w.setStatus("PHD");
-//            w.setMessage(str1);
-//            for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
-//                        if(o.toString().equals("Delivery Organization")){
-//                            System.out.println("YAYYY"+o);
-//                            o.getWorkQueue().addCreatedWorkrequest(w);
-//                        } else {
-//                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
-//                        }
-//                    
-//            }
-//            populateTable();
-//        }
-
             int selectedRow = ManageOrdersJTable.getSelectedRow();
         if(selectedRow >= 0){
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       
-            Vaccine v = (Vaccine)ManageOrdersJTable.getValueAt(selectedRow, 0);
-            Extended w = inventoryOrganization.getWorkQueue().addWorkRequestList();
+            System.out.println(""+selectedRow);
+            Order w = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
+            
             w.setSender(account);
             w.setStatus("Order placed");
             w.setMessage(str1);
-            w.setVaccine(v);
-            w.setNetwork(network.getName());
-           
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                System.out.println("AAAA"+e);
                if(e.getEnterpriseType().equals(Distributor)) {
@@ -255,7 +230,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                     for(Organization o : e.getOrganizationDirectory().getOrganizationList()) {
                         System.out.println("A11111AAA1"+o);
                         if(o.toString().equals("Delivery Organization")){
-                            System.out.println("Adding it in provider organization"+o);
+                            System.out.println("Adding it in Delivery organization"+o);
                             o.getWorkQueue().addCreatedWorkrequest(w);
                             JOptionPane.showMessageDialog(null, "Order was placed successfully!");
                         } else {

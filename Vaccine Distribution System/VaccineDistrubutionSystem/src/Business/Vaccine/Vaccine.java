@@ -25,6 +25,15 @@ public class Vaccine {
         return vaccineId;
     }
 
+    public Vaccine(String name, Float cost, String desc, Date bestUse, int batch, String vaccineId) {
+        this.name = name;
+        this.cost = cost;
+        this.desc = desc;
+        this.bestUse = bestUse;
+        this.batch = batch;
+        this.vaccineId = vaccineId;
+    }
+
     public void setVaccineId(String vaccineId) {
         this.vaccineId = vaccineId;
     }
