@@ -184,14 +184,10 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         int selectedRow = VaccineTable.getSelectedRow();
-        if(selectedRow >= 0){
             VaccineHistoryJPanel manageEnterpriseAdminJPanel=new VaccineHistoryJPanel(userProcessContainer,business,hosOrganization);
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
-            
             layout.next(userProcessContainer);
-        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
