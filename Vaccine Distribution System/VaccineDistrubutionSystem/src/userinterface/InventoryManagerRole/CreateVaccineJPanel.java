@@ -296,14 +296,14 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (Vaccine v : business.getVaccinedir().getVaccDir()) {
-                    Object[] row = new Object[6];
-                    row[0] = v;
-                    row[1] = v.getVaccineId();
-                    row[2] = v.getBatch();
-                    row[3] = v.getCost();
-                    row[4] = v.getDesc();
-                    row[5] = v.getBestUse();
-                    model.addRow(row);
+            Object[] row = new Object[6];
+            row[0] = v;
+            row[1] = v.getVaccineId();
+            row[2] = v.getBatch();
+            row[3] = v.getCost();
+            row[4] = v.getDesc();
+            row[5] = v.getBestUse();
+            model.addRow(row);
          }
     }
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
@@ -344,9 +344,7 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
             String str1 = JOptionPane.showInputDialog(null, "Your order is sent for testing");
             Vaccine v = (Vaccine)VaccineTable.getValueAt(selectedRow, 0);
             System.out.println("org"+inventoryOrganization.getWorkQueue().addWorkRequestList2());
-//            TOdo
             RegisterVaccine rv = inventoryOrganization.getWorkQueue().addWorkRequestList2();
-            
             rv.setSender(userAccount);
             rv.setStatus("Order placed");
             rv.setMessage(str1);

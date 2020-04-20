@@ -125,7 +125,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Batch", "Quantity"
+                "Vaccine Name", "BatchId"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -203,11 +203,11 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
    public void populateBatchTable(){
        DefaultTableModel model = (DefaultTableModel) batchTable.getModel();
         model.setRowCount(0);
-        
+        System.out.println(""+enterprise.getBatchDir().getBatchStorage());
         for (Batch b :enterprise.getBatchDir().getBatchStorage()) {
             Object[] row = new Object[2];
-            row[0] = b.getBatchId();
-            row[1] = b.getVaccine().getName();
+            row[0] = b.getVaccine().getName(); 
+            row[1] = b.getBatchId(); 
             model.addRow(row);
         }
    }
