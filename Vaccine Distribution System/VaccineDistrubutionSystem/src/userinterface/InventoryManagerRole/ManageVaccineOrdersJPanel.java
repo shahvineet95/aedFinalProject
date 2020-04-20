@@ -7,9 +7,12 @@ package userinterface.InventoryManagerRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
+import Business.Network.Network;
 import Business.Organization.InventoryOrganization;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Vaccine.Vaccine;
 import Business.WorkQueue.Extended;
 import Business.WorkQueue.RegisterVaccine;
 import Business.WorkQueue.WorkRequest;
@@ -30,14 +33,16 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem ecosystem;
     private UserAccount account;
-    private InventoryOrganization organization;
+    private InventoryOrganization inventoryOrganization;
     private Enterprise enterprise;
-    public ManageVaccineOrdersJPanel(JPanel userProcessContainer, EcoSystem ecosystem,InventoryOrganization organization, UserAccount account, Enterprise enterprise) {
+    private Network network;
+    public ManageVaccineOrdersJPanel(JPanel userProcessContainer,Network network, EcoSystem ecosystem,InventoryOrganization organization, UserAccount account, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
         this.account = account;
         this.enterprise = enterprise;
+        this.inventoryOrganization = (InventoryOrganization)organization;
         populateTable();
     }
 
@@ -57,6 +62,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         ManageOrdersJTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         proceedBtn.setText("Proceed");
         proceedBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +108,10 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Manage Vaccine Orders");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,15 +126,20 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(refreshTestJButton))
                     .addComponent(proceedBtn)
-                    .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(118, 118, 118)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(486, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jButton1)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,7 +149,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(proceedBtn)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -160,23 +175,53 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 //        userProcessContainer.add("RequestLabTestJPanel", new RequestLabTestJPanel(userProcessContainer, userAccount, enterprise));
 //        layout.next(userProcessContainer);
 
-        int selectedRow=ManageOrdersJTable.getSelectedRow();
-        if(selectedRow>=0){
-            String str1 = JOptionPane.showInputDialog(null, "Your Vaccine is Sent for Testing.Do you want to add addtional message");
-            
-            WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
-            w.setStatus("PHD");
+//        int selectedRow=ManageOrdersJTable.getSelectedRow();
+//        if(selectedRow>=0){
+//            String str1 = JOptionPane.showInputDialog(null, "Your Vaccine is Sent for Testing.Do you want to add addtional message");
+//            
+//            WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
+//            w.setStatus("PHD");
+//            w.setMessage(str1);
+//            for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
+//                        if(o.toString().equals("Delivery Organization")){
+//                            System.out.println("YAYYY"+o);
+//                            o.getWorkQueue().addCreatedWorkrequest(w);
+//                        } else {
+//                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
+//                        }
+//                    
+//            }
+//            populateTable();
+//        }
+
+            int selectedRow = ManageOrdersJTable.getSelectedRow();
+        if(selectedRow >= 0){
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+       
+            Vaccine v = (Vaccine)ManageOrdersJTable.getValueAt(selectedRow, 0);
+            Extended w = inventoryOrganization.getWorkQueue().addWorkRequestList();
+            w.setSender(account);
+            w.setStatus("Order placed");
             w.setMessage(str1);
-            for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){
-                        if(o.toString().equals("PHD Organization")){
-                            System.out.println("YAYYY"+o);
+            w.setVaccine(v);
+            w.setNetwork(network.getName());
+           
+            for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
+               System.out.println("AAAA"+e);
+               if(e.getEnterpriseType().equals(Distributor)) {
+                    System.out.println("AAAA1"+e);
+                    for(Organization o : e.getOrganizationDirectory().getOrganizationList()) {
+                        System.out.println("A11111AAA1"+o);
+                        if(o.toString().equals("Delivery Organization")){
+                            System.out.println("Adding it in provider organization"+o);
                             o.getWorkQueue().addCreatedWorkrequest(w);
+                            JOptionPane.showMessageDialog(null, "Order was placed successfully!");
                         } else {
-                          //  JOptionPane.showMessageDialog(null, "Order could not be placed.");
+                            JOptionPane.showMessageDialog(null, "Order could not be placed.");
                         }
-                    
+                    }
+                } 
             }
-            populateTable();
         }
         
         
@@ -199,6 +244,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JTable ManageOrdersJTable;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton proceedBtn;
     private javax.swing.JButton refreshTestJButton;

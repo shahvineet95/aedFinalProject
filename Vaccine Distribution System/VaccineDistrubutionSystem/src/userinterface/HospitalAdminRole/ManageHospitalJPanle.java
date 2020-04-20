@@ -18,6 +18,9 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.CDCAdmin.ManageVaccine;
+import userinterface.InventoryManagerRole.ManageVaccineOrdersJPanel;
+import userinterface.SystemAdminWorkArea.ManageEnterpriseAdminJPanel;
 
 /**
  *
@@ -53,17 +56,20 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         VaccineTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         quantity = new javax.swing.JTextField();
+<<<<<<< HEAD
         jLabel3 = new javax.swing.JLabel();
         kButton1 = new keeptoo.KButton();
         kButton2 = new keeptoo.KButton();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+=======
+        jLabel8 = new javax.swing.JLabel();
+>>>>>>> submaster
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -117,7 +123,57 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
                 kButton2ActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 520, -1, -1));
+=======
+
+        jLabel2.setText("Quantity");
+
+        jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Hospital Dashboard");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(16, 16, 16)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(quantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+>>>>>>> submaster
     }// </editor-fold>//GEN-END:initComponents
      void populateTable(){
         DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
@@ -167,12 +223,16 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         int selectedRow = VaccineTable.getSelectedRow();
         if(selectedRow >= 0){
 <<<<<<< HEAD
+<<<<<<< HEAD
 //          PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel(userProcessContainer, business,hosOrganization);
 //          userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
 //          CardLayout layout=(CardLayout)userProcessContainer.getLayout();
 //          layout.next(userProcessContainer);
 =======
             PaymentJPanel manageEnterpriseAdminJPanel=new PaymentJPanel();
+=======
+            VaccineHistoryJPanel manageEnterpriseAdminJPanel=new VaccineHistoryJPanel(userProcessContainer,business,hosOrganization);
+>>>>>>> submaster
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
             
@@ -184,9 +244,16 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable VaccineTable;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+=======
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel8;
+>>>>>>> submaster
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KButton kButton1;
     private keeptoo.KButton kButton2;

@@ -89,12 +89,20 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblSelectedNode = new javax.swing.JLabel();
+<<<<<<< HEAD
         button_manageNetwork = new keeptoo.KButton();
         button_manageEnterprise = new keeptoo.KButton();
         button_manageEntAdmin = new keeptoo.KButton();
         button_cdcAdmin = new keeptoo.KButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+=======
+        btnManageNetwork = new javax.swing.JButton();
+        btnManageEnterprise = new javax.swing.JButton();
+        btnManageAdmin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+>>>>>>> submaster
 
         setLayout(new java.awt.BorderLayout());
 
@@ -112,7 +120,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -202,6 +210,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_administrator_male_50px.png"))); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 80, 50));
 
+        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("System Admin");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 400, -1));
+
         jSplitPane.setRightComponent(jPanel2);
 
         add(jSplitPane, java.awt.BorderLayout.CENTER);
@@ -254,8 +267,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private keeptoo.KButton button_manageEnterprise;
     private keeptoo.KButton button_manageNetwork;
     private javax.swing.JLabel jLabel1;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+=======
+    private javax.swing.JLabel jLabel6;
+>>>>>>> submaster
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

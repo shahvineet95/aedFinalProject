@@ -42,8 +42,13 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+<<<<<<< HEAD
         jLabel1.setText("Administrator Work Area.");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
+=======
+        jLabel1.setText("Adminstrative Work Area");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
+>>>>>>> submaster
 
         enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -91,9 +96,19 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 470, 310, 40));
 
+<<<<<<< HEAD
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_administrator_male_50px.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 70, 40));
+=======
+        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        enterpriseLabel.setText("Enterprise: ");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 150, 30));
+
+        valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        valueLabel.setText("<value>");
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 130, 20));
+>>>>>>> submaster
     }// </editor-fold>//GEN-END:initComponents
 
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed

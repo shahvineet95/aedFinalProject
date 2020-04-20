@@ -77,10 +77,14 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jLabel4 = new javax.swing.JLabel();
         kButton1 = new keeptoo.KButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+=======
+        jLabel8 = new javax.swing.JLabel();
+>>>>>>> submaster
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,7 +118,19 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
+<<<<<<< HEAD
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 510, 170));
+=======
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 480, 92));
+
+        addJButton.setText("Create Employee");
+        addJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJButtonActionPerformed(evt);
+            }
+        });
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
+>>>>>>> submaster
 
         organizationJComboBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -123,11 +139,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 230, -1));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel1.setText("Select Organization to View: ");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 200, 250, 30));
+=======
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
+
+        jLabel1.setText("Organization");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+>>>>>>> submaster
 
         jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Employee Name: ");
@@ -140,9 +163,20 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 170, 30));
 
+<<<<<<< HEAD
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Choose Organization: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
+=======
+        jLabel3.setText("Organization");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Manage Employee");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 460, -1));
+    }// </editor-fold>//GEN-END:initComponents
+>>>>>>> submaster
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,9 +240,13 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+<<<<<<< HEAD
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+=======
+    private javax.swing.JLabel jLabel8;
+>>>>>>> submaster
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KButton kButton1;
     private javax.swing.JTextField nameJTextField;
