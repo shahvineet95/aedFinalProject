@@ -5,6 +5,8 @@
  */
 package Business.WorkQueue;
 
+import Business.Batch.Batch;
+import Business.Batch.BatchDirectory;
 import java.util.Date;
 
 /**
@@ -15,6 +17,17 @@ public class RegisterVaccine extends WorkRequest{
      private String network;
      private String vaccineId;
      private String testResult;
+     private Batch batch;
+
+    public Batch getBatch() {
+        return batch;
+    }
+
+    public void setBatch(Batch batch) {
+        this.batch = batch;
+    }
+
+    
 
     public String getTestResult() {
         return testResult;

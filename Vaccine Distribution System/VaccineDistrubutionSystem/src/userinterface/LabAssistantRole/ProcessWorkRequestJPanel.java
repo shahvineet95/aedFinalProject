@@ -116,9 +116,10 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         request.setTestResult(resultJTextField.getText());
         request.setStatus("Passed to CDC");
         JOptionPane.showMessageDialog(null, "Order passed on to CDC.");
-        ArrayList<Vaccine> v = new ArrayList<Vaccine>();
-        v.add(request.getVaccine());
-       //pharmEnterprise.getBatchDir().addBatchStorage(request.getVaccine().getBatch());
+//        ArrayList<Vaccine> v = new ArrayList<Vaccine>();
+//        v.add(request.getVaccine());
+//TODODODODOD
+       pharmEnterprise.getBatchDir().addBatchStorage(request.getBatch());
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 

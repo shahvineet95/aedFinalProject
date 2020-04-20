@@ -5,9 +5,13 @@
  */
 package userinterface.InventoryManagerRole;
 
+import Business.Batch.Batch;
+import Business.Batch.BatchDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import static Business.Enterprise.Enterprise.EnterpriseType.Distributor;
+import static Business.Enterprise.Enterprise.EnterpriseType.Pharmaceutical;
+import Business.Enterprise.PharmaceuticalEnterprise;
 import Business.Network.Network;
 import Business.Organization.InventoryOrganization;
 import Business.Organization.Organization;
@@ -34,15 +38,16 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
     private EcoSystem ecosystem;
     private UserAccount account;
     private InventoryOrganization inventoryOrganization;
-    private Enterprise enterprise;
+    private PharmaceuticalEnterprise enterprise;
     private Network network;
     public ManageVaccineOrdersJPanel(JPanel userProcessContainer,Network network, EcoSystem ecosystem,InventoryOrganization organization, UserAccount account, Enterprise enterprise) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = ecosystem;
         this.account = account;
-        this.enterprise = enterprise;
+        this.enterprise = (PharmaceuticalEnterprise) enterprise;
         this.inventoryOrganization = (InventoryOrganization)organization;
+        populateBatchTable();
         populateTable();
     }
 
@@ -63,6 +68,8 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         ManageOrdersJTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        batchTable = new javax.swing.JTable();
 
         proceedBtn.setText("Proceed");
         proceedBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +119,24 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Manage Vaccine Orders");
 
+        batchTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Batch", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(batchTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,7 +156,9 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                         .addGap(118, 118, 118)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
-                .addContainerGap(653, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,10 +173,12 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                     .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(refreshTestJButton))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(proceedBtn)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -169,6 +198,19 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
+   
+   public void populateBatchTable(){
+       DefaultTableModel model = (DefaultTableModel) batchTable.getModel();
+        model.setRowCount(0);
+        
+        for (Batch b :enterprise.getBatchDir().getBatchStorage()) {
+            Object[] row = new Object[2];
+            row[0] = b.getBatchId();
+            row[1] = b.getVaccine().getName();
+            model.addRow(row);
+        }
+   }
+   
     private void proceedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedBtnActionPerformed
 
 //        sCardLayout layout = (CardLayout) userProcessContainer.getLayout();
@@ -243,10 +285,12 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageOrdersJTable;
+    private javax.swing.JTable batchTable;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton proceedBtn;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JLabel valueLabel;

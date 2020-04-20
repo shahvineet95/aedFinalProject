@@ -351,6 +351,7 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
             rv.setStatus("Order placed");
             rv.setMessage(str1);
             rv.setVaccine(v);
+            rv.setBatch(batch);
             rv.setQuantity(Integer.parseInt(txtBatch.getText()));
             // rv.setVaccineId(txtVaccineId.getText());
             rv.setNetwork(network.getName());
