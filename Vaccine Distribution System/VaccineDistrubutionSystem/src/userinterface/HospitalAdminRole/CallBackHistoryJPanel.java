@@ -167,6 +167,9 @@ public class CallBackHistoryJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
            int selectedRow = requesttable.getSelectedRow();
         CallBackVaccine w=(CallBackVaccine)requesttable.getValueAt(selectedRow, 5);
+        w.setStatus("Ready for pick up");
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+        w.setMessage(str1);
         if(selectedRow >= 0){
              for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                System.out.println("AAAA"+e);
