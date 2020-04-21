@@ -3,10 +3,11 @@
  * and open the template in the editor.
  */
 package userinterface.AdministrativeRole;
-
+import Business.EcoSystem;
 import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
+import Business.Users.User;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -19,14 +20,15 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory organizationDir;
     private JPanel userProcessContainer;
-    
+    private EcoSystem system;
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir) {
+    public ManageEmployeeJPanel(JPanel userProcessContainer,OrganizationDirectory organizationDir, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organizationDir = organizationDir;
+        this.system = system;
         populateOrganizationComboBox();
         populateOrganizationEmpComboBox();
     }
@@ -79,6 +81,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         organizationEmpJComboBox = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        phoneTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        emailTextField = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,7 +125,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, -1, -1));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +147,7 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 170, -1));
 
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -154,13 +160,24 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Manage Employee");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 460, -1));
+
+        jLabel4.setText("Phone Number");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+        add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 170, -1));
+
+        jLabel5.setText("Email Id");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
+        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
         
         Organization organization = (Organization) organizationEmpJComboBox.getSelectedItem();
         String name = nameJTextField.getText();
+        String emailId = emailTextField.getText();
+        String phoneNumber = phoneTextField.getText();
         
+    //    User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         organization.getEmployeeDirectory().createEmployee(name);
         populateTable(organization);
         
@@ -183,14 +200,18 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;
     private javax.swing.JButton backJButton;
+    private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox organizationEmpJComboBox;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;
+    private javax.swing.JTextField phoneTextField;
     // End of variables declaration//GEN-END:variables
 }

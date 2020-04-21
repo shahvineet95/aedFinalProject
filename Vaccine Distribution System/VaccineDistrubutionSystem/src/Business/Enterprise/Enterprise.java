@@ -15,6 +15,15 @@ import Business.Organization.OrganizationDirectory;
 public abstract class Enterprise extends Organization{
     
     private EnterpriseType enterpriseType;
+    private String enterpriseId;
+
+    public String getEnterpriseId() {
+        return enterpriseId;
+    }
+
+    public void setEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+    }
     private OrganizationDirectory organizationDirectory;
 
     public OrganizationDirectory getOrganizationDirectory() {

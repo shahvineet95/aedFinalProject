@@ -7,6 +7,7 @@ package Business.Organization;
 import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
+import Business.Users.UserDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public abstract class Organization {
 
     private String name;
     private WorkQueue workQueue;
+    private UserDirectory userDir;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
@@ -81,7 +83,13 @@ public abstract class Organization {
     public WorkQueue getWorkQueue() {
         return workQueue;
     }
+    public UserDirectory getUserDir() {
+        return userDir;
+    }
 
+    public void setUserDir(UserDirectory userDir) {
+        this.userDir = userDir;
+    }
     public void setName(String name) {
         this.name = name;
     }
