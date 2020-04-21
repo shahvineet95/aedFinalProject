@@ -20,7 +20,8 @@ public class Vaccine {
     private Date bestUse;
     private int batch;
     private String vaccineId;
-
+    private String manufact;
+    private String code;
     public String getVaccineId() {
         return vaccineId;
     }
@@ -44,6 +45,14 @@ public class Vaccine {
 
     public void setBatch(int batch) {
         this.batch = batch;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Date getBestUse() {
@@ -77,6 +86,14 @@ public class Vaccine {
         return desc;
     }
 
+    public String getManufact() {
+        return manufact;
+    }
+
+    public void setManufact(String manufact) {
+        this.manufact = manufact;
+    }
+    
     public void setDesc(String desc) {
         this.desc = desc;
     }

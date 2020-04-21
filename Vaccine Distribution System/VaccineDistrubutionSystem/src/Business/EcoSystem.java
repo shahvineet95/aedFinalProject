@@ -22,12 +22,13 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private ArrayList<Network> networkList;
-    private Organization cdcOrganization;
+    private static Organization cdcOrganization;
     private VaccineDirectory vaccinedir;
     
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
+            cdcOrganization=new CdcOrganization();
         }
         return business;
     }
@@ -35,7 +36,7 @@ public class EcoSystem extends Organization{
     public Network createAndAddNetwork(){
         Network network=new Network();
         networkList.add(network);
-        cdcOrganization=new CdcOrganization();
+       
         return network;
     }
     

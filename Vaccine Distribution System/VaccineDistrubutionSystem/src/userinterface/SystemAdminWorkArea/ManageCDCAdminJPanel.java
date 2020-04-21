@@ -11,6 +11,8 @@ import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.CDCAdminRole;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.RegisterVaccine;
+import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -34,18 +36,13 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-
-        populateNetworkComboBox();
+        populateTable();
+        //populateNetworkComboBox();
     }
+
+     
 
     
-
-    private void populateNetworkComboBox(){
-    }
-    
-    private void populateEnterpriseComboBox(Network network){
-        
-    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,6 +68,8 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         phoneTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         locationTextField = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        CdcTable = new javax.swing.JTable();
 
         jLabel2.setText("Username");
 
@@ -101,6 +100,16 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         jLabel7.setText("Phone Number");
 
         jLabel8.setText("Location");
+
+        CdcTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Name", "UserName", "Email", "Contact Number"
+            }
+        ));
+        jScrollPane1.setViewportView(CdcTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,8 +143,11 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(backJButton)
                         .addGap(167, 167, 167)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(155, 285, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +156,9 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(backJButton))
-                .addGap(240, 240, 240)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(usernameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -164,7 +178,7 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(phoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -175,7 +189,6 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
 
         jLabel1.getAccessibleContext().setAccessibleDescription("");
     }// </editor-fold>//GEN-END:initComponents
-
     private void submitJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitJButtonActionPerformed
         
         
@@ -185,13 +198,29 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         String emailId = emailTextField.getText();
         String phoneNumber = phoneTextField.getText();
         String location = locationTextField.getText();
-        Employee employee = system.getEmployeeDirectory().createEmployee(name, emailId, phoneNumber, location);
+        Employee employee = system.getCdcOrganization().getEmployeeDirectory().createEmployee(name, emailId, phoneNumber, location);
         //Creating User
        // User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
-        UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new CDCAdminRole());
+        UserAccount account = system.getCdcOrganization().getUserAccountDirectory().createUserAccount(username, password, employee, new CDCAdminRole());
         JOptionPane.showMessageDialog(null, "Account created Successfully");
     }//GEN-LAST:event_submitJButtonActionPerformed
+    void populateTable(){
+        DefaultTableModel model = (DefaultTableModel) CdcTable.getModel();
 
+        model.setRowCount(0);
+        try{
+        for(UserAccount w :system.getCdcOrganization().getUserAccountDirectory().getUserAccountList()) {
+            Object[] row = new Object[4];
+            row[0] = w.getEmployee();
+            row[1] = w.getUsername();
+            row[2] = w.getEmployee().getEmailId();
+            row[3] = w.getEmployee().getPhoneNumber();
+            model.addRow(row);
+            }
+        }catch(Exception e){
+            System.out.println("No CDC");
+        }
+    }
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
         userProcessContainer.remove(this);
          Component[] componentArray = userProcessContainer.getComponents();
@@ -203,6 +232,7 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_backJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CdcTable;
     private javax.swing.JButton backJButton;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel jLabel1;
@@ -212,6 +242,7 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField locationTextField;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JPasswordField passwordJPasswordField;
