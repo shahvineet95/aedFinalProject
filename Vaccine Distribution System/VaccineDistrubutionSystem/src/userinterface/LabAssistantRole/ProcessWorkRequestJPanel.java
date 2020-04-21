@@ -120,6 +120,7 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 //        v.add(request.getVaccine());
 //TODODODODOD
        pharmEnterprise.getBatchDir().addBatchStorage(request.getBatch());
+       
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 
