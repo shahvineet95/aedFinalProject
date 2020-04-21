@@ -5,9 +5,11 @@
  */
 package userinterface.CDCAdmin;
 
+import Business.Batch.Batch;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import static Business.Enterprise.Enterprise.EnterpriseType.Pharmaceutical;
+import Business.Enterprise.PharmaceuticalEnterprise;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.Payment.Payment;
@@ -39,6 +41,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         populateTable();
         populatePopulationTable();
+        jPanel1.setVisible(false);
            NetworkCombobox.removeAllItems();
         for(Network a:system.getNetworkList()){
             NetworkCombobox.addItem(a);
@@ -374,7 +377,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest w :system.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
-            Object[] row = new Object[7];
+            if(w instanceof Order){
+                            Object[] row = new Object[7];
             row[0] = w.getVaccine().getName();
             row[1] = w.getQuantity();
             row[2] = w.getQuantity()*w.getVaccine().getCost();
@@ -384,6 +388,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             row[6] = w.getMessage();
             
             model.addRow(row);
+
+            }
         }
     }
     
@@ -478,6 +484,31 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        int selectedRow = ManageOrdersJTable.getSelectedRow();
+        int count =0;
+        if(selectedRow>=0){
+            Order o = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
+            for(Network n:system.getNetworkList()){
+                if(n.getName().equals(o.getNetwork())){
+                    System.out.println("NetW"+n);
+                    for(Enterprise e:n.getEnterpriseDirectory().getEnterpriseList()){
+                        System.out.println("ENTER"+e);
+                        if(e.getEnterpriseType().equals(Pharmaceutical)){
+                            PharmaceuticalEnterprise pe = (PharmaceuticalEnterprise)e;
+                            System.out.println("PHARM"+pe);
+                            for(Batch b:pe.getBatchDir().getBatchStorage()){
+                                System.out.println("Batch:"+b.getVaccine());
+                                System.out.println("Batch:"+o.getVaccine());
+                                if(b.getVaccine().equals(o.getVaccine())){
+                                    count++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        avlNumber.setText(""+count);
     }//GEN-LAST:event_jButton7ActionPerformed
 
 

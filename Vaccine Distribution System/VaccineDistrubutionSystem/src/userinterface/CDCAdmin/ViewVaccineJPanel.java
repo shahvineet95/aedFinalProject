@@ -12,6 +12,8 @@ import static Business.Enterprise.Enterprise.EnterpriseType.Pharmaceutical;
 import Business.Enterprise.PharmaceuticalEnterprise;
 import Business.Network.Network;
 import Business.Vaccine.Vaccine;
+import Business.WorkQueue.Order;
+import Business.WorkQueue.RegisterVaccine;
 import Business.WorkQueue.WorkRequest;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -141,11 +143,12 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel model1 = (DefaultTableModel) viewBatch.getModel();
+        DefaultTableModel model1 = (DefaultTableModel) viewBatch.getModel();
         model1.setRowCount(0);
         for (Batch b :selectedEnterprise.getBatchDir().getBatchStorage()) {
+            System.out.println("bbb"+b.getVaccine());
             if(b.getVaccine().equals(selectedVaccine)){
-                Object[] row = new Object[1];
+            Object[] row = new Object[2];
             row[0] = b.getBatchId();
             row[1] = b.getVaccine();
             model1.addRow(row);
@@ -157,6 +160,7 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
 
         model.setRowCount(0);
         for (WorkRequest w :ecosystem.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
+            if(w instanceof RegisterVaccine){
             Object[] row = new Object[7];
             row[0] = w.getVaccine().getName();
             row[1] = w.getQuantity();
@@ -165,8 +169,8 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
             row[4] = w.getRequestDate();
             row[5] = w;
             row[6] = w.getMessage();
-            
             model.addRow(row);
+            }
         }
     }
     void populateData(){
@@ -190,6 +194,7 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         for(Vaccine v:ecosystem.getVaccinedir().getVaccDir()){
             VaccineDrop.addItem(v);
         }
+        selectedVaccine=ecosystem.getVaccinedir().getVaccDir().get(0);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
