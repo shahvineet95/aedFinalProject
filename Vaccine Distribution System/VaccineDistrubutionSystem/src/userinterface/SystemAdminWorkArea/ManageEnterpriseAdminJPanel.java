@@ -10,7 +10,6 @@ import Business.Enterprise.Enterprise;
 import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.UserAccount.UserAccount;
-import Business.Users.User;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
@@ -98,7 +97,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        enterpriseIdTextField = new javax.swing.JTextField();
+        locationTextField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         phoneTextField = new javax.swing.JTextField();
@@ -162,7 +161,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Enterprise Admin");
 
-        jLabel7.setText("Enterprise Id");
+        jLabel7.setText("Location");
 
         jLabel8.setText("Email Id");
 
@@ -198,7 +197,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel9))
                                 .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(enterpriseIdTextField)
+                                    .addComponent(locationTextField)
                                     .addComponent(phoneTextField)
                                     .addComponent(emailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
@@ -246,7 +245,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(enterpriseIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -275,10 +274,11 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         String emailId = emailTextField.getText();
         String phoneNumber = phoneTextField.getText();
-        String enterpriseId = enterpriseIdTextField.getText();
+        String location = locationTextField.getText();
+       
         //Create User
  //       User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
-        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name, emailId,phoneNumber, location);
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
         populateTable();        
     }//GEN-LAST:event_submitJButtonActionPerformed
@@ -296,7 +296,6 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JTextField emailTextField;
-    private javax.swing.JTextField enterpriseIdTextField;
     private javax.swing.JComboBox enterpriseJComboBox;
     private javax.swing.JTable enterpriseJTable;
     private javax.swing.JLabel jLabel1;
@@ -309,6 +308,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField locationTextField;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JComboBox networkJComboBox;
     private javax.swing.JPasswordField passwordJPasswordField;

@@ -10,7 +10,6 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
-import Business.Users.User;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -102,14 +101,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         passwordJTextField = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        name = new javax.swing.JLabel();
-        nameTxt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        emailText = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        phoneText = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        locationText = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -119,7 +111,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 570, -1, -1));
+        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, -1, -1));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 143, -1));
 
         jLabel1.setText("User Name");
@@ -200,49 +192,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Manage User Accounts");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 570, -1));
-
-        name.setText("name");
-        add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, -1, -1));
-
-        nameTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTxtActionPerformed(evt);
-            }
-        });
-        add(nameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 460, 143, -1));
-
-        jLabel7.setText("Email Id");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, 50, 20));
-        add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 500, 143, -1));
-
-        jLabel9.setText("Phone Number");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 530, 70, 20));
-
-        phoneText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phoneTextActionPerformed(evt);
-            }
-        });
-        add(phoneText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 143, -1));
-
-        jLabel10.setText("location");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 70, 20));
-
-        locationText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                locationTextActionPerformed(evt);
-            }
-        });
-        add(locationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 143, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
         String userName = nameJTextField.getText();
         String password = String.valueOf(passwordJTextField.getPassword());
-        String name = nameTxt.getText();
-        String phoneNumber = phoneText.getText();
-        String emailId = emailText.getText();
-        String location = locationText.getText();
         //Creating user
     //    User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
@@ -273,40 +228,21 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_roleJComboBoxActionPerformed
 
-    private void nameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTxtActionPerformed
-
-    private void phoneTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phoneTextActionPerformed
-
-    private void locationTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_locationTextActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton createUserJButton;
-    private javax.swing.JTextField emailText;
     private javax.swing.JComboBox employeeJComboBox;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField locationText;
-    private javax.swing.JLabel name;
     private javax.swing.JTextField nameJTextField;
-    private javax.swing.JTextField nameTxt;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JPasswordField passwordJTextField;
-    private javax.swing.JTextField phoneText;
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables

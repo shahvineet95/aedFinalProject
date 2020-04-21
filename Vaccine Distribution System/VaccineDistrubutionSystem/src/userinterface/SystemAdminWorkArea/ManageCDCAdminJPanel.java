@@ -11,7 +11,6 @@ import Business.Network.Network;
 import Business.Role.AdminRole;
 import Business.Role.CDCAdminRole;
 import Business.UserAccount.UserAccount;
-import Business.Users.User;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JOptionPane;
@@ -70,6 +69,8 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         phoneTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        locationTextField = new javax.swing.JTextField();
 
         jLabel2.setText("Username");
 
@@ -99,6 +100,8 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
 
         jLabel7.setText("Phone Number");
 
+        jLabel8.setText("Location");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,22 +117,24 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel5)
-                                    .addComponent(jLabel7))
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
                                 .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(phoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(passwordJPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(usernameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(usernameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(submitJButton))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(backJButton)
                         .addGap(167, 167, 167)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(submitJButton)))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(155, 285, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -160,8 +165,12 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(phoneTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(submitJButton)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.getAccessibleContext().setAccessibleDescription("");
@@ -175,7 +184,8 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         String emailId = emailTextField.getText();
         String phoneNumber = phoneTextField.getText();
-        Employee employee = system.getEmployeeDirectory().createEmployee(name);
+        String location = locationTextField.getText();
+        Employee employee = system.getEmployeeDirectory().createEmployee(name, emailId, phoneNumber, location);
         //Creating User
        // User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         UserAccount account = system.getUserAccountDirectory().createUserAccount(username, password, employee, new CDCAdminRole());
@@ -201,6 +211,8 @@ public class ManageCDCAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField locationTextField;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JPasswordField passwordJPasswordField;
     private javax.swing.JTextField phoneTextField;
