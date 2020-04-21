@@ -17,6 +17,7 @@ import Business.Vaccine.Vaccine;
 import Business.WorkQueue.Order;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -411,7 +412,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
        if(selectedRow>=0){
           System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
           WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
+           String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+       
           w.setStatus("CDC Approved");
+          w.setMessage(str1);
           selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
           populateTable();
            System.out.println("SelectedWorkreq"+selectedOrganization);

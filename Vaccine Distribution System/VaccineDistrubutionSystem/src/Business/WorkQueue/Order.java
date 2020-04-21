@@ -6,6 +6,7 @@
 package Business.WorkQueue;
 
 import Business.Batch.BatchDirectory;
+import Business.Organization.HospitalOrganization;
 import Business.Payment.Payment;
 
 /**
@@ -17,6 +18,7 @@ public class Order extends WorkRequest{
     private Payment hosPayment;
     private Payment cdcPayment;
     private BatchDirectory batchDir;
+    private HospitalOrganization hos;
     public String getNetwork() {
         return network;
     }
@@ -52,6 +54,14 @@ public class Order extends WorkRequest{
 
     public void setBatchDir(BatchDirectory batchDir) {
         this.batchDir = batchDir;
+    }
+
+    public HospitalOrganization getHos() {
+        return hos;
+    }
+
+    public void setHos(HospitalOrganization hos) {
+        this.hos = hos;
     }
     
     

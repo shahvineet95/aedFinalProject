@@ -159,6 +159,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
             w.setStatus("Order placed");
             w.setMessage(str1);
             w.setVaccine(v);
+            w.setHos(hosOrganization);
             w.setQuantity(Integer.parseInt(quantity.getText()));
             w.setNetwork(network.getName());
            

@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import userinterface.LabAssistantRole.LabAssistantWorkAreaJPanel;
 import javax.swing.JPanel;
+import userinterface.HospitalAdminRole.HosAdminDashboardJPanel;
 import userinterface.HospitalAdminRole.ManageHospitalJPanle;
 
 /**
@@ -21,7 +22,7 @@ public class HospitalAdmin extends Role {
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer,Network network,UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new ManageHospitalJPanle(userProcessContainer,network, account, organization, business);
+        return new HosAdminDashboardJPanel(userProcessContainer,network, account, organization, business);
     }
     
     @Override
