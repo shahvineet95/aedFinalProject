@@ -283,7 +283,6 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
      public void populateComboBox(){
        nameBox.removeAllItems();
-       
        for(int i=0;i<arr.size(); i++){
         nameBox.addItem(arr.get(i).getName());
         txtCost.setText(""+arr.get(i).getCost());
