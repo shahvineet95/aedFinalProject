@@ -108,6 +108,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         emailText = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         phoneText = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        locationText = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -117,7 +119,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                 createUserJButtonActionPerformed(evt);
             }
         });
-        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, -1, -1));
+        add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 570, -1, -1));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 143, -1));
 
         jLabel1.setText("User Name");
@@ -222,6 +224,16 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         add(phoneText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 143, -1));
+
+        jLabel10.setText("location");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 70, 20));
+
+        locationText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                locationTextActionPerformed(evt);
+            }
+        });
+        add(locationText, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 143, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
@@ -230,6 +242,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         String name = nameTxt.getText();
         String phoneNumber = phoneText.getText();
         String emailId = emailText.getText();
+        String location = locationText.getText();
         //Creating user
     //    User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
@@ -268,12 +281,17 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneTextActionPerformed
 
+    private void locationTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_locationTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_locationTextActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JButton createUserJButton;
     private javax.swing.JTextField emailText;
     private javax.swing.JComboBox employeeJComboBox;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -282,6 +300,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField locationText;
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTextField nameTxt;

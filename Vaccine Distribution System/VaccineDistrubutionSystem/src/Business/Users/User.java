@@ -13,7 +13,16 @@ public class User {
     private String name;
     private String emailId;
     private String phoneNumber;
+    private String location;
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    
     public String getName() {
         return name;
     }

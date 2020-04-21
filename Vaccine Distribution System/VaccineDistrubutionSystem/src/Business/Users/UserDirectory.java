@@ -21,11 +21,12 @@ public class UserDirectory {
     public void setUserList(ArrayList<User> userList) {
         this.userList = userList;
     }
-    public User createUser(String name, String emaiId, String phoneNumber){
+    public User createUser(String name, String emaiId, String phoneNumber, String location){
         User user = new User();
         user.setName(name);
         user.setEmailId(emaiId);
         user.setPhoneNumber(phoneNumber);
+        user.setLocation(location);
         userList.add(user);
         return user;
     }
