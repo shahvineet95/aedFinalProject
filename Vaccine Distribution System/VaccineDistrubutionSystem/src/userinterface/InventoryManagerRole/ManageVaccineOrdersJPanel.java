@@ -21,6 +21,7 @@ import Business.WorkQueue.Order;
 import Business.WorkQueue.RegisterVaccine;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -128,9 +129,16 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                 "Vaccine Name", "BatchId"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -207,7 +215,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         for (Batch b :enterprise.getBatchDir().getBatchStorage()) {
             Object[] row = new Object[2];
             row[0] = b.getVaccine().getName(); 
-            row[1] = b.getBatchId(); 
+            row[1] = b; 
             model.addRow(row);
         }
    }
@@ -215,16 +223,22 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
     private void proceedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceedBtnActionPerformed
 
             int selectedRow = ManageOrdersJTable.getSelectedRow();
+            int batchRow = batchTable.getSelectedRow();
         if(selectedRow >= 0){
-            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+            if(batchRow >= 0){
+                String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
             System.out.println(""+selectedRow);
+            
+           // Batch b = batch.get(batchRow);
+            Batch b = (Batch)batchTable.getValueAt(batchRow, 1);
+            
             Order w = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
             
             w.setSender(account);
             w.setStatus("Order placed");
             w.setMessage(str1);
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
-               System.out.println("AAAA"+e);
+               
                if(e.getEnterpriseType().equals(Distributor)) {
                     System.out.println("AAAA1"+e);
                     for(Organization o : e.getOrganizationDirectory().getOrganizationList()) {
@@ -233,11 +247,19 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
                             System.out.println("Adding it in Delivery organization"+o);
                             o.getWorkQueue().addCreatedWorkrequest(w);
                             JOptionPane.showMessageDialog(null, "Order was placed successfully!");
+                           
+                            enterprise.getBatchDir().removeBatchStorage(b);
+                            batchTable.remove(batchRow);
+
                         } else {
                             JOptionPane.showMessageDialog(null, "Order could not be placed.");
                         }
                     }
                 } 
+            }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Selected row from both tables");
             }
         }
         
@@ -247,6 +269,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
         populateTable();
+        populateBatchTable();
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
