@@ -87,8 +87,10 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         locationTextField = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        organizationJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -112,33 +114,38 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        organizationJTable.setRowHeight(24);
         jScrollPane1.setViewportView(organizationJTable);
         if (organizationJTable.getColumnModel().getColumnCount() > 0) {
             organizationJTable.getColumnModel().getColumn(0).setResizable(false);
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 480, 92));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 610, 200));
 
+        addJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         addJButton.setText("Create Employee");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, -1, -1));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 590, 220, 60));
 
+        organizationJComboBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 160, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 200, -1));
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel1.setText("Organization");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, 30));
 
+        backJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,32 +154,46 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, -1, -1));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 170, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, -1));
 
+        nameJTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 390, 170, -1));
+
+        organizationEmpJComboBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 170, 20));
+        add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 170, 30));
 
+        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Organization");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Manage Employee");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 460, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 480, -1));
 
+        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel4.setText("Phone Number");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
-        add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 170, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 430, -1, -1));
 
+        phoneTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(phoneTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 170, -1));
+
+        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel5.setText("Email Id");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, -1, -1));
-        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 170, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, -1, -1));
 
+        emailTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(emailTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 470, 170, -1));
+
+        jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel6.setText("Location");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, -1));
-        add(locationTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 170, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, -1, -1));
+
+        locationTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(locationTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed

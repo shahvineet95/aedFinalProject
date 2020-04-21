@@ -78,8 +78,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         refreshJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -106,38 +108,45 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setRowHeight(24);
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 640, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 830, 300));
 
+        assignJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         assignJButton.setText("Assign to me");
+        assignJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, -1, -1));
 
+        processJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         processJButton.setText("Process");
+        processJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 110, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 130, -1));
 
+        refreshJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         refreshJButton.setText("Refresh");
+        refreshJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 120, -1));
 
         jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Lab Assistant Work Area");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 340, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 340, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed

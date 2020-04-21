@@ -74,7 +74,6 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         createBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtBatch = new javax.swing.JTextField();
-        bestBeforeDate = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtVaccineId = new javax.swing.JTextField();
@@ -83,13 +82,15 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         nameBox = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtBatchId = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
+        setBackground(new java.awt.Color(153, 255, 153));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Name", "Vaccine Id", "Batch", "Cost", "Description", "Best Before"
@@ -103,56 +104,86 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        VaccineTable.setRowHeight(24);
         jScrollPane1.setViewportView(VaccineTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 860, 300));
+
         txtCost.setEditable(false);
+        txtCost.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(txtCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 190, -1));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 50, -1));
 
+        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Cost");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 50, -1));
 
-        jLabel4.setText("Desc");
+        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel4.setText("Description");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 100, -1));
 
         DescField.setColumns(20);
+        DescField.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         DescField.setRows(5);
         jScrollPane2.setViewportView(DescField);
 
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 190, 140));
+
+        createBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         createBtn.setText("Create");
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createBtnActionPerformed(evt);
             }
         });
+        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 340, 40));
 
+        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel5.setText("Batch");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 230, 60, -1));
 
+        txtBatch.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         txtBatch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBatchActionPerformed(evt);
             }
         });
+        add(txtBatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, 180, -1));
 
+        jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel6.setText("Best before");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 100, -1));
 
+        jLabel7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel7.setText("Vaccine Id");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 90, 30));
 
+        txtVaccineId.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         txtVaccineId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVaccineIdActionPerformed(evt);
             }
         });
+        add(txtVaccineId, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 180, -1));
 
+        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton1.setText("< Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, 130, 50));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Create Vaccine Request");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 312, -1));
 
+        nameBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         nameBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         nameBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -164,101 +195,24 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
                 nameBoxActionPerformed(evt);
             }
         });
+        add(nameBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 190, -1));
 
+        jLabel9.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel9.setText("Batch Id");
         jLabel9.setMaximumSize(new java.awt.Dimension(43, 14));
         jLabel9.setMinimumSize(new java.awt.Dimension(43, 14));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 70, -1));
 
+        txtBatchId.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         txtBatchId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBatchIdActionPerformed(evt);
             }
         });
+        add(txtBatchId, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 180, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(createBtn)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCost, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                    .addComponent(nameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtVaccineId, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBatchId, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBatch, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(59, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(jLabel7)
-                        .addComponent(txtVaccineId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtBatchId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel6))
-                    .addComponent(bestBeforeDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBatch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(createBtn)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
-        );
+        jDateChooser1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 320, 180, 30));
     }// </editor-fold>//GEN-END:initComponents
 
      public void populateComboBox(){
@@ -353,9 +307,9 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DescField;
     private javax.swing.JTable VaccineTable;
-    private com.toedter.calendar.JDateChooser bestBeforeDate;
     private javax.swing.JButton createBtn;
     private javax.swing.JButton jButton1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

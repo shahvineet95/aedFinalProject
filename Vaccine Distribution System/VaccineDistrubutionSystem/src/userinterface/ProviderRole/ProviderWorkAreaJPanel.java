@@ -40,6 +40,8 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
      * @param organization
      * @param enterprise
      */
+    
+    //Constructor
     public ProviderWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, ProviderOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
@@ -84,8 +86,10 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        workRequestJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -102,34 +106,36 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        workRequestJTable.setRowHeight(24);
         jScrollPane1.setViewportView(workRequestJTable);
         if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
             workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
             workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 810, 341));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 221, 790, 260));
 
+        button_approve.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         button_approve.setText("Forward Request");
         button_approve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_approveActionPerformed(evt);
             }
         });
-        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 180, 50));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Provider Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 810, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 800, -1));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<Enterprise Name>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 500, 20));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 520, 20));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Name: ");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed

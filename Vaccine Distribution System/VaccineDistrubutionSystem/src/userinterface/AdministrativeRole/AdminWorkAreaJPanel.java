@@ -44,39 +44,51 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setText("Adminstrative Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, -1));
 
+        userJButton.setBackground(new java.awt.Color(153, 255, 153));
+        userJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         userJButton.setText("Manage User");
+        userJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        userJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userJButtonActionPerformed(evt);
             }
         });
-        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 250, -1));
+        add(userJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 250, 40));
 
+        manageEmployeeJButton.setBackground(new java.awt.Color(153, 255, 153));
+        manageEmployeeJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         manageEmployeeJButton.setText("Manage Employee");
+        manageEmployeeJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        manageEmployeeJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
-        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 250, -1));
+        add(manageEmployeeJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 250, 40));
 
+        manageOrganizationJButton.setBackground(new java.awt.Color(153, 255, 153));
+        manageOrganizationJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         manageOrganizationJButton.setText("Manage Organization");
+        manageOrganizationJButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        manageOrganizationJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
-        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 250, -1));
+        add(manageOrganizationJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 250, 40));
 
         enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         enterpriseLabel.setText("Enterprise: ");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 150, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 100, 30));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 130, 20));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
