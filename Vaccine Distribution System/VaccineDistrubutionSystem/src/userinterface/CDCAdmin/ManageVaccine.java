@@ -60,6 +60,10 @@ public class ManageVaccine extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         manufactField = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(204, 255, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -71,7 +75,10 @@ public class ManageVaccine extends javax.swing.JPanel {
                 "Name", "Cost", "Description"
             }
         ));
+        VaccineTable.setRowHeight(24);
         jScrollPane1.setViewportView(VaccineTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 560, 170));
 
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -79,22 +86,36 @@ public class ManageVaccine extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 270, 40));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 310, 70, -1));
 
+        nameField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 170, -1));
+
+        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Code");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 50, 20));
 
+        codeField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         codeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 codeFieldActionPerformed(evt);
             }
         });
+        add(codeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 170, -1));
 
-        jLabel4.setText("Desc");
+        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel4.setText("Description");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 403, 110, 30));
 
         DescField.setColumns(20);
         DescField.setRows(5);
         jScrollPane2.setViewportView(DescField);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 170, 120));
 
         jButton3.setText("< Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -102,114 +123,48 @@ public class ManageVaccine extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Manage Vaccine");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 55, 412, -1));
 
+        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel5.setText("Batch Size");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 100, -1));
 
+        batchField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         batchField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 batchFieldActionPerformed(evt);
             }
         });
+        add(batchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 170, -1));
 
+        jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel6.setText("Cost");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 40, 20));
 
+        CostField2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         CostField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CostField2ActionPerformed(evt);
             }
         });
+        add(CostField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 170, -1));
 
+        jLabel7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel7.setText("Manufacture:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 110, 20));
 
+        manufactField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         manufactField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manufactFieldActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(134, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jButton1)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(CostField2))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(codeField)
-                                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(batchField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(manufactField))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton3)))
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton3)
-                .addGap(17, 17, 17)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(codeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(3, 3, 3))))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(batchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(CostField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(manufactField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
-                .addGap(42, 42, 42))
-        );
+        add(manufactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 170, -1));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
          DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();

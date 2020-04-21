@@ -143,7 +143,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 550, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 530, 130, -1));
 
         backJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         backJButton.setText("<< Back");

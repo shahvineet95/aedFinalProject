@@ -59,8 +59,14 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         viewBatch = new javax.swing.JTable();
 
-        jLabel1.setText("View Vaccine");
+        setBackground(new java.awt.Color(204, 255, 204));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setText("View Vaccine");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 190, 40));
+
+        ViewVaccine.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         ViewVaccine.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -69,21 +75,35 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
                 "BatchID", "Vaccine", "Network", "Title 4"
             }
         ));
+        ViewVaccine.setRowHeight(24);
         jScrollPane1.setViewportView(ViewVaccine);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 610, 230));
+
+        networkDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(networkDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 90, -1));
+
+        EnterpriseDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        add(EnterpriseDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 92, -1));
+
+        VaccineDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineDrop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VaccineDropActionPerformed(evt);
             }
         });
+        add(VaccineDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 90, -1));
 
+        jButton1.setFont(new java.awt.Font("Product Sans", 0, 24)); // NOI18N
         jButton1.setText("Search");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 385, 220, 40));
 
+        viewBatch.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         viewBatch.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -92,49 +112,10 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
                 "BatchID", "Vaccine"
             }
         ));
+        viewBatch.setRowHeight(24);
         jScrollPane2.setViewportView(viewBatch);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(networkDrop, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
-                                .addComponent(EnterpriseDrop, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(VaccineDrop, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(155, 155, 155)
-                        .addComponent(jLabel1)))
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(networkDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EnterpriseDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VaccineDrop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 610, 200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void VaccineDropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VaccineDropActionPerformed

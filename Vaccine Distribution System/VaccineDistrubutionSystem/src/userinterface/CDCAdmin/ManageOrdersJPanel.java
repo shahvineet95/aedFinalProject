@@ -109,6 +109,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        ManageOrdersJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         ManageOrdersJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -125,10 +126,12 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        ManageOrdersJTable.setRowHeight(24);
         jScrollPane1.setViewportView(ManageOrdersJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 77, 881, 192));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 77, 750, 200));
 
+        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton1.setText("Approve");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,29 +140,35 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton2.setText("Decline");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
 
+        NetworkCombobox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         NetworkCombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NetworkComboboxActionPerformed(evt);
             }
         });
-        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 296, 102, -1));
+        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 290, 140, -1));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Network:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 299, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, 30));
 
+        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Organization:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 299, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 30));
 
+        organizationCombo.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationCombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 organizationComboActionPerformed(evt);
             }
         });
-        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(291, 296, 143, -1));
+        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 160, -1));
 
+        populationTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         populationTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -168,38 +177,43 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 "State ", "Population"
             }
         ));
+        populationTable.setRowHeight(24);
         jScrollPane2.setViewportView(populationTable);
         if (populationTable.getColumnModel().getColumnCount() > 0) {
             populationTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 77, 160, 192));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 77, 270, 700));
 
+        jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton3.setText("< Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 0, -1, -1));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Manage Orders");
         add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 29, 402, -1));
 
+        jButton4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton4.setText("Pay");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 342, -1, -1));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Payment Details"));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 255, 204));
         jLabel4.setText("Credit Card Number:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 34, -1, -1));
 
@@ -207,6 +221,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jPanel1.add(NameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 150, -1));
 
         jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 255, 204));
         jLabel5.setText("Expiry Date:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, -1));
 
@@ -219,8 +234,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jPanel1.add(expDateField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 255, 204));
         jLabel6.setText("CVC code:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, -1, 30));
 
         CvcField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         CvcField.addActionListener(new java.awt.event.ActionListener() {
@@ -228,29 +244,33 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 CvcFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(CvcField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 80, 62, 40));
+        jPanel1.add(CvcField, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 90, 90, 30));
 
         jLabel7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 255, 204));
         jLabel7.setText("Name :");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 30));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 140, 60, 30));
 
         cardNumberField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jPanel1.add(cardNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 162, -1));
+        jPanel1.add(cardNumberField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 320, -1));
 
         jLabel9.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 255, 204));
         jLabel9.setText("Email :");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 60, 30));
 
         emailField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jPanel1.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, 150, -1));
 
         jLabel10.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 255, 204));
         jLabel10.setText("Amount :");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 255, 204));
         jLabel11.setText("xxxx");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 50, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 70, -1));
 
         jButton5.setText("Pay Now");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -258,25 +278,27 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 180, 50));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 180, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 540, 350));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 550, 350));
 
+        jButton6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton6.setText("View Bill");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 342, -1, -1));
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
+        jButton7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton7.setText("Check Availibility");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(452, 295, -1, -1));
+        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
         add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 295, 9, 23));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
