@@ -42,24 +42,22 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
     }
     
-    public void populateTable(){
-        DefaultTableModel model = (DefaultTableModel)workRequestJTable.getModel();
-        
+   void populateTable(){
+         DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
+
         model.setRowCount(0);
-        
-        for(WorkRequest request : labOrganization.getWorkQueue().getWorkRequestList()){
-            Object[] row = new Object[8];
-            row[0] = request;
-            row[1] = request.getSender().getEmployee().getName();
-            row[2] = request.getReceiver() == null ? null : request.getReceiver().getEmployee().getName();
-            row[3] = request.getStatus();
-            row[4] = request.getVaccine().getName();
-            row[5] = request.getVaccine().getVaccineId();
-            row[6] = request.getVaccine().getBestUse();
-            row[7] = request.getVaccine().getBatch();
+        for (WorkRequest v : labOrganization.getWorkQueue().getWorkRequestList()) {
+            if(v instanceof RegisterVaccine){
+            Object[] row = new Object[5];
+            row[0] = ((RegisterVaccine) v).getBatch().getBatchId();
+            row[1] = v.getVaccine();
+            row[2] = v.getVaccine().getCost();
+            row[3] = v.getStatus();
+            row[4] = v.getMessage();
             
             model.addRow(row);
-        }
+            }
+         }
     }
 
     /**
@@ -71,48 +69,16 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
         assignJButton = new javax.swing.JButton();
         processJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        VaccineTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        workRequestJTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Message", "Sender", "Receiver", "Status", "Vaccine Name", "Vaccine Id", "Best Before", "Batch"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        workRequestJTable.setRowHeight(24);
-        jScrollPane1.setViewportView(workRequestJTable);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 830, 300));
 
         assignJButton.setBackground(new java.awt.Color(0, 51, 51));
         assignJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
@@ -156,17 +122,39 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Lab Assistant Work Area");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 340, -1));
+
+        VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "BatchID", "Vaccine", "Cost", "status", "message"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        VaccineTable.setRowHeight(24);
+        jScrollPane1.setViewportView(VaccineTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 860, 300));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
 
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = VaccineTable.getSelectedRow();
         
         if (selectedRow < 0){
             return;
         }
         
-        WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
+        WorkRequest request = (WorkRequest)VaccineTable.getValueAt(selectedRow, 0);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         populateTable();
@@ -175,13 +163,13 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         
-        int selectedRow = workRequestJTable.getSelectedRow();
+        int selectedRow = VaccineTable.getSelectedRow();
         
         if (selectedRow < 0){
             return;
         }
         
-        RegisterVaccine request = (RegisterVaccine)workRequestJTable.getValueAt(selectedRow, 0);
+        RegisterVaccine request = (RegisterVaccine)VaccineTable.getValueAt(selectedRow, 0);
      
         request.setStatus("Processing");
         
@@ -197,12 +185,12 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable VaccineTable;
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
-    private javax.swing.JTable workRequestJTable;
     // End of variables declaration//GEN-END:variables
 }

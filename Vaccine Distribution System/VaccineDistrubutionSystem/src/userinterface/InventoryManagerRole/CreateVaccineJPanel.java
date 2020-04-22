@@ -94,11 +94,11 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Name", "Vaccine Id", "Batch", "Cost", "Description", "Best Before"
+                "BatchID", "Vaccine", "Cost", "status", "message"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -241,13 +241,13 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (WorkRequest v : inventoryOrganization.getWorkQueue().getWorkRequestList()) {
             if(v instanceof RegisterVaccine){
-            Object[] row = new Object[6];
-            row[0] = v;
-            row[1] = v;
-            row[2] = v;
-            row[3] = v;
-            row[4] = v;
-            row[5] = v;
+            Object[] row = new Object[5];
+            row[0] = ((RegisterVaccine) v).getBatch().getBatchId();
+            row[1] = v.getVaccine();
+            row[2] = v.getVaccine().getCost();
+            row[3] = v.getStatus();
+            row[4] = v.getMessage();
+            
             model.addRow(row);
             }
          }
@@ -276,7 +276,8 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
                         }
                     }
                 }
-            }      
+            }   
+            populateTable();
     }//GEN-LAST:event_createBtnActionPerformed
 
     private void txtBatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBatchActionPerformed

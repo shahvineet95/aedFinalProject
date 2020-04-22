@@ -405,7 +405,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
           int selectedRow = ManageOrdersJTable.getSelectedRow();
         if(selectedRow >= 0){
-            selectedWorkrequest = (Order)ManageOrdersJTable.getValueAt(selectedRow, 3);
+            selectedWorkrequest = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
             if(!selectedWorkrequest.getHosPayment().isCompleted()){
                  JOptionPane.showMessageDialog(null, "You Can not Process further");
                  return;
@@ -420,7 +420,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
           int selectedRow = ManageOrdersJTable.getSelectedRow();
         if(selectedRow >= 0){
-            selectedWorkrequest=(Order)ManageOrdersJTable.getValueAt(selectedRow, 3);
+            selectedWorkrequest=(Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
             if(!selectedWorkrequest.getCdcPayment().isCompleted()){
                  JOptionPane.showMessageDialog(null, "You Can not Process further");
                  return;

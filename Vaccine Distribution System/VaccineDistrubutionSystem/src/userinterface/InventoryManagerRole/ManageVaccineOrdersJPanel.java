@@ -185,7 +185,7 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
    public void populateTable(){
         DefaultTableModel model = (DefaultTableModel) ManageOrdersJTable.getModel();
         model.setRowCount(0);
-        for (WorkRequest w :ecosystem.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
+        for (WorkRequest w :inventoryOrganization.getWorkQueue().getWorkRequestList()) {
             Object[] row = new Object[7];
             row[0] = w.getVaccine().getName();
             row[1] = w.getQuantity();
