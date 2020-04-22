@@ -49,7 +49,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         for (WorkRequest v : labOrganization.getWorkQueue().getWorkRequestList()) {
             if(v instanceof RegisterVaccine){
             Object[] row = new Object[5];
-            row[0] = ((RegisterVaccine) v).getBatch().getBatchId();
+            row[0] = v;
             row[1] = v.getVaccine();
             row[2] = v.getVaccine().getCost();
             row[3] = v.getStatus();
