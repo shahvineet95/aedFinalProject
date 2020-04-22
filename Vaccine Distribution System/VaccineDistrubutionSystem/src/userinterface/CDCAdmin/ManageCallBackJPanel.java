@@ -60,6 +60,8 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -84,9 +86,11 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
         ManageOrdersJTable.setRowHeight(24);
         jScrollPane1.setViewportView(ManageOrdersJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 760, 280));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 790, 310));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Create");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +98,7 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 430, 300, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 300, 50));
 
         jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton3.setText("< Back");
@@ -108,10 +112,17 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Manage Vaccine Back");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 402, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 80, 50));
 
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 255, 153));
         jButton2.setText("Call Back Vaccine History");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +130,17 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 300, 50));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 570, 300, 50));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Manage Vaccine Back");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 402, -1));
+
+        jLabel10.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_syringe_50px.png"))); // NOI18N
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 80, 50));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
         DefaultTableModel model = (DefaultTableModel) ManageOrdersJTable.getModel();
@@ -170,13 +191,22 @@ public class ManageCallBackJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageOrdersJTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

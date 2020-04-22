@@ -63,13 +63,15 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
-        jLabel3.setText("Vaccine In-Voice");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_invoice_50px_1.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 120, 60));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Hospital Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -105,7 +107,7 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel11.setText("xxxxxxx");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 390, 130));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 390, 140));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -141,7 +143,7 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel13.setText("Credit card");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 390, 140));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 310, 390, 170));
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 51));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vaccine Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -187,7 +189,11 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel21.setText("xxxxx");
         jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, 30));
 
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 390, 220));
+        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 390, 220));
+
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel7.setText("Vaccine In-Voice");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
     void populateData(){
         hosname.setText(selectedwr.getSender().getEmployee().getName());
@@ -216,6 +222,7 @@ public class ViewBillJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

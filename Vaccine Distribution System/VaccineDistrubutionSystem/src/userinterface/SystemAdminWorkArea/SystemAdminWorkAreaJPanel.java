@@ -133,7 +133,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         lblSelectedNode.setText("<View_selected_node>");
         jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 25, -1, -1));
 
-        btnManageNetwork.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        btnManageNetwork.setBackground(new java.awt.Color(0, 51, 51));
+        btnManageNetwork.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        btnManageNetwork.setForeground(new java.awt.Color(153, 255, 102));
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +143,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageNetworkActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 280, 60));
+        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 340, 50));
 
-        btnManageEnterprise.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        btnManageEnterprise.setBackground(new java.awt.Color(0, 51, 51));
+        btnManageEnterprise.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        btnManageEnterprise.setForeground(new java.awt.Color(153, 255, 102));
         btnManageEnterprise.setText("Manage Enterprise");
         btnManageEnterprise.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnManageEnterprise.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +155,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageEnterpriseActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 280, 60));
+        jPanel2.add(btnManageEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 340, 50));
 
-        btnManageAdmin.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        btnManageAdmin.setBackground(new java.awt.Color(0, 51, 51));
+        btnManageAdmin.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        btnManageAdmin.setForeground(new java.awt.Color(153, 255, 102));
         btnManageAdmin.setText("Manage Enterprise Admin");
         btnManageAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnManageAdmin.addActionListener(new java.awt.event.ActionListener() {
@@ -161,9 +167,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 btnManageAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 280, 60));
+        jPanel2.add(btnManageAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 340, 50));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 102));
         jButton1.setText("Manage CDC Manager");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -171,17 +179,17 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 280, 60));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 340, 50));
 
         jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_administrator_male_50px.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 120, 50));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_admin_settings_male_50px_1.png"))); // NOI18N
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 120, 60));
 
         jLabel7.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("System Admin");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 240, 50));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 240, 50));
 
         jSplitPane.setRightComponent(jPanel2);
 

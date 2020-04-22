@@ -51,7 +51,6 @@ public class ManageVaccine extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         DescField = new javax.swing.JTextArea();
-        jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         batchField = new javax.swing.JTextField();
@@ -59,8 +58,10 @@ public class ManageVaccine extends javax.swing.JPanel {
         CostField2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         manufactField = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
@@ -78,26 +79,30 @@ public class ManageVaccine extends javax.swing.JPanel {
         VaccineTable.setRowHeight(24);
         jScrollPane1.setViewportView(VaccineTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 560, 170));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 610, 200));
 
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Create");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 270, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 630, 320, 60));
 
-        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 310, 70, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 70, -1));
 
         nameField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 310, 170, -1));
+        add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 170, -1));
 
-        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Code");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 50, 20));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 420, 50, 20));
 
         codeField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         codeField.addActionListener(new java.awt.event.ActionListener() {
@@ -105,34 +110,31 @@ public class ManageVaccine extends javax.swing.JPanel {
                 codeFieldActionPerformed(evt);
             }
         });
-        add(codeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 170, -1));
+        add(codeField, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 170, -1));
 
-        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel4.setText("Description");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 403, 110, 30));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 110, 30));
 
         DescField.setColumns(20);
         DescField.setRows(5);
         jScrollPane2.setViewportView(DescField);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 170, 120));
-
-        jButton3.setText("< Back");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 170, 120));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Manage Vaccine");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(307, 55, 412, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 50));
 
-        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel5.setText("Batch Size");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 310, 100, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 100, -1));
 
         batchField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         batchField.addActionListener(new java.awt.event.ActionListener() {
@@ -140,11 +142,11 @@ public class ManageVaccine extends javax.swing.JPanel {
                 batchFieldActionPerformed(evt);
             }
         });
-        add(batchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 170, -1));
+        add(batchField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 380, 170, -1));
 
-        jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel6.setText("Cost");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 40, 20));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 50, 20));
 
         CostField2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         CostField2.addActionListener(new java.awt.event.ActionListener() {
@@ -152,11 +154,11 @@ public class ManageVaccine extends javax.swing.JPanel {
                 CostField2ActionPerformed(evt);
             }
         });
-        add(CostField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 350, 170, -1));
+        add(CostField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 420, 170, -1));
 
-        jLabel7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel7.setText("Manufacture:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 390, 110, 20));
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        jLabel7.setText("Manufacture");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 460, 130, 20));
 
         manufactField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         manufactField.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +166,17 @@ public class ManageVaccine extends javax.swing.JPanel {
                 manufactFieldActionPerformed(evt);
             }
         });
-        add(manufactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 170, -1));
+        add(manufactField, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 170, -1));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Manage Vaccine");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 412, -1));
+
+        jLabel10.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_syringe_50px_4.png"))); // NOI18N
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 90, 50));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
          DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
@@ -195,13 +207,6 @@ public class ManageVaccine extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_codeFieldActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void batchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batchFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_batchFieldActionPerformed
@@ -214,6 +219,13 @@ public class ManageVaccine extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_manufactFieldActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CostField2;
@@ -222,7 +234,7 @@ public class ManageVaccine extends javax.swing.JPanel {
     private javax.swing.JTextField batchField;
     private javax.swing.JTextField codeField;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -230,6 +242,7 @@ public class ManageVaccine extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField manufactField;

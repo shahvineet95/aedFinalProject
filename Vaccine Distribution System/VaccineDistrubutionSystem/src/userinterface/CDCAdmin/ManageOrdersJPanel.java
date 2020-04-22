@@ -85,8 +85,6 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         organizationCombo = new javax.swing.JComboBox();
         jScrollPane2 = new javax.swing.JScrollPane();
         populationTable = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -105,6 +103,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         avlNumber = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -129,7 +130,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         ManageOrdersJTable.setRowHeight(24);
         jScrollPane1.setViewportView(ManageOrdersJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 77, 750, 200));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 750, 200));
 
         jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton1.setText("Approve");
@@ -138,11 +139,11 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 120, 40));
 
         jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton2.setText("Decline");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 110, 40));
 
         NetworkCombobox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         NetworkCombobox.addActionListener(new java.awt.event.ActionListener() {
@@ -150,15 +151,15 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 NetworkComboboxActionPerformed(evt);
             }
         });
-        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 290, 140, -1));
+        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Network:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Organization:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, -1, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, -1, 30));
 
         organizationCombo.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +167,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 organizationComboActionPerformed(evt);
             }
         });
-        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 160, -1));
+        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 160, -1));
 
         populationTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         populationTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -183,21 +184,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             populationTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 77, 270, 700));
-
-        jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jButton3.setText("< Back");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Manage Orders");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 29, 402, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, 270, 700));
 
         jButton4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton4.setText("Pay");
@@ -206,7 +193,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, -1, -1));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 80, 40));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -272,6 +259,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jLabel11.setText("xxxx");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, 70, -1));
 
+        jButton5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton5.setText("Pay Now");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,7 +268,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 180, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 550, 350));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 550, 350));
 
         jButton6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton6.setText("View Bill");
@@ -289,7 +277,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton6ActionPerformed(evt);
             }
         });
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 120, 40));
 
         jButton7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton7.setText("Check Availibility");
@@ -298,8 +286,28 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton7ActionPerformed(evt);
             }
         });
-        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
-        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(597, 295, 9, 23));
+        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 190, 40));
+        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 9, 23));
+
+        jLabel12.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 80, 50));
+
+        jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Manage Orders");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 402, -1));
+
+        jLabel14.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_management_50px.png"))); // NOI18N
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 80, 50));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
         DefaultTableModel model = (DefaultTableModel) ManageOrdersJTable.getModel();
@@ -367,13 +375,6 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
            }
        } 
     }//GEN-LAST:event_NetworkComboboxActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void expDateFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expDateFieldActionPerformed
         // TODO add your handling code here:
@@ -443,6 +444,13 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         avlNumber.setText(""+count);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CvcField;
@@ -455,13 +463,14 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField expDateField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

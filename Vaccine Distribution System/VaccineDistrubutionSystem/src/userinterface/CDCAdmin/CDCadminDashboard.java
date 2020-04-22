@@ -43,11 +43,14 @@ public class CDCadminDashboard extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(153, 255, 153));
         jButton1.setText("Manage Population");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -55,9 +58,11 @@ public class CDCadminDashboard extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 270, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 320, 40));
 
-        manageOrderBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        manageOrderBtn.setBackground(new java.awt.Color(0, 51, 51));
+        manageOrderBtn.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        manageOrderBtn.setForeground(new java.awt.Color(153, 255, 153));
         manageOrderBtn.setText("Manage Orders");
         manageOrderBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         manageOrderBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -65,9 +70,11 @@ public class CDCadminDashboard extends javax.swing.JPanel {
                 manageOrderBtnActionPerformed(evt);
             }
         });
-        add(manageOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 270, 40));
+        add(manageOrderBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 320, 40));
 
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(153, 255, 153));
         jButton2.setText("Manage Vaccines");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -75,14 +82,16 @@ public class CDCadminDashboard extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 270, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 320, 40));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("CDC Admin");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 430, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_admin_settings_male_50px_1.png"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 70, 50));
 
-        jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(0, 51, 51));
+        jButton3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(153, 255, 153));
         jButton3.setText("Manage Vaccine Recall");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -90,9 +99,11 @@ public class CDCadminDashboard extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 510, 270, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 510, 320, 40));
 
-        jButton4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(0, 51, 51));
+        jButton4.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(153, 255, 153));
         jButton4.setText("View Vaccine");
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +111,12 @@ public class CDCadminDashboard extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 440, 270, 40));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 320, 40));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("CDC Admin Work Area");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 430, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -146,6 +162,7 @@ public class CDCadminDashboard extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton manageOrderBtn;
     // End of variables declaration//GEN-END:variables
 }

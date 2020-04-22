@@ -58,13 +58,15 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         viewBatch = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
-        jLabel1.setText("View Vaccine");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 190, 40));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_view_50px.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 70, 50));
 
         ViewVaccine.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         ViewVaccine.setModel(new javax.swing.table.DefaultTableModel(
@@ -81,10 +83,10 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 610, 230));
 
         networkDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        add(networkDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 90, -1));
+        add(networkDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 110, -1));
 
         EnterpriseDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        add(EnterpriseDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 92, -1));
+        add(EnterpriseDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 390, 120, -1));
 
         VaccineDrop.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineDrop.addActionListener(new java.awt.event.ActionListener() {
@@ -92,10 +94,11 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
                 VaccineDropActionPerformed(evt);
             }
         });
-        add(VaccineDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 90, -1));
+        add(VaccineDrop, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 390, 120, -1));
 
         jButton1.setFont(new java.awt.Font("Product Sans", 0, 24)); // NOI18N
         jButton1.setText("Search");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -116,6 +119,10 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(viewBatch);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 610, 200));
+
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel2.setText("View Vaccine");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 190, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void VaccineDropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VaccineDropActionPerformed
@@ -184,6 +191,7 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
     private javax.swing.JTable ViewVaccine;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox networkDrop;
