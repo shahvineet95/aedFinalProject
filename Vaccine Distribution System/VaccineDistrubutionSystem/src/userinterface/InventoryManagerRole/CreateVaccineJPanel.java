@@ -77,12 +77,13 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtVaccineId = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         nameBox = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         txtBatchId = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -107,21 +108,21 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         VaccineTable.setRowHeight(24);
         jScrollPane1.setViewportView(VaccineTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 860, 300));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 860, 300));
 
         txtCost.setEditable(false);
         txtCost.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         add(txtCost, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 190, -1));
 
-        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 50, -1));
 
-        jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Cost");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 50, -1));
 
-        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel4.setText("Description");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 100, -1));
 
@@ -132,18 +133,21 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 190, 140));
 
-        createBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        createBtn.setBackground(new java.awt.Color(0, 51, 51));
+        createBtn.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        createBtn.setForeground(new java.awt.Color(204, 255, 204));
         createBtn.setText("Create");
+        createBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         createBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createBtnActionPerformed(evt);
             }
         });
-        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 340, 40));
+        add(createBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 340, 50));
 
-        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel5.setText("Batch");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(595, 230, 60, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 60, -1));
 
         txtBatch.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         txtBatch.addActionListener(new java.awt.event.ActionListener() {
@@ -153,11 +157,11 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         });
         add(txtBatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 230, 180, -1));
 
-        jLabel6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel6.setText("Best before");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, 100, -1));
 
-        jLabel7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel7.setText("Vaccine Id");
         add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 90, 30));
 
@@ -169,19 +173,16 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         });
         add(txtVaccineId, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, 180, -1));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jButton1.setText("< Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, 130, 50));
-
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Create Vaccine Request");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 312, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 70, 50));
 
         nameBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         nameBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -197,11 +198,11 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         });
         add(nameBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 190, -1));
 
-        jLabel9.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel9.setText("Batch Id");
         jLabel9.setMaximumSize(new java.awt.Dimension(43, 14));
         jLabel9.setMinimumSize(new java.awt.Dimension(43, 14));
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 70, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 70, -1));
 
         txtBatchId.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         txtBatchId.addActionListener(new java.awt.event.ActionListener() {
@@ -213,6 +214,16 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
 
         jDateChooser1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 320, 180, 30));
+
+        jLabel10.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Create Vaccine Request");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 312, -1));
+
+        jLabel11.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_syringe_50px.png"))); // NOI18N
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 70, 50));
     }// </editor-fold>//GEN-END:initComponents
 
      public void populateComboBox(){
@@ -276,13 +287,6 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtVaccineIdActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void nameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameBoxActionPerformed
@@ -303,13 +307,21 @@ public class CreateVaccineJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBatchIdActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea DescField;
     private javax.swing.JTable VaccineTable;
     private javax.swing.JButton createBtn;
-    private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

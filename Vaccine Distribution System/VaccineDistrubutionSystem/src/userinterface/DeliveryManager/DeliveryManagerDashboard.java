@@ -59,6 +59,7 @@ public class DeliveryManagerDashboard extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,28 +82,35 @@ public class DeliveryManagerDashboard extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(ManageOrdersJTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 820, 300));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 820, 300));
 
         jComboBox1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 350, -1));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 350, -1));
 
-        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Delivery Person : ");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, -1, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 480, -1, 30));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 255, 204));
         jButton1.setText("Assign");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 200, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 550, 270, 60));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Delivery Manager Dashboard");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 426, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_dashboard_50px.png"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 70, 60));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Delivery Manager Dashboard");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 426, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -138,6 +146,7 @@ public class DeliveryManagerDashboard extends javax.swing.JPanel {
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

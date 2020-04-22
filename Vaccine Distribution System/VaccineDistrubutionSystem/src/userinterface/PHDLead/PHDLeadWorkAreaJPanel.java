@@ -92,44 +92,49 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         populationField = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         workRequestJTable = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jButton1.setText("Approve");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, 240, 60));
 
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jButton2.setText("Deny");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, -1, -1));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 220, 60));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PHD Lead Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 750, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_admin_settings_male_50px_1.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 80, 60));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 568, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 568, -1));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel3.setText("Enterprise:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel2.setText("State Population : ");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
+        populationField.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         populationField.setText("<>");
-        add(populationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+        add(populationField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 80, -1));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,7 +154,12 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(workRequestJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 750, 189));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 750, 189));
+
+        jLabel4.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("PHD Lead Work Area");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 750, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -187,6 +197,7 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel populationField;
     private javax.swing.JLabel valueLabel;

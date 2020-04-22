@@ -64,6 +64,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         quantity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -82,25 +83,31 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 640, 210));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(0, 51, 51));
+        jButton1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(204, 255, 153));
         jButton1.setText("Place Order");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 210, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 210, 50));
 
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 153));
         jButton2.setText("VIew Order History");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 210, 50));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 210, 50));
 
-        jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel2.setText("Quantity");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, 30));
 
@@ -109,8 +116,13 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Hospital Dashboard");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 312, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_dashboard_50px.png"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 30, 60, 50));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Hospital Dashboard");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 312, -1));
     }// </editor-fold>//GEN-END:initComponents
      void populateTable(){
          DefaultTableModel model = (DefaultTableModel) VaccineTable.getModel();
@@ -175,6 +187,7 @@ public class ManageHospitalJPanle extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField quantity;
     // End of variables declaration//GEN-END:variables

@@ -85,6 +85,7 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -115,19 +116,19 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 221, 790, 260));
 
-        button_approve.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        button_approve.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         button_approve.setText("Forward Request");
         button_approve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_approveActionPerformed(evt);
             }
         });
-        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 180, 50));
+        add(button_approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 240, 50));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Provider Work Area");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 800, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_work_50px.png"))); // NOI18N
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 40, 80, 60));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         valueLabel.setText("<Enterprise Name>");
@@ -136,6 +137,11 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Name: ");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 160, -1));
+
+        jLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Provider Work Area");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 800, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void button_approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_approveActionPerformed
@@ -170,6 +176,7 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_approve;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel valueLabel;

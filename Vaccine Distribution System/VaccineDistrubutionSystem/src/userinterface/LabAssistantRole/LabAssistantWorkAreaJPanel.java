@@ -77,6 +77,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
         processJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,7 +114,8 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 830, 300));
 
-        assignJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        assignJButton.setBackground(new java.awt.Color(0, 51, 51));
+        assignJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         assignJButton.setText("Assign to me");
         assignJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         assignJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -121,9 +123,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 assignJButtonActionPerformed(evt);
             }
         });
-        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, -1, -1));
+        add(assignJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 190, 50));
 
-        processJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        processJButton.setBackground(new java.awt.Color(0, 51, 51));
+        processJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         processJButton.setText("Process");
         processJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -131,9 +134,10 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 490, 130, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 180, 50));
 
-        refreshJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        refreshJButton.setBackground(new java.awt.Color(0, 51, 51));
+        refreshJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -141,12 +145,17 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 120, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, 170, 50));
 
         jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Lab Assistant Work Area");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 340, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_lab_items_50px.png"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 80, 50));
+
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Lab Assistant Work Area");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 340, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
@@ -190,6 +199,7 @@ public class LabAssistantWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;

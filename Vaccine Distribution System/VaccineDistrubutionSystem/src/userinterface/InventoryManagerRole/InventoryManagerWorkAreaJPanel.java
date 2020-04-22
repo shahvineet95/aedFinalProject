@@ -57,6 +57,7 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         manageVaccineBtn = new javax.swing.JButton();
         createVaccineBtn = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,26 +67,37 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Inventory Manager Work Area");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_in_inventory_50px.png"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 130, 60));
 
-        manageVaccineBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        manageVaccineBtn.setBackground(new java.awt.Color(0, 51, 51));
+        manageVaccineBtn.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        manageVaccineBtn.setForeground(new java.awt.Color(153, 255, 153));
         manageVaccineBtn.setText("Manage Vaccines Orders");
+        manageVaccineBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         manageVaccineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVaccineBtnActionPerformed(evt);
             }
         });
-        add(manageVaccineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 250, 45));
+        add(manageVaccineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 340, 60));
 
-        createVaccineBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        createVaccineBtn.setBackground(new java.awt.Color(0, 51, 51));
+        createVaccineBtn.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        createVaccineBtn.setForeground(new java.awt.Color(153, 255, 153));
         createVaccineBtn.setText("Create Vaccine");
+        createVaccineBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         createVaccineBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createVaccineBtnActionPerformed(evt);
             }
         });
-        add(createVaccineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 250, 45));
+        add(createVaccineBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 340, 60));
+
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Inventory Manager Work Area");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, -1, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageVaccineBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageVaccineBtnActionPerformed
@@ -123,6 +135,7 @@ public class InventoryManagerWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createVaccineBtn;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton manageVaccineBtn;
     // End of variables declaration//GEN-END:variables

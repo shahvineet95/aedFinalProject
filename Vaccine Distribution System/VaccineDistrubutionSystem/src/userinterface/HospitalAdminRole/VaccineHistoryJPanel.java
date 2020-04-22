@@ -69,6 +69,8 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         amountText = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -104,28 +106,40 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, 110, 40));
 
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 153));
         jButton2.setText("Pay Now");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 120, 40));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 360, 180, 40));
 
-        jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(0, 51, 51));
+        jButton3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(204, 255, 153));
         jButton3.setText("View Bill");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 140, 40));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 190, 40));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Vaccine History");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 312, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, 50));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 20), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -193,6 +207,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
 
         jButton4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton4.setText("Pay Now");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -201,6 +216,16 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 140, 40));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 460, 400));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Vaccine History");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 312, -1));
+
+        jLabel10.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_activity_history_50px.png"))); // NOI18N
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 60, 50));
     }// </editor-fold>//GEN-END:initComponents
     void populateTable(){
          DefaultTableModel model = (DefaultTableModel) requesttable.getModel();
@@ -270,6 +295,17 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
         p.setEnd4digits("**** **** **** "+cardNumberField.getText().substring(cardNumberField.getText().length()-4,cardNumberField.getText().length()));
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        ManageHospitalJPanle sysAdminwjp = (ManageHospitalJPanle) component;
+        sysAdminwjp.populateTable();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CvcField;
@@ -282,6 +318,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -289,6 +326,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable requesttable;
