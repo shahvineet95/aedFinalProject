@@ -67,6 +67,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
         valueLabel = new javax.swing.JLabel();
+        enterpriseLabel1 = new javax.swing.JLabel();
+        enterpriseLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -107,9 +109,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 560, 160));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 760, 290));
 
-        requestTestJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        requestTestJButton.setBackground(new java.awt.Color(0, 51, 51));
+        requestTestJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        requestTestJButton.setForeground(new java.awt.Color(153, 255, 153));
         requestTestJButton.setText("Request Test");
         requestTestJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -117,9 +121,11 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 298, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 550, 240, 50));
 
-        refreshTestJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        refreshTestJButton.setBackground(new java.awt.Color(0, 51, 51));
+        refreshTestJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        refreshTestJButton.setForeground(new java.awt.Color(153, 255, 153));
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,15 +133,25 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, -1));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 550, 200, 50));
 
-        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 127, 30));
+        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enterpriseLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_doctors_bag_50px.png"))); // NOI18N
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 40, 70, 60));
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 158, 30));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 158, 30));
+
+        enterpriseLabel1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        enterpriseLabel1.setText("EnterPrise :");
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 127, 30));
+
+        enterpriseLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        enterpriseLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enterpriseLabel2.setText("Doctor Work Area ");
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 240, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -154,6 +170,8 @@ public class DoctorWorkAreaJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel enterpriseLabel1;
+    private javax.swing.JLabel enterpriseLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JButton requestTestJButton;

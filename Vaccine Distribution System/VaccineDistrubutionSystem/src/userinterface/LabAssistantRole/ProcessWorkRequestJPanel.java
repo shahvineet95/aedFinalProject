@@ -54,22 +54,28 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         resultJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        submitJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        submitJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         submitJButton.setText("Submit Result");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 220, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 250, 60));
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 24)); // NOI18N
-        jLabel1.setText("Result");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 70, 30));
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_process_50px_2.png"))); // NOI18N
+        jLabel1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jLabel1ComponentHidden(evt);
+            }
+        });
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 40, 70, 60));
 
         resultJTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         add(resultJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 270, -1));
@@ -85,7 +91,11 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Product Sans", 0, 36)); // NOI18N
         jLabel2.setText("Process Work Request");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 380, 90));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 380, 90));
+
+        jLabel3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel3.setText("Result");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 70, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -112,10 +122,15 @@ public class ProcessWorkRequestJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_submitJButtonActionPerformed
 
+    private void jLabel1ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jLabel1ComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1ComponentHidden
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField resultJTextField;
     private javax.swing.JButton submitJButton;
     // End of variables declaration//GEN-END:variables

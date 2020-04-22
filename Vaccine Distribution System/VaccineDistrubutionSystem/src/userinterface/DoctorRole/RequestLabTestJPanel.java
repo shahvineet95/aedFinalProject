@@ -53,11 +53,16 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
+        enterpriseLabel1 = new javax.swing.JLabel();
+        enterpriseLabel2 = new javax.swing.JLabel();
+        enterpriseLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        requestTestJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        requestTestJButton.setBackground(new java.awt.Color(0, 51, 51));
+        requestTestJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        requestTestJButton.setForeground(new java.awt.Color(204, 255, 204));
         requestTestJButton.setText("Request Test");
         requestTestJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -65,14 +70,14 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 250, 60));
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel1.setText("Message");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
 
         messageJTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 210, -1));
+        add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 210, -1));
 
         backJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         backJButton.setText("<<Back");
@@ -86,11 +91,31 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
 
         valueLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, 130, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 130, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 120, 30));
+        enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        enterpriseLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enterpriseLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        enterpriseLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enterpriseLabelMouseClicked(evt);
+            }
+        });
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 70, 50));
+
+        enterpriseLabel1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        enterpriseLabel1.setText("EnterPrise :");
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 120, 30));
+
+        enterpriseLabel2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        enterpriseLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enterpriseLabel2.setText("Request Lab Test");
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 210, 30));
+
+        enterpriseLabel3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        enterpriseLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        enterpriseLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_lab_items_50px.png"))); // NOI18N
+        add(enterpriseLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 70, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -128,9 +153,23 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_backJButtonActionPerformed
 
+    private void enterpriseLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterpriseLabelMouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        InventoryManagerWorkAreaJPanel dwjp = (InventoryManagerWorkAreaJPanel) component;
+        dwjp.populateRequestTable();
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_enterpriseLabelMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel enterpriseLabel1;
+    private javax.swing.JLabel enterpriseLabel2;
+    private javax.swing.JLabel enterpriseLabel3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField messageJTextField;
     private javax.swing.JButton requestTestJButton;

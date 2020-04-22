@@ -68,31 +68,38 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         valueLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ManageOrdersJTable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         batchTable = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        proceedBtn.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        proceedBtn.setBackground(new java.awt.Color(0, 51, 51));
+        proceedBtn.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        proceedBtn.setForeground(new java.awt.Color(153, 255, 153));
         proceedBtn.setText("Proceed");
+        proceedBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         proceedBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 proceedBtnActionPerformed(evt);
             }
         });
-        add(proceedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 160, 50));
+        add(proceedBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 160, 50));
 
-        refreshTestJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        refreshTestJButton.setBackground(new java.awt.Color(0, 51, 51));
+        refreshTestJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        refreshTestJButton.setForeground(new java.awt.Color(153, 255, 153));
         refreshTestJButton.setText("Refresh");
+        refreshTestJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 150, 50));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 150, 50));
 
         enterpriseLabel.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
@@ -124,19 +131,16 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 630, 213));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jButton1.setText("< Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, 120, 50));
-
         jLabel6.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Manage Vaccine Orders");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 312, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 50));
 
         batchTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         batchTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -166,6 +170,16 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(batchTable);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 270, 300, 213));
+
+        jLabel7.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Manage Vaccine Orders");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 312, -1));
+
+        jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_syringe_50px_4.png"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 80, 50));
     }// </editor-fold>//GEN-END:initComponents
 
    public void populateTable(){
@@ -249,21 +263,21 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
         populateBatchTable();
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-        //Remove batch from batch storage
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jLabel6MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ManageOrdersJTable;
     private javax.swing.JTable batchTable;
     private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton proceedBtn;

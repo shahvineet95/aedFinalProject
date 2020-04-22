@@ -60,11 +60,14 @@ public class HosAdminDashboardJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 51, 51));
+        jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(204, 255, 153));
         jButton2.setText("View Call Back Vaccine");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -72,14 +75,16 @@ public class HosAdminDashboardJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 260, 70));
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 260, 70));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Hospital Dashboard");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 312, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_dashboard_50px.png"))); // NOI18N
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 70, 60));
 
-        jButton3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(0, 51, 51));
+        jButton3.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(204, 255, 153));
         jButton3.setText("Create Order");
         jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +92,12 @@ public class HosAdminDashboardJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 260, 60));
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 260, 60));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Hospital Dashboard");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 312, -1));
     }// </editor-fold>//GEN-END:initComponents
      
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -111,5 +121,6 @@ public class HosAdminDashboardJPanel extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
