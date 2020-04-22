@@ -166,9 +166,14 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          int selectedRow=workRequestJTable.getSelectedRow();
         if(selectedRow>=0){
+            WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
+            if(!w.getStatus().equals("Sent to PHD")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+            
             String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
        
-            WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
             w.setStatus("PHD Approved");
             w.setMessage(str1);
             system.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);
@@ -180,9 +185,12 @@ public class PHDLeadWorkAreaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          int selectedRow=workRequestJTable.getSelectedRow();
         if(selectedRow>=0){
-            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       
             WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
+            if(!w.getStatus().equals("Sent to PHD")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
             w.setStatus("PHD Denied");
             w.setMessage(str1);
             system.getCdcOrganization().getWorkQueue().addCreatedWorkrequest(w);

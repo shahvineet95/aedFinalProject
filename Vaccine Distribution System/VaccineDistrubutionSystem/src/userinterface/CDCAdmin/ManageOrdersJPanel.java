@@ -139,11 +139,16 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 120, 40));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 120, 40));
 
         jButton2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton2.setText("Decline");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 110, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 110, 40));
 
         NetworkCombobox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         NetworkCombobox.addActionListener(new java.awt.event.ActionListener() {
@@ -151,15 +156,15 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 NetworkComboboxActionPerformed(evt);
             }
         });
-        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 140, -1));
+        add(NetworkCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 140, -1));
 
         jLabel2.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel2.setText("Network:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, 30));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel3.setText("Organization:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, -1, 30));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, -1, 30));
 
         organizationCombo.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationCombo.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +172,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 organizationComboActionPerformed(evt);
             }
         });
-        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 160, -1));
+        add(organizationCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 160, -1));
 
         populationTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         populationTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -193,7 +198,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 410, 80, 40));
+        add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 80, 40));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 18), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -266,9 +271,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 180, 50));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 180, 50));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 550, 350));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 550, 350));
 
         jButton6.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton6.setText("View Bill");
@@ -277,7 +282,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton6ActionPerformed(evt);
             }
         });
-        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 410, 120, 40));
+        add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 120, 40));
 
         jButton7.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jButton7.setText("Check Availibility");
@@ -286,8 +291,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 jButton7ActionPerformed(evt);
             }
         });
-        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 190, 40));
-        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 20, 40));
+        add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, 190, 40));
+        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 340, 20, 40));
 
         jLabel12.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -348,8 +353,11 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
        if(selectedRow>=0){
           System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
           WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
-           String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       
+           if(!w.getStatus().equals("PHD Approved")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+          String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
           w.setStatus("CDC Approved");
           w.setMessage(str1);
           selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
@@ -396,8 +404,13 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
           int selectedRow = ManageOrdersJTable.getSelectedRow();
         if(selectedRow >= 0){
-            jPanel1.setVisible(true);
             selectedWorkrequest = (Order)ManageOrdersJTable.getValueAt(selectedRow, 3);
+            if(!selectedWorkrequest.getHosPayment().isCompleted()){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+            jPanel1.setVisible(true);
+            
             jLabel8.setText(""+selectedWorkrequest.getQuantity()*selectedWorkrequest.getVaccine().getCost());
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -407,6 +420,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
           int selectedRow = ManageOrdersJTable.getSelectedRow();
         if(selectedRow >= 0){
             selectedWorkrequest=(Order)ManageOrdersJTable.getValueAt(selectedRow, 3);
+            if(!selectedWorkrequest.getCdcPayment().isCompleted()){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
             ViewBillJPanel manageEnterpriseAdminJPanel = new ViewBillJPanel(userProcessContainer,system,selectedWorkrequest);
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
@@ -450,6 +467,25 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         int selectedRow = ManageOrdersJTable.getSelectedRow();
+       if(selectedRow>=0){
+          System.out.println("AAAAA"+ManageOrdersJTable.getValueAt(selectedRow, 5));
+          WorkRequest w =(WorkRequest)ManageOrdersJTable.getValueAt(selectedRow, 5);
+           if(!w.getStatus().equals("PHD Approved")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+          String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+          w.setStatus("CDC Denied");
+          w.setMessage(str1);
+          selectedOrganization.getWorkQueue().addCreatedWorkrequest(w);
+          populateTable();
+           System.out.println("SelectedWorkreq"+selectedOrganization);
+       }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

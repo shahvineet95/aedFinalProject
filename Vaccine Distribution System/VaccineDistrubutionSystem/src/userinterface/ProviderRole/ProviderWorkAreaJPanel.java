@@ -150,10 +150,17 @@ public final class ProviderWorkAreaJPanel extends javax.swing.JPanel {
 	//select a row from table
         int selectedRow=workRequestJTable.getSelectedRow();
         if(selectedRow>=0){
-            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-       		
+            
+            
+            	
 		//get workrequest from workRequestJTable..
             WorkRequest w =(WorkRequest)workRequestJTable.getValueAt(selectedRow, 4);
+            if(!w.getStatus().equals("Order placed")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+            String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
+       	
             w.setStatus("Sent to PHD");
             w.setMessage(str1);
             for(Organization o:enterprise.getOrganizationDirectory().getOrganizationList()){

@@ -45,9 +45,9 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         hosname = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        addrField = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        cityField = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         cardNumber = new javax.swing.JLabel();
@@ -57,13 +57,13 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        nameV = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        sizeV = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        orderV = new javax.swing.JLabel();
+        ManuV = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -86,19 +86,19 @@ public class ViewBillJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Address :");
+        jLabel4.setText("Contact :");
 
-        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("xxxxxxx");
+        addrField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        addrField.setForeground(new java.awt.Color(255, 255, 255));
+        addrField.setText("xxxxxxx");
 
         jLabel10.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("City :");
 
-        jLabel11.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("xxxxxxx");
+        cityField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        cityField.setForeground(new java.awt.Color(255, 255, 255));
+        cityField.setText("xxxxxxx");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,8 +112,8 @@ public class ViewBillJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel5)
+                    .addComponent(cityField)
+                    .addComponent(addrField)
                     .addComponent(hosname))
                 .addContainerGap(280, Short.MAX_VALUE))
         );
@@ -127,11 +127,11 @@ public class ViewBillJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(addrField))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel11))
+                    .addComponent(cityField))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -215,9 +215,9 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Vaccine Name :");
 
-        jLabel15.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("xxxxx");
+        nameV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        nameV.setForeground(new java.awt.Color(255, 255, 255));
+        nameV.setText("xxxxx");
 
         jLabel16.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,21 +227,21 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Batch Size :");
 
-        jLabel18.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("xxxxx");
+        sizeV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        sizeV.setForeground(new java.awt.Color(255, 255, 255));
+        sizeV.setText("xxxxx");
 
         jLabel19.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Batch Ordered : ");
 
-        jLabel20.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("xxxxx");
+        orderV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        orderV.setForeground(new java.awt.Color(255, 255, 255));
+        orderV.setText("xxxxx");
 
-        jLabel21.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("xxxxx");
+        ManuV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        ManuV.setForeground(new java.awt.Color(255, 255, 255));
+        ManuV.setText("xxxxx");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -253,21 +253,21 @@ public class ViewBillJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel15))
+                        .addComponent(nameV))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel16)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel21)))
+                        .addComponent(ManuV)))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18))
+                        .addComponent(sizeV))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel20)))
+                        .addComponent(orderV)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -276,15 +276,15 @@ public class ViewBillJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jLabel15)
+                    .addComponent(nameV)
                     .addComponent(jLabel17)
-                    .addComponent(jLabel18))
+                    .addComponent(sizeV))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
+                    .addComponent(orderV)
+                    .addComponent(ManuV))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -301,30 +301,36 @@ public class ViewBillJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     void populateData(){
         hosname.setText(selectedwr.getSender().getEmployee().getName());
+        addrField.setText(selectedwr.getSender().getEmployee().getPhoneNumber());
+        cityField.setText(selectedwr.getSender().getEmployee().getLocation());
+        
         cardNumber.setText(selectedwr.getHosPayment().getEnd4digits());
         amount.setText(""+selectedwr.getQuantity()*selectedwr.getVaccine().getCost());
+        
+        nameV.setText(selectedwr.getVaccine().getName());
+        ManuV.setText(selectedwr.getVaccine().getManufact());
+        sizeV.setText(""+selectedwr.getVaccine().getBatch());
+        orderV.setText(""+selectedwr.getQuantity());
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ManuV;
+    private javax.swing.JLabel addrField;
     private javax.swing.JLabel amount;
     private javax.swing.JLabel cardNumber;
+    private javax.swing.JLabel cityField;
     private javax.swing.JLabel hosname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -332,5 +338,8 @@ public class ViewBillJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel nameV;
+    private javax.swing.JLabel orderV;
+    private javax.swing.JLabel sizeV;
     // End of variables declaration//GEN-END:variables
 }

@@ -215,18 +215,22 @@ public class ManageVaccineOrdersJPanel extends javax.swing.JPanel {
 
             int selectedRow = ManageOrdersJTable.getSelectedRow();
             int batchRow = batchTable.getSelectedRow();
-        if(selectedRow >= 0){
+            if(selectedRow >= 0){
             if(batchRow >= 0){
-                String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-            System.out.println(""+selectedRow);
+            Order w = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
+            if(!w.getStatus().equals("CDC Approved")||!w.getCdcPayment().isCompleted()){
+             JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
+            String str1 = JOptionPane.showInputDialog(null, "Do you want to add addtional message");
             
            // Batch b = batch.get(batchRow);
             Batch b = (Batch)batchTable.getValueAt(batchRow, 1);
             
-            Order w = (Order)ManageOrdersJTable.getValueAt(selectedRow, 5);
+           
             
             w.setSender(account);
-            w.setStatus("Order placed");
+            w.setStatus("Order ready for pick-up");
             w.setMessage(str1);
             for(Enterprise e : network.getEnterpriseDirectory().getEnterpriseList()) {
                

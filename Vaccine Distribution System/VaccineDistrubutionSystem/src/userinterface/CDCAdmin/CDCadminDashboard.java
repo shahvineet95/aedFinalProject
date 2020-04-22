@@ -153,6 +153,10 @@ public class CDCadminDashboard extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+         ViewVaccineJPanel manageNetworkJPanel=new ViewVaccineJPanel(userProcessContainer, system);
+        userProcessContainer.add("manageNetworkJPanel",manageNetworkJPanel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

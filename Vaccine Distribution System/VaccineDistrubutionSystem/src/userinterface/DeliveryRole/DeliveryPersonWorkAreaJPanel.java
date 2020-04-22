@@ -158,8 +158,12 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Select a row!");
             return;
         }
-         String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
         WorkRequest wr = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+        if(!wr.getStatus().equals("Order ready for pick-up")){
+            JOptionPane.showMessageDialog(null, "Select a row!");
+            return;
+        }
+         String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
         wr.setStatus("Order picked Up");
         wr.setMessage(str1);
 //        String selectedOrderId = (String) workRequestJTable.getValueAt(selectedRow, 4);
@@ -177,9 +181,15 @@ public class DeliveryPersonWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Select a row!");
             return;
         }
+        WorkRequest wr = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
+       
+        if(!wr.getStatus().equals("Order picked Up")){
+            JOptionPane.showMessageDialog(null, "Select a row!");
+            return;
+        }
+ 
         
           String str1 = JOptionPane.showInputDialog(null, "Your order is placed.Do you want to add addtional message");
-        WorkRequest wr = (WorkRequest)workRequestJTable.getValueAt(selectedRow,0);
         wr.setStatus("Order Delivered");
         wr.setMessage(str1);
 //        String selectedOrderId = (String) workRequestJTable.getValueAt(selectedRow, 4);

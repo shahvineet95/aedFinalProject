@@ -67,10 +67,7 @@ public class ManageVaccine extends javax.swing.JPanel {
         VaccineTable.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         VaccineTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Name", "Cost", "Description"
@@ -194,7 +191,7 @@ public class ManageVaccine extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Vaccine v = ecosystem.getVaccinedir().addVaccDir();
-        v.setCost(Float.parseFloat(codeField.getText()));
+        v.setCost(Float.parseFloat(CostField2.getText()));
         v.setDesc(DescField.getText());
         v.setName(nameField.getText());
         v.setCode(codeField.getText());

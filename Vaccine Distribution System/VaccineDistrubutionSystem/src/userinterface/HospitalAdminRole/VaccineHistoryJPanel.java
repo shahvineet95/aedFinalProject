@@ -14,6 +14,7 @@ import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
@@ -213,9 +214,9 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 140, 40));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 140, 40));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, 460, 400));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 460, 400));
 
         jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -259,9 +260,14 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
            int selectedRow = requesttable.getSelectedRow();
+           selectedWorkrequest = (Order)requesttable.getValueAt(selectedRow, 3);
         if(selectedRow >= 0){
+            if(!selectedWorkrequest.getStatus().equals("CDC Approved")){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
             jPanel1.setVisible(true);
-            selectedWorkrequest = (Order)requesttable.getValueAt(selectedRow, 3);
+            
             amountText.setText(""+selectedWorkrequest.getQuantity()*selectedWorkrequest.getVaccine().getCost());
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -271,6 +277,10 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
          int selectedRow = requesttable.getSelectedRow();
         if(selectedRow >= 0){
             selectedWorkrequest=(Order)requesttable.getValueAt(selectedRow, 3);
+            if(!selectedWorkrequest.getHosPayment().isCompleted()){
+                 JOptionPane.showMessageDialog(null, "You Can not Process further");
+                 return;
+            }
             ViewBillJPanel manageEnterpriseAdminJPanel = new ViewBillJPanel(userProcessContainer,business,selectedWorkrequest);
             userProcessContainer.add("manageEnterpriseAdminJPanel",manageEnterpriseAdminJPanel);
             CardLayout layout=(CardLayout)userProcessContainer.getLayout();
