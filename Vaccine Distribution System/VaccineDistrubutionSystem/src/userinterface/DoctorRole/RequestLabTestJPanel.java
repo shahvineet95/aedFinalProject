@@ -50,7 +50,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         requestTestJButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         messageJTextField = new javax.swing.JTextField();
-        backJButton = new javax.swing.JButton();
         valueLabel = new javax.swing.JLabel();
         enterpriseLabel = new javax.swing.JLabel();
         enterpriseLabel1 = new javax.swing.JLabel();
@@ -79,16 +78,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         messageJTextField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         add(messageJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 210, -1));
 
-        backJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        backJButton.setText("<<Back");
-        backJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
-            }
-        });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-
         valueLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 130, -1));
@@ -101,7 +90,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                 enterpriseLabelMouseClicked(evt);
             }
         });
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 70, 50));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 70, 50));
 
         enterpriseLabel1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         enterpriseLabel1.setText("EnterPrise :");
@@ -141,18 +130,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_requestTestJButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        InventoryManagerWorkAreaJPanel dwjp = (InventoryManagerWorkAreaJPanel) component;
-        dwjp.populateRequestTable();
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-        
-    }//GEN-LAST:event_backJButtonActionPerformed
-
     private void enterpriseLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterpriseLabelMouseClicked
         // TODO add your handling code here:
         userProcessContainer.remove(this);
@@ -165,7 +142,6 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_enterpriseLabelMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backJButton;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JLabel enterpriseLabel2;

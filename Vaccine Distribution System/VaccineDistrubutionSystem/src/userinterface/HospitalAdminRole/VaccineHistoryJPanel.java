@@ -51,7 +51,6 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         requesttable = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -97,15 +96,6 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 840, 200));
 
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jButton1.setText("< Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, 110, 40));
-
         jButton2.setBackground(new java.awt.Color(0, 51, 51));
         jButton2.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(204, 255, 153));
@@ -139,7 +129,7 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
                 jLabel8MouseClicked(evt);
             }
         });
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 60, 50));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 60, 50));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Payment Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Product Sans", 0, 20), new java.awt.Color(204, 255, 204))); // NOI18N
@@ -242,20 +232,6 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-//        userProcessContainer.remove(this);
-//        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-//        layout.previous(userProcessContainer);
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-        ManageHospitalJPanle sysAdminwjp = (ManageHospitalJPanle) component;
-        sysAdminwjp.populateTable();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
            int selectedRow = requesttable.getSelectedRow();
@@ -314,7 +290,6 @@ public class VaccineHistoryJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField cardNumberField;
     private javax.swing.JTextField emailField;
     private javax.swing.JTextField expDateField;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

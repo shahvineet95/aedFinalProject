@@ -90,8 +90,9 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         addJButton = new javax.swing.JButton();
         organizationJComboBox = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
-        backJButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -127,16 +128,19 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 480, 140));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 480, 140));
 
-        addJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        addJButton.setBackground(new java.awt.Color(0, 51, 51));
+        addJButton.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        addJButton.setForeground(new java.awt.Color(153, 255, 153));
         addJButton.setText("Add Organization");
+        addJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButtonActionPerformed(evt);
             }
         });
-        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 210, 60));
+        add(addJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 250, 60));
 
         organizationJComboBox.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -145,25 +149,32 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                 organizationJComboBoxActionPerformed(evt);
             }
         });
-        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 170, -1));
+        add(organizationJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, 170, -1));
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         jLabel1.setText("Organization Type ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, 30));
-
-        backJButton.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        backJButton.setText("<< Back");
-        backJButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButtonActionPerformed(evt);
-            }
-        });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 19, 100, 40));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 440, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Manage Organizations");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 500, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_back_arrow_50px.png"))); // NOI18N
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 60));
+
+        jLabel9.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Manage Organizations");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 500, -1));
+
+        jLabel10.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_organization_50px.png"))); // NOI18N
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 90, 60));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
@@ -172,21 +183,23 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_addJButtonActionPerformed
 
-    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backJButtonActionPerformed
-
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addJButton;
-    private javax.swing.JButton backJButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JTable organizationJTable;

@@ -125,13 +125,13 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel1.setText("Selected Node:");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(128, 25, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        lblSelectedNode.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        lblSelectedNode.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         lblSelectedNode.setText("<View_selected_node>");
-        jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 25, -1, -1));
+        jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, -1));
 
         btnManageNetwork.setBackground(new java.awt.Color(0, 51, 51));
         btnManageNetwork.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
