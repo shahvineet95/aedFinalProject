@@ -51,6 +51,7 @@ public class EcoSystem extends Organization{
         super(null);
         networkList = new ArrayList<Network>();
         vaccinedir = new VaccineDirectory();
+        cdcOrganization=new CdcOrganization();
     }
 
     public ArrayList<Network> getNetworkList() {

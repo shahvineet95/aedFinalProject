@@ -318,6 +318,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) ManageOrdersJTable.getModel();
 
         model.setRowCount(0);
+        System.out.println("Y"+system.getCdcOrganization().getWorkQueue().getWorkRequestList());
         for (WorkRequest w :system.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
             if(w instanceof Order){
             Object[] row = new Object[7];

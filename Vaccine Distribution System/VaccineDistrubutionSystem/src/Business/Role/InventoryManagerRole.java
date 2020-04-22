@@ -23,4 +23,9 @@ public class InventoryManagerRole extends Role{
     public JPanel createWorkArea(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new InventoryManagerWorkAreaJPanel(userProcessContainer,network, account, (InventoryOrganization)organization, enterprise, business);
     }
+    
+     @Override
+    public String toString() {
+        return "Inventory Manager";
+    }
 }

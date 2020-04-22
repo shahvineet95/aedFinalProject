@@ -22,5 +22,8 @@ public class LabAssistantRole extends Role {
     public JPanel createWorkArea(JPanel userProcessContainer,Network network, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new LabAssistantWorkAreaJPanel(userProcessContainer, account, organization, business, enterprise);
     }
-    
+     @Override
+    public String toString() {
+        return "Lab Assitant";
+    }
 }
