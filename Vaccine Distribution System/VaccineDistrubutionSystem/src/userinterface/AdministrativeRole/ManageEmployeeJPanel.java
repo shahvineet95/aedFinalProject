@@ -8,6 +8,9 @@ import Business.Employee.Employee;
 import Business.Organization.Organization;
 import Business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -203,13 +206,30 @@ public class ManageEmployeeJPanel extends javax.swing.JPanel {
         String emailId = emailTextField.getText();
         String phoneNumber = phoneTextField.getText();
         String location = locationTextField.getText();
-        
+        try{
+            int number = Integer.parseInt(phoneNumber);
+            if(phoneNumber.length()!= 10){
+                JOptionPane.showMessageDialog(null, "Enter Valid contact Number");
+            return;
+            }
+        }catch(Exception e){
+         JOptionPane.showMessageDialog(null, "Enter Valid contact Number");
+            return;
+        }
+         if(validateUsername(emailId) ==false){
+             JOptionPane.showMessageDialog(null, "Insert Valid Email Id");
+            return;
+        }
     //    User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         organization.getEmployeeDirectory().createEmployee(name, emailId, phoneNumber, location);
         populateTable(organization);
         
     }//GEN-LAST:event_addJButtonActionPerformed
-
+     private boolean validateUsername(String email){
+      Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+      Matcher m = p.matcher(email);
+      return m.matches(); 
+     }
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
         userProcessContainer.remove(this);

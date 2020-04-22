@@ -44,9 +44,9 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         hosname = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        addr = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        cityField = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         cardNumber = new javax.swing.JLabel();
@@ -56,13 +56,13 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        nameV = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        sizeV = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        batchordered = new javax.swing.JLabel();
+        manuV = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 255, 153));
@@ -89,23 +89,23 @@ public class ViewBillJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Address :");
+        jLabel4.setText("Contact :");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("xxxxxxx");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        addr.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        addr.setForeground(new java.awt.Color(255, 255, 255));
+        addr.setText("xxxxxxx");
+        jPanel1.add(addr, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("City :");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("xxxxxxx");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        cityField.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        cityField.setForeground(new java.awt.Color(255, 255, 255));
+        cityField.setText("xxxxxxx");
+        jPanel1.add(cityField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 390, 140));
 
@@ -154,10 +154,10 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel14.setText("Vaccine Name :");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 31, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("xxxxx");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
+        nameV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        nameV.setForeground(new java.awt.Color(255, 255, 255));
+        nameV.setText("xxxxx");
+        jPanel3.add(nameV, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,25 +169,25 @@ public class ViewBillJPanel extends javax.swing.JPanel {
         jLabel17.setText("Batch Size :");
         jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("xxxxx");
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+        sizeV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        sizeV.setForeground(new java.awt.Color(255, 255, 255));
+        sizeV.setText("xxxxx");
+        jPanel3.add(sizeV, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("Batch Ordered : ");
         jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jLabel20.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("xxxxx");
-        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
+        batchordered.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        batchordered.setForeground(new java.awt.Color(255, 255, 255));
+        batchordered.setText("xxxxx");
+        jPanel3.add(batchordered, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
 
-        jLabel21.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("xxxxx");
-        jPanel3.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, 30));
+        manuV.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        manuV.setForeground(new java.awt.Color(255, 255, 255));
+        manuV.setText("xxxxx");
+        jPanel3.add(manuV, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, -1, 30));
 
         add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 390, 220));
 
@@ -197,35 +197,43 @@ public class ViewBillJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     void populateData(){
         hosname.setText(selectedwr.getSender().getEmployee().getName());
+        addr.setText(selectedwr.getSender().getEmployee().getPhoneNumber());
+        cityField.setText(selectedwr.getSender().getEmployee().getLocation());
+        
         cardNumber.setText(selectedwr.getHosPayment().getEnd4digits());
         amount.setText(""+selectedwr.getQuantity()*selectedwr.getVaccine().getCost());
+        
+        nameV.setText(selectedwr.getVaccine().getName());
+        manuV.setText(selectedwr.getVaccine().getManufact());
+        sizeV.setText(""+selectedwr.getVaccine().getBatch());
+        batchordered.setText(""+selectedwr.getQuantity());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addr;
     private javax.swing.JLabel amount;
+    private javax.swing.JLabel batchordered;
     private javax.swing.JLabel cardNumber;
+    private javax.swing.JLabel cityField;
     private javax.swing.JLabel hosname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel manuV;
+    private javax.swing.JLabel nameV;
+    private javax.swing.JLabel sizeV;
     // End of variables declaration//GEN-END:variables
 }

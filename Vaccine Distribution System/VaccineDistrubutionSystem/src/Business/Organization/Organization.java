@@ -26,8 +26,9 @@ public abstract class Organization {
     public enum Type{
         Admin("Admin Organization"), 
         InventoryManager("Inventory Organization"), 
-        Doctor("Doctor Organization"), 
         Lab("Lab Organization"),
+        
+        Doctor("Doctor Organization"), 
         
         //for the delivery enterprise, @author - santhosh
         PhdLead("PHD Organization"),
@@ -37,6 +38,7 @@ public abstract class Organization {
         
         //---Dharmik
         Hospitaladmin("Hospital Organization"),
+        
         CDCAdminRole("CdcOrganization");
         
         

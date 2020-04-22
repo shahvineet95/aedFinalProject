@@ -318,7 +318,10 @@ public class MainJFrame extends javax.swing.JFrame {
                 }
             }
         }
-        
+        if(userAccount==null){
+            userAccount = system.getCdcOrganization().getUserAccountDirectory().authenticateUser(userName, password);
+            inOrganization=system.getCdcOrganization();
+        }
         if(userAccount==null){
             JOptionPane.showMessageDialog(null, "Invalid credentials");
             return;

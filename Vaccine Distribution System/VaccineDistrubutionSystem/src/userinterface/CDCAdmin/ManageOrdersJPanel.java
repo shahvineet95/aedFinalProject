@@ -116,7 +116,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Vaccine", "Batches", "Cost", "Hospital", "Created Date", "Status", "Message"
+                "Vaccine", "Batches", "Cost", "State", "Created Date", "Status", "Message"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -287,7 +287,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             }
         });
         add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 410, 190, 40));
-        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 9, 23));
+        add(avlNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 410, 20, 40));
 
         jLabel12.setFont(new java.awt.Font("Product Sans", 1, 24)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -315,11 +315,11 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (WorkRequest w :system.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
             if(w instanceof Order){
-                            Object[] row = new Object[7];
+            Object[] row = new Object[7];
             row[0] = w.getVaccine().getName();
             row[1] = w.getQuantity();
             row[2] = w.getQuantity()*w.getVaccine().getCost();
-            row[3] = w.getSender();
+            row[3] = ((Order) w).getNetwork();
             row[4] = w.getRequestDate();
             row[5] = w;
             row[6] = w.getMessage();

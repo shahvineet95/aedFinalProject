@@ -74,7 +74,7 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "BatchID", "Vaccine", "Network", "Title 4"
+                "BatchID", "Vaccine", "Network", "Test Result"
             }
         ));
         ViewVaccine.setRowHeight(24);
@@ -149,14 +149,12 @@ public class ViewVaccineJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (WorkRequest w :ecosystem.getCdcOrganization().getWorkQueue().getWorkRequestList()) {
             if(w instanceof RegisterVaccine){
-            Object[] row = new Object[7];
-            row[0] = w.getVaccine().getName();
-            row[1] = w.getQuantity();
+            Object[] row = new Object[4];
+            row[0] = ((RegisterVaccine) w).getBatch().getBatchId();
+            row[1] = w.getVaccine().getName();
             row[2] = w.getQuantity()*w.getVaccine().getCost();
-            row[3] = w.getSender();
-            row[4] = w.getRequestDate();
-            row[5] = w;
-            row[6] = w.getMessage();
+            row[3] = ((RegisterVaccine) w).getNetwork();
+            row[4] = ((RegisterVaccine) w).getTestResult();
             model.addRow(row);
             }
         }

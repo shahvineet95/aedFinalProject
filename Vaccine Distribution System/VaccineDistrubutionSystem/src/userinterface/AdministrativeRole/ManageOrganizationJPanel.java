@@ -51,11 +51,14 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
                     organizationJComboBox.addItem(type);
                 }
             }
-        } else {
-            System.out.println("False Condition was executed!");
-            System.out.println("In Enterprise :: " + this.enterprise.getEnterpriseType().getValue());
-                   
-            for (Type type : EnumSet.range(Organization.Type.Admin, Organization.Type.Hospitaladmin)){
+        } else if (this.enterprise.getEnterpriseType().getValue().equals("Pharmaceutical")) {
+            for (Type type: EnumSet.range(Organization.Type.InventoryManager, Organization.Type.Lab)) {
+                if (!type.getValue().equals(Type.Admin.getValue())) {
+                    organizationJComboBox.addItem(type);
+                }
+            }
+        } else if (this.enterprise.getEnterpriseType().getValue().equals("Hospital")) {
+            for (Type type: EnumSet.range(Organization.Type.Hospitaladmin, Organization.Type.Hospitaladmin)) {
                 if (!type.getValue().equals(Type.Admin.getValue())) {
                     organizationJComboBox.addItem(type);
                 }

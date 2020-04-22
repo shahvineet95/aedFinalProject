@@ -45,7 +45,7 @@
                 <Column editable="false" title="Vaccine" type="java.lang.Object"/>
                 <Column editable="true" title="Batches" type="java.lang.Object"/>
                 <Column editable="true" title="Cost" type="java.lang.Object"/>
-                <Column editable="true" title="Hospital" type="java.lang.Object"/>
+                <Column editable="true" title="State" type="java.lang.Object"/>
                 <Column editable="true" title="Created Date" type="java.lang.Object"/>
                 <Column editable="true" title="Status" type="java.lang.Object"/>
                 <Column editable="true" title="Message" type="java.lang.Object"/>
@@ -511,7 +511,7 @@
     <Component class="javax.swing.JLabel" name="avlNumber">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="610" y="350" width="9" height="23"/>
+          <AbsoluteConstraints x="760" y="410" width="20" height="40"/>
         </Constraint>
       </Constraints>
     </Component>

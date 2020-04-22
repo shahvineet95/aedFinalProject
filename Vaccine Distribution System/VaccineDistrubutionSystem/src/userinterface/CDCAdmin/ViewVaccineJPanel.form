@@ -61,7 +61,7 @@
                 <Column editable="true" title="BatchID" type="java.lang.Object"/>
                 <Column editable="true" title="Vaccine" type="java.lang.Object"/>
                 <Column editable="true" title="Network" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                <Column editable="true" title="Test Result" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

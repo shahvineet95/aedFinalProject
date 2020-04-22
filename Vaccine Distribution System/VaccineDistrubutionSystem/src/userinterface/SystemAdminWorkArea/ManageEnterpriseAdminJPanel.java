@@ -12,6 +12,9 @@ import Business.Role.AdminRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -239,7 +242,32 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String phoneNumber = phoneTextField.getText();
         String location = locationTextField.getText();
        
-        //Create User
+        if(enterprise.getUserAccountDirectory().authenticateUser(username, password) != null){
+            JOptionPane.showMessageDialog(null, "Username Already exists");
+            return;
+        }
+        try{
+            int number = Integer.parseInt(phoneNumber);
+            if(phoneNumber.length()!= 10){
+                JOptionPane.showMessageDialog(null, "Enter Valid contact Number");
+            return;
+            }
+        }catch(Exception e){
+         JOptionPane.showMessageDialog(null, "Enter Valid contact Number");
+            return;
+        }
+        if(username.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null, "Username and password can not be empty");
+            return;
+        }
+          if(validateUsername(emailId) ==false){
+             JOptionPane.showMessageDialog(null, "Insert Valid Email Id");
+            return;
+        }
+//        if(validatePassWord(password) ==false){
+//             JOptionPane.showMessageDialog(null, "Your password must contain one lowercase,one uppercase, one special sign and minimum 6 charcters");
+//            return;
+//        }
  //       User user = system.getCdcOrganization().getUserDir().createUser(name, emailId, phoneNumber);
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name, emailId,phoneNumber, location);
         UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
@@ -256,7 +284,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jLabel6MouseClicked
-
+     private boolean validatePassWord(String Password){
+         Pattern pass = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[#$*&])(?=\\S+$).{6,}$");
+         Matcher mpass = pass.matcher(Password);
+         System.out.println(mpass+"----"+mpass.matches());
+         return mpass.matches();
+     }
+    private boolean validateUsername(String email){
+      Pattern p = Pattern.compile("^[a-zA-z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+      Matcher m = p.matcher(email);
+      return m.matches(); 
+     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailTextField;
     private javax.swing.JComboBox enterpriseJComboBox;

@@ -11,6 +11,7 @@ import Business.Organization.Organization;
 import Business.Role.Role;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -216,7 +217,16 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         Employee employee = (Employee) employeeJComboBox.getSelectedItem();
         Role role = (Role) roleJComboBox.getSelectedItem();
+        if(enterprise.getUserAccountDirectory().authenticateUser(userName, password) != null){
+            JOptionPane.showMessageDialog(null, "Username Already exists");
+            return;
+        }
         
+        if(userName.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(null, "Username and password can not be empty");
+            return;
+        }
+         
         organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         
         popData();
